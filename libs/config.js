@@ -38,7 +38,8 @@ module.exports = {
         app.use(bodyParser.json());
         app.use(session_obj);
         return app;
-    }
+    },
+    db_conn_string: "http://localhost:7474"
 
 
 };
