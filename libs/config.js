@@ -44,7 +44,14 @@ module.exports = {
     user_model_name: 'User',
     hashtag_model_name: 'Hashtag',
     hashtag_to_hashtag_rel_name: 'CORRELATED_WITH',
-    user_to_hashtag_rel_name: 'SUBSCRIBES_TO'
+    user_to_hashtag_rel_name: 'SUBSCRIBES_TO',
+    id: function(entry) {return entry;},
+    error_print: function(str) {
+        return function(err) {
+            console.log(str);
+            return false;
+        }
+    }
 
 
 };
