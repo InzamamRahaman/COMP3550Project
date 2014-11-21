@@ -19,14 +19,14 @@ function Models(db){
         salt: {type: String}
 
     }
-
+    /*
     this.findUser = q.nbind(that.User.where, that.User);
     this.createUser = q.nbind(that.User.save, that.User);
 
     this.Hashtag = that.seraph_model(db, config.hashtag_model_name);
     this.Hashtag.schema = {
         name: {type : String, required: true}
-    }
+    } */
 
     this.findHashtag = q.nbind(that.Hashtag.where, that.Hashtag);
     this.createHashtag = q.nbind(that.Hashtag.save, that.Hashtag);

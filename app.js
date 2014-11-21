@@ -11,7 +11,7 @@ db.query('MATCH (pp:Person) WHERE pp.name = "Jane" RETURN pp', {}, function(err,
     } else {
         console.log(res);
     }
-})
+});
 var Models = require("./libs/models").Models;
 console.log(Models);
 var models = new Models(db); // Use this to manipulate models

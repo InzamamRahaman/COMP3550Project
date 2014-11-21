@@ -39,7 +39,7 @@ function RelationshipManager(db) {
 
     // For GET wrt a user following hastags
     this.getFollowedHashtags = function(user_identifier) {
-        var query = "match (n: {user_node} {user_i})-[:{follows}]-(h:{hashtag_node})" +
+        var query = "match (n: {user_node} {user_i})-[:{follows}]->(h:{hashtag_node})" +
                 " return h";
         var params = {
             user_node : config.user_model_name,
@@ -49,12 +49,12 @@ function RelationshipManager(db) {
             hashtag_node: config.hashtag_model_name,
             follows: config.user_to_hashtag_rel_name
         }
-        promisifiedQuery(query, params).then(config.id).fail(config.error_print("can't get hashtags"));
+        return promisifiedQuery(query, params).then(config.id).fail(config.error_print("can't get hashtags"));
     }
 
     // For DELETE wrt a user following a hashtag
     this.userUnfollowHashtag = function(user_identifier, hashtag_name) {
-        var query = "match (n:{user_node} {user_i})-[:{follows}]-(h:{hashtag_node} {hash_i}) " +
+        var query = "match (n:{user_node} {user_i})-[:{follows}]->(h:{hashtag_node} {hash_i}) " +
                 " delete follows";
         var param = {
             user_node : config.user_model_name,
@@ -67,23 +67,25 @@ function RelationshipManager(db) {
                 name: hashtag_name
             }
         };
-        promisifiedQuery(query, param).then(config.id).fail(config.error_print("can't delete following"));
+        return promisifiedQuery(query, param).then(config.id).fail(config.error_print("can't delete following"));
     }
 
     // For POST wrt a user following a hashtag
     this.userFollowHashtag = function(user_identifier, hashtag_name) {
-        var query = [
-            "MATCH (N: " + config.user_model_name + "{identifier: " + user_identifier  + "})",
-            "CREATE UNIQUE (N)-[follows:" + config.user_to_hashtag_rel_name
-                + "]-(h:" + config.hashtag_model_name + "{name:" + hashtag_name + "})",
-            "RETURN follows"
-        ].join("\n");
-        promisifiedQuery(query, {}).then(function(res) {
-            return res;
-        }).fail(function(err) {
-            console.log("Failed to create follows relationship!");
-            return false;
-        });
+        var query = "match (n: {user_model} {user_i})-[:{follows}]->(h:{hashtag_model} {hash_i}) return follows";
+        var param = {
+            user_model: config.user_model_name,
+            follows: config.user_to_hashtag_rel_name,
+            hashtag_model: config.hashtag_model_name,
+            user_i: {
+                identifier: user_identifier
+            },
+            hash_i: {
+                name: hashtag_name
+            }
+        };
+        return promisifiedQuery(query, param).then(config.id).
+            fail(config.error_print("error subscribing user to hashtag"));
 
     }
 
