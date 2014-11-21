@@ -2,9 +2,9 @@
  * Created by Inzamam on 11/20/2014.
  */
 
-var config = require("config");
+var config = require("./config");
 
-module.Models = function(db) {
+function Models(db){
 
     var seraph_model = require("seraph-model");
     // Set up the models to access the nodes in the database
@@ -41,4 +41,8 @@ module.Models = function(db) {
     })
 
 
-};
+}
+
+module.exports = {
+    Models: Models
+}
