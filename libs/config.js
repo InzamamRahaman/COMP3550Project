@@ -36,12 +36,15 @@ module.exports = {
             extended : false
         }));
         app.use(bodyParser.json());
+        app.use(cookieParser());
         app.use(session_obj);
         return app;
     },
     db_conn_string: "http://localhost:7474",
     user_model_name: 'User',
-    hashtag_model_name: 'Hashtag'
+    hashtag_model_name: 'Hashtag',
+    hashtag_to_hashtag_rel_name: 'CORRELATED_WITH',
+    user_to_hashtag_rel_name: 'SUBSCRIBES_TO'
 
 
 };

@@ -6,9 +6,10 @@ var config = require("./config");
 
 function Models(db){
 
+    var that = this;
     var seraph_model = require("seraph-model");
     // Set up the models to access the nodes in the database
-    this.User = seraph_model(db, config.user_model_name);
+    this.User = that.seraph_model(db, config.user_model_name);
     this.User.schema = {
         // a unique string to identifier a user
         // it can be an email, username, ext....
@@ -18,7 +19,7 @@ function Models(db){
 
     }
 
-    this.Hashtag = seraph_model(db, config.hashtag_model_name);
+    this.Hashtag = that.seraph_model(db, config.hashtag_model_name);
     this.Hashtag.schema = {
         name: {type : String, required: true}
     }
