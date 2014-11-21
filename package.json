@@ -23,6 +23,7 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.2",
     "seraph": "^0.9.12",
+    "seraph-model": "^0.6.18",
     "socket.io": "^1.2.0"
   }
 }
