@@ -1,0 +1,25 @@
+{
+  "name": "internetTechIIProject",
+  "version": "0.0.0",
+  "authors": [
+    "IzzyRahaman <izzyrahaman@gmail.com>"
+  ],
+  "description": "A solution to the problem of information overload with respect to twitter",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.1",
+    "angular": "~1.3.3",
+    "lodash": "~2.4.1",
+    "highcharts": "https://github.com/highslide-software/highcharts-release.git#~4.0.4",
+    "angular-validation": "https://github.com/huei90/angular-validation.git#~1.2.6"
+  }
+}

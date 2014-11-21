@@ -1,0 +1,28 @@
+{
+  "name": "internetTechIIProject",
+  "version": "0.0.0",
+  "description": "A solution to the problem of information overloading with respect to twitter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Inzamam Rahaman, Akash Manohar, Jherez Taylor, Steffan Boodhoo",
+  "license": "N\\A",
+  "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "body-parser": "^1.9.2",
+    "bower": "^1.3.12",
+    "cookie-parser": "^1.3.3",
+    "express": "^4.10.2",
+    "express-session": "^1.9.1",
+    "lodash": "^2.4.1",
+    "mongoose": "^3.8.19",
+    "passport": "^0.2.1",
+    "passport-facebook": "^1.0.3",
+    "passport-google": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.2",
+    "seraph": "^0.9.12",
+    "socket.io": "^1.2.0"
+  }
+}
