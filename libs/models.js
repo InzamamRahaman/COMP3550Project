@@ -2,11 +2,13 @@
  * Created by Inzamam on 11/20/2014.
  */
 
+var config = require("config");
 
-module.set_up_models = function(db) {
+module.Models = function(db) {
 
-    var seraph_model = require("seraph-model")
-    this.User = seraph_model(db, 'user');
+    var seraph_model = require("seraph-model");
+    // Set up the models to access the nodes in the database
+    this.User = seraph_model(db, config.user_model_name);
     this.User.schema = {
         // a unique string to identifier a user
         // it can be an email, username, ext....
@@ -16,10 +18,27 @@ module.set_up_models = function(db) {
 
     }
 
-    this.Hashtag = seraph_model(db, 'hashtag');
+    this.Hashtag = seraph_model(db, config.hashtag_model_name);
     this.Hashtag.schema = {
         name: {type : String, required: true}
     }
+
+    // Set up indexes on the database
+    db.index.createIfNone('User', 'identifier', function(err, index) {
+        if(err) {
+            console.log("Error in creating index");
+        } else {
+            console.log(index);
+        }
+    });
+
+    db.index.createIfNone('Hashtag', 'name', function(err, index) {
+        if(err) {
+            console.log("Error in creating index");
+        } else {
+            console.log(index);
+        }
+    })
 
 
 };

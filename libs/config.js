@@ -39,7 +39,9 @@ module.exports = {
         app.use(session_obj);
         return app;
     },
-    db_conn_string: "http://localhost:7474"
+    db_conn_string: "http://localhost:7474",
+    user_model_name: 'User',
+    hashtag_model_name: 'Hashtag'
 
 
 };
