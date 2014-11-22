@@ -27,4 +27,6 @@ bower_components
 
 # Users Environment Variables
 .lock-wscript
-.idea/workspace.xml
+
+# User-specific stuff:
+# .idea/workspace.xml
