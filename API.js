@@ -1,9 +1,13 @@
-function(){
-	var express = require("express");
-	var app = config.init_server(express());
 
-	app.get('',function(req,res){
-		
+function apiManager(app){
+
+	this.getHash = app.get('/index/hash',function(req,res){
+		var data=req.body.data;
+		res.write(data);
 	});
-	
+
+}
+
+module.exports = {
+    apiManager: apiManager
 }
