@@ -19,15 +19,35 @@ models.setUpDB(function() {
 
     var RelationshipManager = require("./libs/relationships").RelationshipManager;
     var relationships = new RelationshipManager(db);
+
+
+
     app.listen(config.port);
     console.log("Application started at http://127.0.0.1:"
     + config.port);
-    test(relationships, "Jane");
+    test2(relationships);
 
 // Code to test creation, deletion, ect...
 
 
 });
+
+function test2(relationships) {
+    relationships.addToCorrelationBetweenHashtags("a", "b", function(data) {
+        console.log("Added rel " + data);
+        relationships.addToCorrelationBetweenHashtags("b","c", function(data1) {
+            console.log("Added rel" + data1);
+            relationships.addToCorrelationBetweenHashtags("d", "e", function(data3) {
+                console.log("Added rel " + data3);
+                relationships.addToCorrelationBetweenHashtags("c", "e", function(data3) {
+                    console.log("Added rel" + data3);
+                    relationships.addToCorrelationBetweenHashtags("Csharp", "scala", function(d) {console.log("Aded rel")});
+                });
+
+            })
+        });
+    })
+}
 
 function test(relationships, id) {
     models.User.save({identifier: id}, function(err, res){
