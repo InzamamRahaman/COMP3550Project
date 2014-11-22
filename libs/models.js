@@ -32,22 +32,51 @@ function Models(db){
     //this.createHashtag = q.nbind(that.Hashtag.save, that.Hashtag);
 
     // Set up indexes on the database
-    db.index.createIfNone('User', 'identifier', function(err, index) {
-        if(err) {
-            console.log("Error in creating index");
-        } else {
-            console.log(index);
-        }
-    });
+    this.setUpDB = function(callback) {
+        db.index.createIfNone('User', 'identifier', function(err, index) {
+            if(err) {
+                console.log("Error in creating index");
+            } else {
+                console.log("index on User created");
+                console.log(index);
+                db.index.createIfNone('Hashtag', 'name', function(err, index) {
+                    if(err) {
+                        console.log("Error in creating index");
+                    } else {
+                        console.log("Index on hashtag created");
+                        console.log(index);
+                        // Set up constraints to ensure uniqueness
+                        db.constraints.uniqueness.createIfNone('User', 'identifier', function(err, constraint) {
+                            if(err) {
+                                console.log("Error creating constraint on User");
+                            } else {
+                                console.log("Constraint on User added");
+                                console.log(constraint);
+                                db.constraints.uniqueness.createIfNone('Hashtag', 'name', function(err, constraint) {
+                                    if(err) {
+                                        console.log("Error on creating constraint on Hashtag");
+                                    } else {
+                                        console.log("Constraint on Hashtag added");
+                                        console.log(constraint);
+                                        console.log("Finised set up db indicies and constraints");
+                                        callback();
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
 
-    db.index.createIfNone('Hashtag', 'name', function(err, index) {
-        if(err) {
-            console.log("Error in creating index");
-        } else {
-            console.log(index);
-        }
-    })
+            }
+        });
 
+
+
+
+
+
+
+    }
 
 }
 

@@ -82,7 +82,8 @@ function RelationshipManager(db) {
         var query = [
             "MATCH (u:User)",
             "WHERE u.identifier = {u_i}",
-            'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h:Hashtag {name: "' + hashtag_name + '"})',
+            'MERGE (h:Hashtag {name: "' + hashtag_name + '"})',
+            'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
             "RETURN follows, h"
         ].join("\n")
         //"match (n:User {user_i})-[follows:SUBSCRIBES_TO]->(h:Hashtag {hash_i}) return follows";
