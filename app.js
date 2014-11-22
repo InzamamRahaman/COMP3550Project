@@ -26,7 +26,7 @@ models.setUpDB(function() {
     console.log("Application started at http://127.0.0.1:"
     + config.port);
     test2(relationships);
-
+app.use(express.static(__dirname + '/app'));
 // Code to test creation, deletion, ect...
 
 
