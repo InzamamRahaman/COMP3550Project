@@ -3,8 +3,6 @@
 ### WebStorm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
-*.iml
-
 # User-specific stuff:
  .idea/workspace.xml
 
