@@ -42,15 +42,13 @@ function RelationshipManager(db) {
 
     // For GET wrt a user following hastags
     this.getFollowedHashtags = function(user_identifier, callback) {
-        var query = "match (n: {user_node} {user_i})-[:{follows}]->(h:{hashtag_node})" +
-                " return h";
+        var query = [
+            'MATCH (n:User)-[rel:SUBSCRIBES_TO]->(h:Hashtag)',
+            'WHERE n.identifier = {user_i}',
+            'RETURN h,rel'
+        ].join('\n');
         var params = {
-            user_node : config.user_model_name,
-            user_id : {
-                identifier: user_identifier
-            },
-            hashtag_node: config.hashtag_model_name,
-            follows: config.user_to_hashtag_rel_name
+            user_i : user_identifier
         }
         var fn = config.id;
         if(callback !== undefined) {

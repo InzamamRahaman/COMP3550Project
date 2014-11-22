@@ -24,20 +24,28 @@ console.log("Application started at http://127.0.0.1:"
 
 // Code to test creation, deletion, ect...
 
-models.User.save({identifier: "test12"}, function(err, res){
+models.User.save({identifier: "test15"}, function(err, res){
   if(err) {
       console.log("error");
   }  else {
       var res2 = undefined;
       console.log("created user " + JSON.stringify(res));
       console.log("creating relationship");
-      relationships.userFollowHashtag("test12", "scala", function(data) {
+      relationships.userFollowHashtag("test15", "scala", function(data) {
           res2 = data;
           console.log("relationship " + JSON.stringify(data));
+          /*
           relationships.userUnfollowHashtag("test12", "scala", function(data1) {
               console.log("Deletion successful");
               console.log(data1);
-          })
+          }) */
+
+          relationships.userFollowHashtag("test15", "haskell", function(res){
+             console.log(res);
+              relationships.getFollowedHashtags("test15", function(data1) {
+                  console.log(data1)
+              });
+          });
       });
   }
 });
