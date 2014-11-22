@@ -4,6 +4,8 @@
 
 var config = require("./config");
 var q = require("q");
+var crpyto = require("crypto");
+var bcrytp = require("bcryptjs");
 
 function Models(db){
 
@@ -20,9 +22,18 @@ function Models(db){
         follows: {type: Number}
     }
 
-    var prepareUser = function(object, callback) {
 
+
+    // Code to prepare the user
+    var prepareUser = function(object, callback) {
+        object.follows = 0;
+        object.salt = bcrytp.genSaltSync(10);
+        object.password = bcrytp.hashSync(object.password, object.salt);
+        callback(null, object);
     }
+
+    this.User.on('prepare', prepareUser);
+
     /*
     this.findUser = q.nbind(that.User.where, that.User);
     this.createUser = q.nbind(that.User.save, that.User);
