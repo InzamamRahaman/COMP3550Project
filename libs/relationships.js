@@ -77,18 +77,35 @@ function RelationshipManager(db) {
         return promisifiedQuery(query, param).then(fn).fail(config.error_print("can't delete following")).done();
     }
 
+    this.getCorrelatedHashtags = function(hashtag1, callback) {
+
+        var query1 = [
+            'MATCH (h:Hashtag)-[rel:CORRELATED_WITH]->(h1:Hashtag)',
+            'WHERE h.name = "' + hashtag1 + '" AND rel.cost < ' + config.corr_check,
+            'RETURN h1'
+        ].join('\n');
+
+        promisifiedQuery(query1, {}, function(data){
+            var query2 = [
+                'MATCH (h:Hashtag)-[rel1:CORRELATED_WITH]-(h1:Hashtag)-[rel2:CORRELATED_WITH]-(h3:Hashtag)'
+            ]
+        })
+
+
+    }
+
     this.addToCorrelationBetweenHashtags = function(hashtag1, hashtag2, callback) {
         var query = [
             'MERGE (h1:Hashtag  {name: "' + hashtag1 +'"})',
-            'ON CREATE SET h1.count=1',
-            'ON MATCH SET h1.count = h1.count + 1',
+            'ON CREATE SET h1.count=1.0',
+            'ON MATCH SET h1.count = h1.count + 1.0',
             'MERGE (h2:Hashtag  {name: "' + hashtag2 +'"})',
-            'ON CREATE SET h2.count=1',
-            'ON MATCH SET h2.count = h2.count + 1',
-            'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0, cost: 0}]->(h2)',
-            'SET rel.times = rel.times + 1, rel.cost = 100 - (100 * (rel.times/h1.count))',
-            'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0, cost: 0}]->(h1)',
-            'SET rel2.times = rel2.times + 1, rel2.cost = 100 - (100 * (rel2.times/h2.count))'
+            'ON CREATE SET h2.count=1.0',
+            'ON MATCH SET h2.count = h2.count + 1.0',
+            'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
+            'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
+            'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
+            'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
         ].join('\n');
         var fn = config.id;
         if(callback) {
@@ -104,6 +121,7 @@ function RelationshipManager(db) {
         var query = [
             "MATCH (u:User)",
             "WHERE u.identifier = {u_i}",
+            'SET u.follows = u.follows + 1',
             'MERGE (h:Hashtag {name: "' + hashtag_name + '", count: 0})',
             'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
             "RETURN follows, h"

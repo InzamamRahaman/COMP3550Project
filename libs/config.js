@@ -52,8 +52,10 @@ module.exports = {
             console.log(JSON.stringify(err));
             return false;
         }
-    }
+    },
 
+    min_viable_corr: 50.0,
+    corr_check: 100.0 - this.min_viable_corr
 
 };
 

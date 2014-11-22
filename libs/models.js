@@ -16,7 +16,11 @@ function Models(db){
         // it can be an email, username, ext....
         identifier: {type : String, required: true},
         password: {type: String},
-        salt: {type: String}
+        salt: {type: String},
+        follows: {type: Number}
+    }
+
+    var prepareUser = function(object, callback) {
 
     }
     /*
