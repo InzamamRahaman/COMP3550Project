@@ -10,7 +10,7 @@ function Models(db){
     var that = this;
     var seraph_model = require("seraph-model");
     // Set up the models to access the nodes in the database
-    this.User = that.seraph_model(db, config.user_model_name);
+    this.User = seraph_model(db, config.user_model_name);
     this.User.schema = {
         // a unique string to identifier a user
         // it can be an email, username, ext....
@@ -28,8 +28,8 @@ function Models(db){
         name: {type : String, required: true}
     } */
 
-    this.findHashtag = q.nbind(that.Hashtag.where, that.Hashtag);
-    this.createHashtag = q.nbind(that.Hashtag.save, that.Hashtag);
+    //this.findHashtag = q.nbind(that.Hashtag.where, that.Hashtag);
+    //this.createHashtag = q.nbind(that.Hashtag.save, that.Hashtag);
 
     // Set up indexes on the database
     db.index.createIfNone('User', 'identifier', function(err, index) {

@@ -13,15 +13,17 @@ function RelationshipManager(db) {
     var q = require("q");
 
     var promisifiedQuery = function(query, params) {
-        var defferred = q.defer();
+        var deffered = q.defer();
         db.query(query, params, function(err, res) {
             if(err) {
-                defferred.reject(new Error(err));
+                console.log("Error in executing query");
+                console.log(JSON.stringify(err));
+                deffered.reject(new Error(err));
             } else {
                 deffered.resolve(res);
             }
         });
-        return defferred.promise;
+        return deffered.promise;
     }
 
     var that = this;
@@ -38,7 +40,7 @@ function RelationshipManager(db) {
     }
 
     // For GET wrt a user following hastags
-    this.getFollowedHashtags = function(user_identifier) {
+    this.getFollowedHashtags = function(user_identifier, callback) {
         var query = "match (n: {user_node} {user_i})-[:{follows}]->(h:{hashtag_node})" +
                 " return h";
         var params = {
@@ -49,7 +51,13 @@ function RelationshipManager(db) {
             hashtag_node: config.hashtag_model_name,
             follows: config.user_to_hashtag_rel_name
         }
-        return promisifiedQuery(query, params).then(config.id).fail(config.error_print("can't get hashtags"));
+        var fn = config.id;
+        if(callback !== undefined) {
+            console.log("using defined fun");
+            fn = callback;
+        }
+
+        return promisifiedQuery(query, params).then(fn).fail(config.error_print("can't get hashtags"));
     }
 
     // For DELETE wrt a user following a hashtag
@@ -67,25 +75,29 @@ function RelationshipManager(db) {
                 name: hashtag_name
             }
         };
-        return promisifiedQuery(query, param).then(config.id).fail(config.error_print("can't delete following"));
+        return promisifiedQuery(query, param).then(config.id).fail(config.error_print("can't delete following")).done();
     }
 
     // For POST wrt a user following a hashtag
-    this.userFollowHashtag = function(user_identifier, hashtag_name) {
-        var query = "match (n: {user_model} {user_i})-[:{follows}]->(h:{hashtag_model} {hash_i}) return follows";
+    this.userFollowHashtag = function(user_identifier, hashtag_name, callback) {
+        var query = [
+            "MATCH (u:User)",
+            "WHERE u.identifier = {u_i}",
+            'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h:Hashtag {name: "' + hashtag_name + '"})',
+            "RETURN follows, h"
+        ].join("\n")
+        //"match (n:User {user_i})-[follows:SUBSCRIBES_TO]->(h:Hashtag {hash_i}) return follows";
         var param = {
-            user_model: config.user_model_name,
-            follows: config.user_to_hashtag_rel_name,
-            hashtag_model: config.hashtag_model_name,
-            user_i: {
-                identifier: user_identifier
-            },
-            hash_i: {
-                name: hashtag_name
-            }
+            u_i: user_identifier,
+            h_i: hashtag_name
         };
-        return promisifiedQuery(query, param).then(config.id).
-            fail(config.error_print("error subscribing user to hashtag"));
+        var fn = config.id;
+        if(callback) {
+            console.log("using supplied callback");
+            fn = callback;
+        }
+        return promisifiedQuery(query, param).then(fn).
+            fail(config.error_print("error subscribing user to hashtag")).done();
 
     }
 

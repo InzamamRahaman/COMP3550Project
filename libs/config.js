@@ -49,6 +49,7 @@ module.exports = {
     error_print: function(str) {
         return function(err) {
             console.log(str);
+            console.log(JSON.stringify(err));
             return false;
         }
     }
