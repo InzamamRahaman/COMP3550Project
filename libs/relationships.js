@@ -79,17 +79,19 @@ function RelationshipManager(db) {
 
     this.getCorrelatedHashtags = function(hashtag1, callback) {
 
-        var query1 = [
-            'MATCH (h:Hashtag)-[rel:CORRELATED_WITH]->(h1:Hashtag)',
-            'WHERE h.name = "' + hashtag1 + '" AND rel.cost < ' + config.corr_check,
-            'RETURN h1'
+        var query = [
+            'MATCH P = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)',
+            'WITH h1, p, REDUCE(total = 0, r IN relationships(p) | total + r.cost) AS total_cost',
+            'WHERE h1.name = ' + hashtag1 + ' AND total_cost < ' + config.corr_check,
+            'RETURN nodes(p), relationships(p);'
         ].join('\n');
 
-        promisifiedQuery(query1, {}, function(data){
-            var query2 = [
-                'MATCH (h:Hashtag)-[rel1:CORRELATED_WITH]-(h1:Hashtag)-[rel2:CORRELATED_WITH]-(h3:Hashtag)'
-            ]
-        })
+        var fn = config.id;
+        if(callback) {
+            fn = callback;
+        }
+
+        return promisifiedQuery(query, {}).then(fn).fail(config.error_print("erroring getting correlated hashtags"));
 
 
     }
