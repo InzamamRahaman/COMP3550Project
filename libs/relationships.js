@@ -11,6 +11,7 @@ function RelationshipManager(db) {
     var config = require("./config");
     var Models = require("./models").Models(db);
     var q = require("q");
+    var mutil = require("mutil");
 
     var promisifiedQuery = function(query, params) {
         var deffered = q.defer();
@@ -61,21 +62,21 @@ function RelationshipManager(db) {
     }
 
     // For DELETE wrt a user following a hashtag
-    this.userUnfollowHashtag = function(user_identifier, hashtag_name) {
-        var query = "match (n:{user_node} {user_i})-[:{follows}]->(h:{hashtag_node} {hash_i}) " +
-                " delete follows";
+    this.userUnfollowHashtag = function(user_identifier, hashtag_name, callback) {
+        var query = [
+            'MATCH (u:User)-[follows:SUBSCRIBES_TO]-(h:Hashtag)',
+            'WHERE u.identifier = {user_i} AND h.name = {hashtag_i}',
+            'DELETE follows'
+        ].join("\n")
         var param = {
-            user_node : config.user_model_name,
-            hashtag_node: config.hashtag_model_name,
-            follows: config.user_to_hashtag_rel_name,
-            user_i: {
-                identifier: user_identifier
-            },
-            hash_i: {
-                name: hashtag_name
-            }
+            user_i : user_identifier,
+            hashtag_i : hashtag_name
         };
-        return promisifiedQuery(query, param).then(config.id).fail(config.error_print("can't delete following")).done();
+        var fn = config.id;
+        if(callback) {
+            fn = callback;
+        }
+        return promisifiedQuery(query, param).then(fn).fail(config.error_print("can't delete following")).done();
     }
 
     // For POST wrt a user following a hashtag

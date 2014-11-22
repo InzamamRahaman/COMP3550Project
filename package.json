@@ -17,6 +17,7 @@
     "express-session": "^1.9.1",
     "lodash": "^2.4.1",
     "mongoose": "^3.8.19",
+    "mutil": "^0.3.0",
     "passport": "^0.2.1",
     "passport-facebook": "^1.0.3",
     "passport-google": "^0.3.0",

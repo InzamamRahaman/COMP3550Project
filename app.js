@@ -33,7 +33,11 @@ models.User.save({identifier: "test12"}, function(err, res){
       console.log("creating relationship");
       relationships.userFollowHashtag("test12", "scala", function(data) {
           res2 = data;
-          console.log("relationship " + JSON.stringify(res2));
+          console.log("relationship " + JSON.stringify(data));
+          relationships.userUnfollowHashtag("test12", "scala", function(data1) {
+              console.log("Deletion successful");
+              console.log(data1);
+          })
       });
   }
 });
