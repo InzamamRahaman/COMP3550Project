@@ -3,9 +3,6 @@
 ### WebStorm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
-# User-specific stuff:
- .idea/workspace.xml
-
 # Gradle:
  .idea/gradle.xml
  .idea/libraries
