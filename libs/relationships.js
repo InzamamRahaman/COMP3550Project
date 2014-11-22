@@ -45,7 +45,7 @@ function RelationshipManager(db) {
         var query = [
             'MATCH (n:User)-[rel:SUBSCRIBES_TO]->(h:Hashtag)',
             'WHERE n.identifier = {user_i}',
-            'RETURN h,rel'
+            'RETURN h'
         ].join('\n');
         var params = {
             user_i: user_identifier
@@ -79,10 +79,16 @@ function RelationshipManager(db) {
 
     this.getCorrelatedHashtags = function (hashtag1, callback) {
 
+        /*
+         MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)
+         WITH h1, p, REDUCE(total = 0, r IN relationships(p) |  total + r.cost) AS total_cost
+         WHERE h1.name = "e" AND total_cost < 60
+         RETURN nodes(p), relationships(p);
+         */
         var query = [
-            'MATCH P = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)',
+            'MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)',
             'WITH h1, p, REDUCE(total = 0, r IN relationships(p) | total + r.cost) AS total_cost',
-            'WHERE h1.name = ' + hashtag1 + ' AND total_cost < ' + config.corr_check,
+            'WHERE h1.name = "' + hashtag1 + '" AND total_cost < ' + config.corr_check,
             'RETURN nodes(p), relationships(p);'
         ].join('\n');
 
