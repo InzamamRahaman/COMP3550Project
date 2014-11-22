@@ -18,8 +18,9 @@ var models = new Models(db); // Use this to manipulate models
 models.setUpDB(function() {
 
     var RelationshipManager = require("./libs/relationships").RelationshipManager;
+    var API = require("./libs/API").RelationshipManager;
     var relationships = new RelationshipManager(db);
-
+    var api = new API(app);
 
 
     app.listen(config.port);

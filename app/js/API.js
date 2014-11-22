@@ -1,4 +1,4 @@
-function(){
+function apiManager(){
 
 	function getHash(hash,unwanted,filerBySentiment,sentiment, success, failure){
 		var data={ "hash":hash,"unwanted":unwanted,"filerBySentiment":filerBySentiment,"sentiment":sentiment};
@@ -48,4 +48,8 @@ function(){
       });
     }
  
-}();
+}
+
+module.exports = {
+    apiManager: apiManager
+}
