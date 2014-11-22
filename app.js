@@ -20,6 +20,9 @@ models.setUpDB(function() {
     var RelationshipManager = require("./libs/relationships").RelationshipManager;
     var relationships = new RelationshipManager(db);
 
+    console.log("set up database, setting up api's");
+    var API = require("./libs/API").apiManager;    
+    var api = new API(app);
 
 
     app.listen(config.port);
