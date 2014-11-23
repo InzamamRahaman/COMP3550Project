@@ -106,11 +106,15 @@ function RelationshipManager(db) {
     var createOrUpdateHashtag = function (hashtag, callback) {
         console.log("creating hashtag for " + hashtag);
         var query = [
-            'MERGE (h:Hashtag {name: "' + hashtag + '"})',
+            //'MERGE (h:Hashtag {name: "' + hashtag + '"})',
+            'MERGE (h:Hashtag {name : {hashtag_name}})',
             'ON CREATE SET h.count = 1.0',
             'ON MATCH SET h.count = h.count + 1.0'
         ].join('\n');
-        db.query(query, {}, callback);
+        var param = {
+            hashtag_name: hashtag
+        }
+        db.query(query, param, callback);
         //promisifiedQuery(query, {}).then(callback).fail(config.error_print("Error creating or updating tag")).done();
     }
 
@@ -194,7 +198,8 @@ function RelationshipManager(db) {
             "MATCH (u:User)",
             "WHERE u.identifier = {u_i}",
             'SET u.follows = u.follows + 1',
-            'MERGE (h:Hashtag {name: "' + hashtag_name + '", count: 0})',
+            //'MERGE (h:Hashtag {name: "' + hashtag_name + '", count: 0})',
+            'MERGE (h:Hashtag {name: {h_i}, count: 0})',
             'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
             "RETURN follows, h"
         ].join("\n")

@@ -36,6 +36,9 @@ app.use(express.static(__dirname + '/app'));
 });
 
 function test2(relationships) {
+    db.index.list('Hashtag', function(err, res) {
+        console.log("Indicies on Hashtag " + JSON.stringify(res) );
+    });
     relationships.addToCorrelationBetweenHashtags("a", "b", function(data) {
         console.log("Added rel " + data);
         relationships.addToCorrelationBetweenHashtags("b","c", function(data1) {
