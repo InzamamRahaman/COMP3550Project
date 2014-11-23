@@ -11,6 +11,7 @@ function Models(db){
 
     var that = this;
     var seraph_model = require("seraph-model");
+
     // Set up the models to access the nodes in the database
     this.User = seraph_model(db, config.user_model_name);
     this.User.schema = {
@@ -19,20 +20,36 @@ function Models(db){
         identifier: {type : String, required: true},
         password: {type: String},
         salt: {type: String},
-        follows: {type: Number}
+        follows: {type: Number},
+        subscriptions: {type : Number},
+        twitterName: {type : String}
     }
 
+    this.Hashtag = seraph_model(db, config.hashtag_model_name);
+    this.Hashtag.schema = {
+        name: {type: String, required: true},
+        count: {type: Number, required: false}
+    }
 
+    // Code to prepare hashtags
+    var prepareHashtag = function(object, callback) {
+        object.count = 0;
+        callback(null, object);
+    }
 
     // Code to prepare the user
     var prepareUser = function(object, callback) {
         object.follows = 0;
-        object.salt = bcrytp.genSaltSync(10);
-        object.password = bcrytp.hashSync(object.password, object.salt);
+        object.subscriptions = 0;
+        if(object.password) {
+            object.salt = bcrytp.genSaltSync(10);
+            object.password = bcrytp.hashSync(object.password, object.salt);
+        }
         callback(null, object);
     }
 
     this.User.on('prepare', prepareUser);
+    this.Hashtag.on('prepare', prepareHashtag);
 
     /*
     this.findUser = q.nbind(that.User.where, that.User);

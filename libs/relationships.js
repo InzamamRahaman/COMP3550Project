@@ -194,6 +194,45 @@ function RelationshipManager(db) {
 
     // For POST wrt a user following a hashtag
     this.userFollowHashtag = function(user_identifier, hashtag_name, callback) {
+
+        var query1 = [
+            'MERGE (h:Hashtag {name: {h_i}})',
+            'ON CREATE SET h.count=0',
+            'ON MATCH SET h.count= h.count + 1',
+            'RETURN h'
+        ].join('\n');
+
+        var query2 = [
+            'MATCH (u:User), (h:Hashtag)',
+            'WHERE u.identifier = {u_i} AND h.name = {h_i}',
+            'SET u.subscriptions=u.subscriptions + 1',
+            'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
+            'RETURNS follows'
+        ].join('\n');
+
+        var param = {
+            u_i: user_identifier,
+            h_i: hashtag_name
+        };
+        var fn = config.id;
+        if(callback) {
+            console.log("using supplied callback");
+            fn = callback;
+        }
+
+        db.query(query1,param, function(err, res) {
+            if (err) {
+                console.log("ERROR IN MERGING HASHTAG FOR FOLLOWS RELATIONSHIP:");
+                console.log(new Error(err));
+            } else {
+                promisifiedQuery(query2, param).then(fn).fail(function(err) {
+                    console.log("ERROR IN CREATING SUBSCRIPTION RELATIONSHIP");
+                    console.log(new Error(err));
+                }).done();
+            }
+        })
+
+        /*
         var query = [
             "MATCH (u:User)",
             "WHERE u.identifier = {u_i}",
@@ -204,18 +243,10 @@ function RelationshipManager(db) {
             "RETURN follows, h"
         ].join("\n")
         //"match (n:User {user_i})-[follows:SUBSCRIBES_TO]->(h:Hashtag {hash_i}) return follows";
-        var param = {
-            u_i: user_identifier,
-            h_i: hashtag_name
-        };
-        var fn = config.id;
-        if(callback) {
-            console.log("using supplied callback");
-            fn = callback;
-        }
+
         return promisifiedQuery(query, param).then(fn).
             fail(config.error_print("error subscribing user to hashtag")).done();
-
+        */
     }
 
 
