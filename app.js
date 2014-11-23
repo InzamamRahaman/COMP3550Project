@@ -47,9 +47,11 @@ function test2(relationships) {
                     relationships.addToCorrelationBetweenHashtags("Csharp", "scala", function(data4){
                         console.log("Added rel2");
                         relationships.addToCorrelationBetweenHashtags("e", "zzz", function(d) {
+                            console.log(d);
+                            /*
                             relationships.getCorrelatedHashtags("e", function(ans) {
                                 console.log(ans);
-                            })
+                            }) */
                         });
                     });
                 });

@@ -129,21 +129,23 @@ function RelationshipManager(db) {
                     } else {
                         console.log("Hashtag for " + hashtag2 + " was created");
                         console.log("created for " + JSON.stringify(data1));
+                        var param = {
+                            h1_i : hashtag1,
+                            h2_i: hashtag2
+                        };
+
                         var query = [
                             'MATCH (h1:Hashtag), (h2:Hashtag)',
                             'WHERE h1.name = {h1_i} AND h2.name = {h2_i}',
                             'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH]->(h2)',
                             'SET rel.times = coalesce(rel.times, 0) + 1,' +
                             'rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
-                            'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH]->(h1)',
+                            'CREATE UNIQUE (h1)<-[rel2:CORRELATED_WITH]-(h2)',
                             'SET rel2.times = coalesce(rel2.times, 0) + 1,' +
                             ' rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))',
                             'RETURN rel, rel2'
                         ].join('\n');
-                        var param = {
-                            h1_i : hashtag1,
-                            h2_i: hashtag2
-                        };
+
                         promisifiedQuery(query, param).then(callback).fail(function(err) {
                             console.log("Error in creating or updating relationship");
                             console.log(new Error(err));
