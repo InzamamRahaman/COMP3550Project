@@ -130,13 +130,21 @@ function RelationshipManager(db) {
                         console.log("Hashtag for " + hashtag2 + " was created");
                         console.log("created for " + JSON.stringify(data1));
                         var query = [
-                            'MATCH (h1:Hashtag {name:"' + hashtag1 + '"}), (h2:Hashtag {name:"' + hashtag2 + '"})',
-                            'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
-                            'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
-                            'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
-                            'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
+                            'MATCH (h1:Hashtag), (h2:Hashtag)',
+                            'WHERE h1.name = {h1_i} AND h2.name = {h2_i}',
+                            'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH]->(h2)',
+                            'SET rel.times = coalesce(rel.times, 0) + 1,' +
+                            'rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
+                            'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH]->(h1)',
+                            'SET rel2.times = coalesce(rel2.times, 0) + 1,' +
+                            ' rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))',
+                            'RETURN rel, rel2'
                         ].join('\n');
-                        promisifiedQuery(query, {}).then(callback).fail(function(err) {
+                        var param = {
+                            h1_i : hashtag1,
+                            h2_i: hashtag2
+                        };
+                        promisifiedQuery(query, param).then(callback).fail(function(err) {
                             console.log("Error in creating or updating relationship");
                             console.log(new Error(err));
                         }).done();
@@ -146,6 +154,14 @@ function RelationshipManager(db) {
 
         });
     }
+
+    /*
+     'MATCH (h1:Hashtag {name:"' + hashtag1 + '"}), (h2:Hashtag {name:"' + hashtag2 + '"})',
+     'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
+     'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
+     'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
+     'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
+     */
 
 
     /*
