@@ -118,6 +118,7 @@ function RelationshipManager(db) {
         //promisifiedQuery(query, {}).then(callback).fail(config.error_print("Error creating or updating tag")).done();
     }
 
+
     this.addToCorrelationBetweenHashtags = function (hashtag1, hashtag2, callback) {
 
         createOrUpdateHashtag(hashtag1, function (err, data) {
@@ -138,15 +139,17 @@ function RelationshipManager(db) {
                             h2_i: hashtag2
                         };
 
+                        // Our query uses the Jaccard index to compute the
+                        // relationship between two hashtags
                         var query = [
                             'MATCH (h1:Hashtag), (h2:Hashtag)',
                             'WHERE h1.name = {h1_i} AND h2.name = {h2_i}',
                             'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH]->(h2)',
                             'SET rel.times = coalesce(rel.times, 0) + 1,' +
-                            'rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
+                            'rel.cost = 100.0 - (100.0 * (rel.times/(h1.count + h2.count)))',
                             'CREATE UNIQUE (h1)<-[rel2:CORRELATED_WITH]-(h2)',
                             'SET rel2.times = coalesce(rel2.times, 0) + 1,' +
-                            ' rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))',
+                            'rel2.cost = 100.0 - (100.0 * (rel2.times/(h1.count + h2.count)))',
                             'RETURN rel, rel2'
                         ].join('\n');
 
@@ -161,34 +164,7 @@ function RelationshipManager(db) {
         });
     }
 
-    /*
-     'MATCH (h1:Hashtag {name:"' + hashtag1 + '"}), (h2:Hashtag {name:"' + hashtag2 + '"})',
-     'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
-     'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
-     'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
-     'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
-     */
 
-
-    /*
-     var query = [
-     'MERGE (h1:Hashtag  {name: "' + hashtag1 +'"})',
-     'ON CREATE SET h1.count=1.0',
-     'ON MATCH SET h1.count = h1.count + 1.0',
-     'MERGE (h2:Hashtag  {name: "' + hashtag2 +'"})',
-     'ON CREATE SET h2.count=1.0',
-     'ON MATCH SET h2.count = h2.count + 1.0',
-     'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
-     'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
-     'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
-     'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
-     ].join('\n');
-     var fn = config.id;
-     if(callback) {
-     fn = callback;
-     }
-     return promisifiedQuery(query, {}).then(fn).
-     fail(config.error_print("Error handling hashtag connections")).done(); */
 
 
 
@@ -230,23 +206,24 @@ function RelationshipManager(db) {
                     console.log(new Error(err));
                 }).done();
             }
-        })
+        });
+    }
 
-        /*
+
+    this.getHashtagSubGraph = function(hashtag, callback) {
+
         var query = [
-            "MATCH (u:User)",
-            "WHERE u.identifier = {u_i}",
-            'SET u.follows = u.follows + 1',
-            //'MERGE (h:Hashtag {name: "' + hashtag_name + '", count: 0})',
-            'MERGE (h:Hashtag {name: {h_i}, count: 0})',
-            'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
-            "RETURN follows, h"
-        ].join("\n")
-        //"match (n:User {user_i})-[follows:SUBSCRIBES_TO]->(h:Hashtag {hash_i}) return follows";
 
-        return promisifiedQuery(query, param).then(fn).
-            fail(config.error_print("error subscribing user to hashtag")).done();
-        */
+            '',
+
+        ].join("\n");
+
+        var params = {
+            h_name: hashtag
+        };
+
+        db.query(query, params, callback);
+
     }
 
 
@@ -263,3 +240,54 @@ module.exports = {
 
 
 }
+
+
+
+
+// Queries used for testing
+
+/*
+ 'MATCH (h1:Hashtag {name:"' + hashtag1 + '"}), (h2:Hashtag {name:"' + hashtag2 + '"})',
+ 'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
+ 'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
+ 'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
+ 'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
+ */
+
+
+/*
+ var query = [
+ 'MERGE (h1:Hashtag  {name: "' + hashtag1 +'"})',
+ 'ON CREATE SET h1.count=1.0',
+ 'ON MATCH SET h1.count = h1.count + 1.0',
+ 'MERGE (h2:Hashtag  {name: "' + hashtag2 +'"})',
+ 'ON CREATE SET h2.count=1.0',
+ 'ON MATCH SET h2.count = h2.count + 1.0',
+ 'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h2)',
+ 'SET rel.times = rel.times + 1.0, rel.cost = 100.0 - (100.0 * (rel.times/h1.count))',
+ 'CREATE UNIQUE (h2)-[rel2:CORRELATED_WITH {times: 0.0, cost: 0.0}]->(h1)',
+ 'SET rel2.times = rel2.times + 1.0, rel2.cost = 100.0 - (100.0 * (rel2.times/h2.count))'
+ ].join('\n');
+ var fn = config.id;
+ if(callback) {
+ fn = callback;
+ }
+ return promisifiedQuery(query, {}).then(fn).
+ fail(config.error_print("Error handling hashtag connections")).done(); */
+
+
+/*
+ var query = [
+ "MATCH (u:User)",
+ "WHERE u.identifier = {u_i}",
+ 'SET u.follows = u.follows + 1',
+ //'MERGE (h:Hashtag {name: "' + hashtag_name + '", count: 0})',
+ 'MERGE (h:Hashtag {name: {h_i}, count: 0})',
+ 'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
+ "RETURN follows, h"
+ ].join("\n")
+ //"match (n:User {user_i})-[follows:SUBSCRIBES_TO]->(h:Hashtag {hash_i}) return follows";
+
+ return promisifiedQuery(query, param).then(fn).
+ fail(config.error_print("error subscribing user to hashtag")).done();
+ */
