@@ -39,16 +39,31 @@ models.setUpDB(function() {
     var twitConfig  = require('./twitConfig.json');
     var twitter = new Twitter(twitConfig);
     var stream = twitter.stream('statuses/sample', {language: 'en'});
+    startStreaming(stream);
 
     app.listen(config.port);
-    console.log("Application started at http://127.0.0.1:"
-    + config.port);
+    console.log("Application started at http://127.0.0.1:" + config.port);
     test3(relationships);
     app.use(express.static(__dirname + '/app'));
 // Code to test creation, deletion, ect...
 
 
 });
+
+function startStreaming(stream){
+    stream.on('tweet', function(tweet){
+        //When Stream is received from twitter
+        var tweets=tweet.entities.hashtags;
+            if(tweets!=null&&tweets.length!=0){
+                var hashtags=[];
+                tweets.forEach(function(curr){
+                    hashtags.push(curr.text);
+                });
+                var dbObj={"id":tweet.id,"tags":hashtags,"text":tweet.text}
+                console.log(dbObj);
+            }
+    });
+}
 
 function test3(relationships) {
 
