@@ -143,7 +143,7 @@ function RelationshipManager(db) {
         });
     }
 
-    this.correlateHashtagList = function (hashtags) {
+    this.correlateHashtagList = function (hashtags, callback) {
         var len = hashtags.length;
         for(var idx = 0; idx < len; idx++) {
             for(var jdx = idx + 1; jdx < len; jdx++) {
