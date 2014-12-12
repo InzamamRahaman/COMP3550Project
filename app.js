@@ -28,27 +28,26 @@ models.setUpDB(function() {
             Models.authenticateLocalUser(username, password, done);
         }
     ));
-
     console.log("set up database, setting up api's");
     app.post('/login', passport.authenticate('local', passport_config));
-    var API = require("./libs/API").apiManager;    
-    var api = new API(app);
-    var http    = require('http').Server(app);
-    var io  = require('socket.io')(http);
-    var Twitter = require('twit');
-    var twitConfig  = require('./twitConfig.json');
-    var twitter = new Twitter(twitConfig);
-    var stream = twitter.stream('statuses/sample', {language: 'en'});
-    startStreaming(stream);
-
-    app.listen(config.port);
-    console.log("Application started at http://127.0.0.1:" + config.port);
     test3(relationships);
-    app.use(express.static(__dirname + '/app'));
 // Code to test creation, deletion, ect...
-
-
 });
+
+var API = require("./libs/API").apiManager;    
+var api = new API(app);
+var http    = require('http').Server(app);
+var io  = require('socket.io')(http);
+var Twitter = require('twit');
+var twitConfig  = require('./twitConfig.json');
+var twitter = new Twitter(twitConfig);
+var stream = twitter.stream('statuses/sample', {language: 'en'});
+startStreaming(stream);
+
+app.use(express.static(__dirname + '/app'));
+app.listen(config.port);
+console.log("Application started at http://127.0.0.1:" + config.port);
+
 
 function startStreaming(stream){
     stream.on('tweet', function(tweet){
