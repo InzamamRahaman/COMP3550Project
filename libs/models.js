@@ -31,6 +31,14 @@ function Models(db){
         count: {type: Number, required: false}
     }
 
+    this.addUser = function(username, password, callback) {
+        this.User.save({identifier: username, password: password}, callback);
+    }
+
+    this.changeUserPassword = function(username, oldpassword, newpassword, callback) {
+        
+    }
+
     this.authenticateLocalUser = function(identifier, password, callback) {
         this.User.where({identifier: identifier}, {}, function(err, user) {
             if(err) {
