@@ -55,8 +55,8 @@ function RelationshipManager(db) {
             console.log("using defined fun");
             fn = callback;
         }
-
-        return promisifiedQuery(query, params).then(fn).fail(config.error_print("can't get hashtags"));
+        db.query(query, params, fn);
+        //return promisifiedQuery(query, params).then(fn).fail(config.error_print("can't get hashtags"));
     }
 
     // For DELETE wrt a user following a hashtag
@@ -74,34 +74,11 @@ function RelationshipManager(db) {
         if (callback) {
             fn = callback;
         }
-        return promisifiedQuery(query, param).then(fn).fail(config.error_print("can't delete following")).done();
+        db.query(query, param, fn);
+        //return promisifiedQuery(query, param).then(fn).fail(config.error_print("can't delete following")).done();
     }
 
-    this.getCorrelatedHashtags = function (hashtag1, callback) {
 
-        /*
-         MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)
-         WITH h1, p, REDUCE(total = 0, r IN relationships(p) |  total + r.cost) AS total_cost
-         WHERE h1.name = "e" AND total_cost < 60
-         RETURN nodes(p), relationships(p);
-         */
-        var query = [
-            'MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)',
-            'WITH h1, p, REDUCE(total = 0, r IN relationships(p) | total + r.cost) AS total_cost',
-            'WHERE h1.name = "' + hashtag1 + '" AND total_cost < ' + config.corr_check,
-            'RETURN nodes(p), relationships(p);'
-        ].join('\n');
-
-        var fn = config.id;
-        if (callback) {
-            fn = callback;
-        }
-
-        return promisifiedQuery(query, {}).then(fn).
-            fail(config.error_print("erroring getting correlated hashtags")).done();
-
-
-    }
 
     var createOrUpdateHashtag = function (hashtag, callback) {
         console.log("creating hashtag for " + hashtag);
@@ -153,10 +130,12 @@ function RelationshipManager(db) {
                             'RETURN rel, rel2'
                         ].join('\n');
 
+                        db.query(query, param, callback);
+                        /*
                         promisifiedQuery(query, param).then(callback).fail(function(err) {
                             console.log("Error in creating or updating relationship");
                             console.log(new Error(err));
-                        }).done();
+                        }).done(); */
                     }
                 });
             }
@@ -201,29 +180,33 @@ function RelationshipManager(db) {
                 console.log("ERROR IN MERGING HASHTAG FOR FOLLOWS RELATIONSHIP:");
                 console.log(new Error(err));
             } else {
+                db.query(query2, param, fn);
+                /*
                 promisifiedQuery(query2, param).then(fn).fail(function(err) {
                     console.log("ERROR IN CREATING SUBSCRIPTION RELATIONSHIP");
                     console.log(new Error(err));
-                }).done();
+                }).done(); */
             }
         });
     }
 
 
+    /*
+        Used to obtained a sub graph of related hashtags, given a hashtag to act
+        as the central vertex
+     */
     this.getHashtagSubGraph = function(hashtag, callback) {
-
         var query = [
-
-            '',
-
+            'MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*1..3]->(h2:Hashtag)',
+            'WITH h1, h2,rel,p, reduce(total = 0, r in rel | total + r.cost) AS len',
+            'WHERE len < {max_cost} AND h1.name <> h2.name AND h1.name = "{name}"',
+            'RETURN extract(r in rel|{start: startNode(r).name, cost: r.cost, end: endNode(r).name});'
         ].join("\n");
-
         var params = {
-            h_name: hashtag
+            name: hashtag,
+            max_cost: 75
         };
-
         db.query(query, params, callback);
-
     }
 
 
@@ -290,4 +273,32 @@ module.exports = {
 
  return promisifiedQuery(query, param).then(fn).
  fail(config.error_print("error subscribing user to hashtag")).done();
+
+
+ this.getCorrelatedHashtags = function (hashtag1, callback) {
+
+ /*
+ MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)
+ WITH h1, p, REDUCE(total = 0, r IN relationships(p) |  total + r.cost) AS total_cost
+ WHERE h1.name = "e" AND total_cost < 60
+ RETURN nodes(p), relationships(p);
+ */
+/*
+var query = [
+    'MATCH p = (h1:Hashtag)-[rel:CORRELATED_WITH*]->(h2:Hashtag)',
+    'WITH h1, p, REDUCE(total = 0, r IN relationships(p) | total + r.cost) AS total_cost',
+    'WHERE h1.name = "' + hashtag1 + '" AND total_cost < ' + config.corr_check,
+    'RETURN nodes(p), relationships(p);'
+].join('\n');
+
+var fn = config.id;
+if (callback) {
+    fn = callback;
+}
+
+return promisifiedQuery(query, {}).then(fn).
+    fail(config.error_print("erroring getting correlated hashtags")).done();
+
+
+}
  */

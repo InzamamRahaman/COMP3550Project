@@ -55,7 +55,16 @@ module.exports = {
     },
 
     min_viable_corr: 50.0,
-    corr_check: 100.0 - this.min_viable_corr
+    corr_check: 100.0 - this.min_viable_corr,
+    errorify: function(func) {
+        return function(err, res) {
+            if(err) {
+                console.log(new Error(err));
+            } else {
+                func(res);
+            }
+        }
+    }
 
 };
 
