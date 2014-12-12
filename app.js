@@ -8,6 +8,8 @@ var db = require("seraph")(config.db_conn_string);
 var lodash = require("lodash");
 var buckets = require("./libs/buckets.js");
 var Models = require("./libs/models").Models;
+var passport = require("passport");
+var LocalStrategy = require("passport-local").Strategy;
 console.log(Models);
 var models = new Models(db); // Use this to manipulate models
 models.setUpDB(function() {
@@ -15,7 +17,20 @@ models.setUpDB(function() {
     var RelationshipManager = require("./libs/relationships").RelationshipManager;
     var relationships = new RelationshipManager(db);
 
+    // Set up passport here
+    var passport_config = {
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true
+    };
+    passport.use(new LocalStrategy(
+        function (username, password, done) {
+            Models.authenticateLocalUser(username, password, done);
+        }
+    ));
+
     console.log("set up database, setting up api's");
+    app.post('/login', passport.authenticate('local', passport_config));
     var API = require("./libs/API").apiManager;    
     var api = new API(app);
 
@@ -24,7 +39,7 @@ models.setUpDB(function() {
     console.log("Application started at http://127.0.0.1:"
     + config.port);
     test3(relationships);
-app.use(express.static(__dirname + '/app'));
+    app.use(express.static(__dirname + '/app'));
 // Code to test creation, deletion, ect...
 
 

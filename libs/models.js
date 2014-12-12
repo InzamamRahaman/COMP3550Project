@@ -31,6 +31,25 @@ function Models(db){
         count: {type: Number, required: false}
     }
 
+    this.authenticateLocalUser = function(identifier, password, callback) {
+        this.User.where({identifier: identifier}, {}, function(err, user) {
+            if(err) {
+                console.log(new Error(err));
+                callback(null, false, {message: "Database error! Contact webmaster"});
+            } else if (u.length > 0){
+                var u = user[0];
+                var hash_to_check = bcrytp.hashSync(password, u.salt);
+                if (hash_to_check !== u.password) {
+                    callback(null, false, {message: "Incorrect password"});
+                } else {
+                    callback(null, u);
+                }
+            } else {
+                callback(null,  false, {message: "Username not found"});
+            }
+        });
+    }
+
     // Code to prepare hashtags
     var prepareHashtag = function(object, callback) {
         object.count = 0;
