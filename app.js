@@ -61,6 +61,7 @@ function startStreaming(stream){
                     hashtags.push(curr.text);//array of hashtags for database
                     //for the blink feed
                     for(var subscribers in words[curr.text]){//check the word to see if it had subscribers
+                        console.log("subscribers"+subscribers);
                         if(subscribers===null)
                             return;
                         subscribers.forEach(function(usrObj){
@@ -72,13 +73,13 @@ function startStreaming(stream){
                     }
                 });
                 var dbObj={"id":tweet.id,"tags":hashtags,"text":tweet.text}
-                console.log(dbObj);
+                //console.log(dbObj);
             }
     });
 }
 
-io.on('connection', function (socket){
-
+io.on('connection', function(socket){
+    console.log("user connected");
     socket.on('register',function(data){
         var email=data.email;
         users[email]={'email':email,'socket':socket};
@@ -86,7 +87,9 @@ io.on('connection', function (socket){
             var list=words[tag];
             if(list===null)//if this word has never been added then welp
                 list=[];
-            list[email]=users[email];
+            list[email]=users[email];// ! change to check then push
+            console.log(list[email]);
+            console.log("registered");
         });
     });
 
