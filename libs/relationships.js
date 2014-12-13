@@ -119,6 +119,14 @@ function RelationshipManager(db) {
 
                         // Our query uses the Jaccard index to compute the
                         // relationship between two hashtags
+
+                        var query2 = [
+                            'MATCH (h1:Hashtag), (h2:Hashtag)',
+                            'WHERE h1.name = {h1} AND h2.name = {h2}',
+                            'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH]->(h2)',
+                            'SET rel.times = coalesce(rel.times, 0) + 1'
+                        ].join("\n");
+
                         var query = [
                             'MATCH (h1:Hashtag), (h2:Hashtag)',
                             "WHERE h1.name = {h1_i} AND h2.name = {h2_i}",

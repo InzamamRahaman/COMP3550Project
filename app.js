@@ -28,25 +28,51 @@ models.setUpDB(function() {
     ));
     console.log("set up database, setting up api's");
     app.post('/login', passport.authenticate('local', passport_config));
+    var API = require("./libs/API").apiManager;
+    var api = new API(app);
+    var http    = require('http').Server(app);
+    var io  = require('socket.io')(http);
+    var Twitter = require('twit');
+    var twitConfig  = config.twitConfig;
+    var twitter = new Twitter(twitConfig);
+    var words={},users={};
+
+    var stream = twitter.stream('statuses/sample', {language: 'en'});
+    console.log("Reading stream");
+    read_twitter_stream(stream, relationships);
+    app.use(express.static(__dirname + '/app'));
+    http.listen(config.port, function(){
+        console.log("Listening on http://127.0.0.1:"+config.port);
+    });
+
+
+    //IO conn stuff
+
+    io.on('connection', function(socket){
+        console.log("user connected");
+        socket.on('register',function(data){
+            var email=data.email;
+            users[email]={'email':email,'socket':socket};
+            data.tags.forEach(function(tag){
+                console.log(tag.toLowerCase());
+                var list=words[tag.toLowerCase()];
+                if(typeof(list)==="undefined")//if this word has never been added then welp
+                    list={};
+                list[email]=users[email];// ! change to check then push
+                words[tag.toLowerCase()]=list;//in case it was previously undefined
+            });
+            console.log("registered");
+        });
+
+        socket.on('disconnect',function(){
+
+        });
+    });
+
+
     //test3(relationships);
 });
 
-var API = require("./libs/API").apiManager;
-var api = new API(app);
-var http    = require('http').Server(app);
-var io  = require('socket.io')(http);
-var Twitter = require('twit');
-var twitConfig  = config.twitConfig;
-var twitter = new Twitter(twitConfig);
-var words={},users={};
-
-var stream = twitter.stream('statuses/sample', {language: 'en'});
-console.log("Reading stream");
-read_twitter_stream(stream, relationships);
-app.use(express.static(__dirname + '/app'));
-http.listen(config.port, function(){
-    console.log("Listening on http://127.0.0.1:"+config.port);
-});
 
 function read_twitter_stream(stream, relationships) {
     stream.on('tweet', function(tweet_received) {
@@ -98,26 +124,6 @@ function get_user_identifier(data) {
 }
 
 
-io.on('connection', function(socket){
-    console.log("user connected");
-    socket.on('register',function(data){
-        var email=data.email;
-        users[email]={'email':email,'socket':socket};
-        data.tags.forEach(function(tag){
-            console.log(tag.toLowerCase());
-            var list=words[tag.toLowerCase()];
-            if(typeof(list)==="undefined")//if this word has never been added then welp
-                list={};
-            list[email]=users[email];// ! change to check then push
-            words[tag.toLowerCase()]=list;//in case it was previously undefined
-        });
-        console.log("registered");
-    });
-
-    socket.on('disconnect',function(){
-
-    });
-});
 
 
 
