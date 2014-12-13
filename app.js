@@ -41,12 +41,14 @@ var io  = require('socket.io')(http);
 var Twitter = require('twit');
 var twitConfig  = require('./twitConfig.json');
 var twitter = new Twitter(twitConfig);
+var words={},users={};
 var stream = twitter.stream('statuses/sample', {language: 'en'});
 startStreaming(stream);
 
 app.use(express.static(__dirname + '/app'));
 app.listen(config.port);
 console.log("Application started at http://127.0.0.1:" + config.port);
+
 
 
 function startStreaming(stream){
@@ -56,13 +58,40 @@ function startStreaming(stream){
             if(tweets!=null&&tweets.length!=0){
                 var hashtags=[];
                 tweets.forEach(function(curr){
-                    hashtags.push(curr.text);
+                    hashtags.push(curr.text);//array of hashtags for database
+                    //for the blink feed
+                    for(var subscribers in words[curr.text]){//check the word to see if it had subscribers
+                        if(subscribers===null)
+                            return;
+                        subscribers.forEach(function(usrObj){
+                            if(usrObj.lastTweet!=tweet.id){
+                                usrObj.lastTweet=tweet.id;
+                                usrObj.socket.emit('new tweet',{'text':tweet.text});
+                            }
+                        });
+                    }
                 });
                 var dbObj={"id":tweet.id,"tags":hashtags,"text":tweet.text}
                 console.log(dbObj);
             }
     });
 }
+
+io.on('connection', function (socket){
+
+    socket.on('register',function(data){
+        var email=data.email;
+        users[email]={'email':email,'socket':socket};
+        data.tags.forEach(function(tag){
+            var list=words[tag];
+            if(list===null)//if this word has never been added then welp
+                list=[];
+            list[email]=users[email];
+        });
+    });
+
+
+});
 
 function test3(relationships) {
 
