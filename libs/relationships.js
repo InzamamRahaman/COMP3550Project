@@ -84,9 +84,10 @@ function RelationshipManager(db) {
         console.log("creating hashtag for " + hashtag);
         var query = [
             //'MERGE (h:Hashtag {name: "' + hashtag + '"})',
-            'MERGE (h:Hashtag {name : {hashtag_name}})',
+            "MERGE (h:Hashtag {name : {hashtag_name}})",
             'ON CREATE SET h.count = 1.0',
-            'ON MATCH SET h.count = h.count + 1.0'
+            'ON MATCH SET h.count = h.count + 1.0',
+            'RETURN h'
         ].join('\n');
         var param = {
             hashtag_name: hashtag
@@ -97,20 +98,20 @@ function RelationshipManager(db) {
 
 
     this.addToCorrelationBetweenHashtags = function (hashtag1, hashtag2, callback) {
-
+        console.log("Correlating " + hashtag1 + " and " + hashtag2);
         createOrUpdateHashtag(hashtag1, function (err, data) {
             if (err) {
                 console.log("Hashtag " + hashtag1 + " was not created");
                 console.log(new Error(err));
             } else {
                 console.log("Hashtag " + hashtag1 + " was created");
-                console.log("created for " + JSON.stringify(data));
+                console.log("created for 1: " + JSON.stringify(data));
                 createOrUpdateHashtag(hashtag2, function (err1, data1) {
                     if (err1) {
                         console.log(new Error(err1));
                     } else {
                         console.log("Hashtag for " + hashtag2 + " was created");
-                        console.log("created for " + JSON.stringify(data1));
+                        console.log("created for 2:" + JSON.stringify(data1));
                         var param = {
                             h1_i : hashtag1,
                             h2_i: hashtag2
@@ -120,7 +121,7 @@ function RelationshipManager(db) {
                         // relationship between two hashtags
                         var query = [
                             'MATCH (h1:Hashtag), (h2:Hashtag)',
-                            'WHERE h1.name = {h1_i} AND h2.name = {h2_i}',
+                            "WHERE h1.name = {h1_i} AND h2.name = {h2_i}",
                             'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH]->(h2)',
                             'SET rel.times = coalesce(rel.times, 0) + 1,' +
                             'rel.cost = 100.0 - (100.0 * (rel.times/(h1.count + h2.count)))',

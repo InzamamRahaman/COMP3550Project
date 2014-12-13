@@ -1,0 +1,5873 @@
+"C:\Program Files (x86)\JetBrains\WebStorm 9.0.1\bin\runnerw.exe" "C:\Program Files\nodejs\node.exe" app.js
+[Function: Models]
+index on User created
+{ property_keys: [ 'identifier' ], label: 'User' }
+Index on hashtag created
+{ property_keys: [ 'name' ], label: 'Hashtag' }
+Constraint on User added
+undefined
+Constraint on Hashtag added
+undefined
+Finised set up db indicies and constraints
+set up database, setting up api's
+Creating twitter stream
+Reading stream
+Application started at http://127.0.0.1:3000
+u:undefined
+h:undefined
+Added hashtags  []
+Added hashtags  ["diamondball"]
+Correlating proactive and complementarity
+creating hashtag for proactive
+Correlating proactive and international
+creating hashtag for proactive
+Correlating proactive and criminal
+creating hashtag for proactive
+Correlating complementarity and international
+creating hashtag for complementarity
+Correlating complementarity and criminal
+creating hashtag for complementarity
+Correlating international and criminal
+creating hashtag for international
+Added hashtags  ["proactive","complementarity","international","criminal"]
+Correlating trustme and nhl
+creating hashtag for trustme
+Added hashtags  ["trustme","nhl"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["thepolarexpress"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag proactive was created
+created for 1: [{"count":1,"name":"proactive","id":1971}]
+creating hashtag for complementarity
+Hashtag complementarity was created
+created for 1: [{"count":1,"name":"complementarity","id":1975}]
+creating hashtag for international
+Hashtag proactive was created
+created for 1: [{"count":1,"name":"proactive","id":1974}]
+creating hashtag for criminal
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating four and 1dxfactor
+creating hashtag for four
+Added hashtags  ["four","1dxfactor"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["jalenmcmillannewtrailer"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["getwellsoonlouis"]
+Added hashtags  ["cimsoutfits"]
+Added hashtags  []
+Hashtag complementarity was created
+created for 1: [{"count":1,"name":"complementarity","id":1973}]
+creating hashtag for criminal
+Correlating microsoft and windows10
+creating hashtag for microsoft
+Added hashtags  ["microsoft","windows10"]
+Correlating xfactorfinal and xfactor
+creating hashtag for xfactorfinal
+Added hashtags  ["xfactorfinal","xfactor"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag proactive was created
+created for 1: [{"count":1,"name":"proactive","id":1972}]
+creating hashtag for international
+Hashtag for international was created
+created for 2:[{"count":1,"name":"international","id":1978}]
+Hashtag for complementarity was created
+created for 2:[{"count":2,"name":"complementarity","id":1975}]
+Hashtag trustme was created
+created for 1: [{"count":1,"name":"trustme","id":1977}]
+creating hashtag for nhl
+Hashtag international was created
+created for 1: [{"count":1,"name":"international","id":1976}]
+creating hashtag for criminal
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["four"]
+Added hashtags  ["realoviedo"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mgwv"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag microsoft was created
+created for 1: [{"count":1,"name":"microsoft","id":1982}]
+creating hashtag for windows10
+Hashtag for criminal was created
+created for 2:[{"count":1,"name":"criminal","id":1981}]
+Hashtag four was created
+created for 1: [{"count":1,"name":"four","id":1980}]
+creating hashtag for 1dxfactor
+Hashtag for criminal was created
+created for 2:[{"count":1,"name":"criminal","id":1979}]
+Hashtag for international was created
+created for 2:[{"count":2,"name":"international","id":1978},{"count":2,"name":"international","id":1976}]
+Added hashtags  []
+Added hashtags  []
+Correlating navyfootball and armyfootball
+creating hashtag for navyfootball
+Correlating navyfootball and gonavybeatarmy
+creating hashtag for navyfootball
+Correlating armyfootball and gonavybeatarmy
+creating hashtag for armyfootball
+Added hashtags  ["navyfootball","armyfootball","gonavybeatarmy"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating sex and adult
+creating hashtag for sex
+Added hashtags  ["sex","adult"]
+Correlating bestnewartist and 20daysofsomethingbig
+creating hashtag for bestnewartist
+Added hashtags  ["bestnewartist","20daysofsomethingbig"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating sex and movie
+creating hashtag for sex
+Correlating sex and hot
+creating hashtag for sex
+Correlating sex and iphone
+creating hashtag for sex
+Correlating movie and hot
+creating hashtag for movie
+Correlating movie and iphone
+creating hashtag for movie
+Correlating hot and iphone
+creating hashtag for hot
+Added hashtags  ["sex","movie","hot","iphone"]
+Added hashtags  []
+Added hashtags  ["victoriaxmas"]
+Correlating baltimore and orioles
+creating hashtag for baltimore
+Correlating baltimore and baseball
+creating hashtag for baltimore
+Correlating orioles and baseball
+creating hashtag for orioles
+Added hashtags  ["baltimore","orioles","baseball"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Hashtag xfactorfinal was created
+created for 1: [{"count":1,"name":"xfactorfinal","id":1983}]
+creating hashtag for xfactor
+[ { rel:
+     { start: 1975,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11140 },
+    rel2:
+     { start: 1978,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11144 } },
+  { rel:
+     { start: 1975,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11141 },
+    rel2:
+     { start: 1976,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11145 } },
+  { rel:
+     { start: 1973,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11142 },
+    rel2:
+     { start: 1978,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11146 } },
+  { rel:
+     { start: 1973,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11143 },
+    rel2:
+     { start: 1976,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11147 } } ]
+Hashtag for criminal was created
+created for 2:[{"count":2,"name":"criminal","id":1981},{"count":2,"name":"criminal","id":1979}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag for nhl was created
+created for 2:[{"count":1,"name":"nhl","id":1984}]
+[ { rel:
+     { start: 1971,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11148 },
+    rel2:
+     { start: 1975,
+       end: 1971,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11154 } },
+  { rel:
+     { start: 1971,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11149 },
+    rel2:
+     { start: 1973,
+       end: 1971,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11155 } },
+  { rel:
+     { start: 1974,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11150 },
+    rel2:
+     { start: 1975,
+       end: 1974,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11156 } },
+  { rel:
+     { start: 1974,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11151 },
+    rel2:
+     { start: 1973,
+       end: 1974,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11157 } },
+  { rel:
+     { start: 1972,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11152 },
+    rel2:
+     { start: 1975,
+       end: 1972,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11158 } },
+  { rel:
+     { start: 1972,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11153 },
+    rel2:
+     { start: 1973,
+       end: 1972,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11159 } } ]
+Hashtag for 1dxfactor was created
+created for 2:[{"count":1,"name":"1dxfactor","id":1986}]
+Hashtag for windows10 was created
+created for 2:[{"count":1,"name":"windows10","id":1985}]
+Hashtag navyfootball was created
+created for 1: [{"count":1,"name":"navyfootball","id":1987}]
+creating hashtag for armyfootball
+[ { rel:
+     { start: 1975,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11160 },
+    rel2:
+     { start: 1981,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11164 } },
+  { rel:
+     { start: 1975,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11161 },
+    rel2:
+     { start: 1979,
+       end: 1975,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11165 } },
+  { rel:
+     { start: 1973,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11162 },
+    rel2:
+     { start: 1981,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11166 } },
+  { rel:
+     { start: 1973,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11163 },
+    rel2:
+     { start: 1979,
+       end: 1973,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11167 } } ]
+Added hashtags  ["bearcatnation"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag navyfootball was created
+created for 1: [{"count":1,"name":"navyfootball","id":1988}]
+creating hashtag for gonavybeatarmy
+[ { rel:
+     { start: 1971,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11168 },
+    rel2:
+     { start: 1981,
+       end: 1971,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11174 } },
+  { rel:
+     { start: 1971,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11169 },
+    rel2:
+     { start: 1979,
+       end: 1971,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11175 } },
+  { rel:
+     { start: 1974,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11170 },
+    rel2:
+     { start: 1981,
+       end: 1974,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11176 } },
+  { rel:
+     { start: 1974,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11171 },
+    rel2:
+     { start: 1979,
+       end: 1974,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11177 } },
+  { rel:
+     { start: 1972,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11172 },
+    rel2:
+     { start: 1981,
+       end: 1972,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11178 } },
+  { rel:
+     { start: 1972,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11173 },
+    rel2:
+     { start: 1979,
+       end: 1972,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11179 } } ]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["nowplaying"]
+Added hashtags  []
+Hashtag sex was created
+created for 1: [{"count":1,"name":"sex","id":1990}]
+creating hashtag for adult
+Hashtag armyfootball was created
+created for 1: [{"count":1,"name":"armyfootball","id":1989}]
+creating hashtag for gonavybeatarmy
+Hashtag sex was created
+created for 1: [{"count":2,"name":"sex","id":1990}]
+creating hashtag for hot
+[ { rel:
+     { start: 1971,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11180 },
+    rel2:
+     { start: 1978,
+       end: 1971,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11186 } },
+  { rel:
+     { start: 1971,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11181 },
+    rel2:
+     { start: 1976,
+       end: 1971,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11187 } },
+  { rel:
+     { start: 1974,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11182 },
+    rel2:
+     { start: 1978,
+       end: 1974,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11188 } },
+  { rel:
+     { start: 1974,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11183 },
+    rel2:
+     { start: 1976,
+       end: 1974,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11189 } },
+  { rel:
+     { start: 1972,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11184 },
+    rel2:
+     { start: 1978,
+       end: 1972,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11190 } },
+  { rel:
+     { start: 1972,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11185 },
+    rel2:
+     { start: 1976,
+       end: 1972,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11191 } } ]
+Hashtag sex was created
+created for 1: [{"count":1,"name":"sex","id":1992}]
+creating hashtag for movie
+Hashtag bestnewartist was created
+created for 1: [{"count":1,"name":"bestnewartist","id":1991}]
+creating hashtag for 20daysofsomethingbig
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["jalenmcmillannewtrailer"]
+Correlating moneytea and lose5in5days
+creating hashtag for moneytea
+Added hashtags  ["moneytea","lose5in5days"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag hot was created
+created for 1: [{"count":1,"name":"hot","id":1993}]
+creating hashtag for iphone
+Hashtag movie was created
+created for 1: [{"count":2,"name":"movie","id":1508},{"count":2,"name":"movie","id":1510},{"count":2,"name":"movie","id":1509}]
+creating hashtag for hot
+Hashtag sex was created
+created for 1: [{"count":3,"name":"sex","id":1990}]
+creating hashtag for iphone
+Hashtag baltimore was created
+created for 1: [{"count":1,"name":"baltimore","id":1995}]
+creating hashtag for baseball
+Hashtag baltimore was created
+created for 1: [{"count":1,"name":"baltimore","id":1994}]
+creating hashtag for orioles
+[ { rel:
+     { start: 1978,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11192 },
+    rel2:
+     { start: 1981,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11196 } },
+  { rel:
+     { start: 1978,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11193 },
+    rel2:
+     { start: 1979,
+       end: 1978,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11197 } },
+  { rel:
+     { start: 1976,
+       end: 1981,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11194 },
+    rel2:
+     { start: 1981,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11198 } },
+  { rel:
+     { start: 1976,
+       end: 1979,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11195 },
+    rel2:
+     { start: 1979,
+       end: 1976,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11199 } } ]
+Hashtag movie was created
+created for 1: [{"count":2,"name":"movie","id":1508},{"count":3,"name":"movie","id":1510},{"count":3,"name":"movie","id":1509}]
+creating hashtag for iphone
+Hashtag orioles was created
+created for 1: [{"count":1,"name":"orioles","id":1997}]
+creating hashtag for baseball
+Correlating four and 1dxfactor
+creating hashtag for four
+Added hashtags  ["four","1dxfactor"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["happy1stannivwinnertv"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag for xfactor was created
+created for 2:[{"count":1,"name":"xfactor","id":1996}]
+Hashtag for armyfootball was created
+created for 2:[{"count":2,"name":"armyfootball","id":1989}]
+[ { rel:
+     { start: 1982,
+       end: 1985,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11204 },
+    rel2:
+     { start: 1985,
+       end: 1982,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11205 } } ]
+[ { rel:
+     { start: 1980,
+       end: 1986,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11202 },
+    rel2:
+     { start: 1986,
+       end: 1980,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11203 } } ]
+[ { rel:
+     { start: 1977,
+       end: 1984,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11200 },
+    rel2:
+     { start: 1984,
+       end: 1977,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11201 } } ]
+Added hashtags  []
+Hashtag for gonavybeatarmy was created
+created for 2:[{"count":1,"name":"gonavybeatarmy","id":1998}]
+Hashtag for movie was created
+created for 2:[{"count":3,"name":"movie","id":1508},{"count":4,"name":"movie","id":1510},{"count":4,"name":"movie","id":1509}]
+Hashtag for gonavybeatarmy was created
+created for 2:[{"count":1,"name":"gonavybeatarmy","id":2000}]
+Hashtag for adult was created
+created for 2:[{"count":1,"name":"adult","id":1999}]
+Hashtag for hot was created
+created for 2:[{"count":2,"name":"hot","id":1993}]
+Hashtag for iphone was created
+created for 2:[{"count":2,"name":"iphone","id":940},{"count":2,"name":"iphone","id":939}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["3mhuktour"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["devinbuckets"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag moneytea was created
+created for 1: [{"count":1,"name":"moneytea","id":2001}]
+creating hashtag for lose5in5days
+Added hashtags  []
+Correlating xfactor and strictly
+creating hashtag for xfactor
+Correlating xfactor and whdarts
+creating hashtag for xfactor
+Correlating strictly and whdarts
+creating hashtag for strictly
+Added hashtags  ["xfactor","strictly","whdarts"]
+Added hashtags  ["cleaningjobs"]
+Hashtag for 20daysofsomethingbig was created
+created for 2:[{"count":1,"name":"20daysofsomethingbig","id":2002}]
+Hashtag for orioles was created
+created for 2:[{"count":2,"name":"orioles","id":1997}]
+Hashtag for iphone was created
+created for 2:[{"count":3,"name":"iphone","id":940},{"count":3,"name":"iphone","id":939}]
+Hashtag for baseball was created
+created for 2:[{"count":1,"name":"baseball","id":2003}]
+Hashtag for hot was created
+created for 2:[{"count":2,"name":"hot","id":1993}]
+Hashtag four was created
+created for 1: [{"count":2,"name":"four","id":1980}]
+creating hashtag for 1dxfactor
+Hashtag for baseball was created
+created for 2:[{"count":1,"name":"baseball","id":2004}]
+Hashtag for iphone was created
+created for 2:[{"count":3,"name":"iphone","id":940},{"count":4,"name":"iphone","id":939}]
+[ { rel:
+     { start: 1987,
+       end: 1989,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11208 },
+    rel2:
+     { start: 1989,
+       end: 1987,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11210 } },
+  { rel:
+     { start: 1988,
+       end: 1989,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11209 },
+    rel2:
+     { start: 1989,
+       end: 1988,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11211 } } ]
+[ { rel:
+     { start: 1983,
+       end: 1996,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11206 },
+    rel2:
+     { start: 1996,
+       end: 1983,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11207 } } ]
+[ { rel:
+     { start: 1989,
+       end: 1998,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11218 },
+    rel2:
+     { start: 1998,
+       end: 1989,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11222 } },
+  { rel:
+     { start: 1989,
+       end: 2000,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11220 },
+    rel2:
+     { start: 2000,
+       end: 1989,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11224 } } ]
+[ { rel:
+     { start: 1990,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11212 },
+    rel2:
+     { start: 1508,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11219 } },
+  { rel:
+     { start: 1990,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11213 },
+    rel2:
+     { start: 1510,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11221 } },
+  { rel:
+     { start: 1990,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11214 },
+    rel2:
+     { start: 1509,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11223 } },
+  { rel:
+     { start: 1992,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11215 },
+    rel2:
+     { start: 1508,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11225 } },
+  { rel:
+     { start: 1992,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11216 },
+    rel2:
+     { start: 1510,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11226 } },
+  { rel:
+     { start: 1992,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11217 },
+    rel2:
+     { start: 1509,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11227 } } ]
+[ { rel:
+     { start: 1990,
+       end: 1999,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11235 },
+    rel2:
+     { start: 1999,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11238 } },
+  { rel:
+     { start: 1992,
+       end: 1999,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11237 },
+    rel2:
+     { start: 1999,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11239 } } ]
+[ { rel:
+     { start: 1990,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11240 },
+    rel2:
+     { start: 1993,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11242 } },
+  { rel:
+     { start: 1992,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11241 },
+    rel2:
+     { start: 1993,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11243 } } ]
+[ { rel:
+     { start: 1993,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11244 },
+    rel2:
+     { start: 940,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11246 } },
+  { rel:
+     { start: 1993,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11245 },
+    rel2:
+     { start: 939,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11247 } } ]
+Hashtag xfactor was created
+created for 1: [{"count":2,"name":"xfactor","id":1996}]
+creating hashtag for strictly
+Hashtag xfactor was created
+created for 1: [{"count":2,"name":"xfactor","id":1996}]
+creating hashtag for whdarts
+Hashtag for lose5in5days was created
+created for 2:[{"count":1,"name":"lose5in5days","id":2005}]
+[ { rel:
+     { start: 1987,
+       end: 1998,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11228 },
+    rel2:
+     { start: 1998,
+       end: 1987,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11232 } },
+  { rel:
+     { start: 1987,
+       end: 2000,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11229 },
+    rel2:
+     { start: 2000,
+       end: 1987,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11233 } },
+  { rel:
+     { start: 1988,
+       end: 1998,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11230 },
+    rel2:
+     { start: 1998,
+       end: 1988,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11234 } },
+  { rel:
+     { start: 1988,
+       end: 2000,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11231 },
+    rel2:
+     { start: 2000,
+       end: 1988,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11236 } } ]
+[ { rel:
+     { start: 1995,
+       end: 1997,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11250 },
+    rel2:
+     { start: 1997,
+       end: 1995,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11252 } },
+  { rel:
+     { start: 1994,
+       end: 1997,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11251 },
+    rel2:
+     { start: 1997,
+       end: 1994,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11253 } } ]
+[ { rel:
+     { start: 1991,
+       end: 2002,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11248 },
+    rel2:
+     { start: 2002,
+       end: 1991,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11249 } } ]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag strictly was created
+created for 1: [{"count":1,"name":"strictly","id":2006}]
+creating hashtag for whdarts
+Hashtag for 1dxfactor was created
+created for 2:[{"count":2,"name":"1dxfactor","id":1986}]
+[ { rel:
+     { start: 1995,
+       end: 2003,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11262 },
+    rel2:
+     { start: 2003,
+       end: 1995,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11266 } },
+  { rel:
+     { start: 1995,
+       end: 2004,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11263 },
+    rel2:
+     { start: 2004,
+       end: 1995,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11267 } },
+  { rel:
+     { start: 1994,
+       end: 2003,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11264 },
+    rel2:
+     { start: 2003,
+       end: 1994,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11268 } },
+  { rel:
+     { start: 1994,
+       end: 2004,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11265 },
+    rel2:
+     { start: 2004,
+       end: 1994,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11269 } } ]
+[ { rel:
+     { start: 1990,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11254 },
+    rel2:
+     { start: 940,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11258 } },
+  { rel:
+     { start: 1990,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11255 },
+    rel2:
+     { start: 939,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11259 } },
+  { rel:
+     { start: 1992,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11256 },
+    rel2:
+     { start: 940,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11260 } },
+  { rel:
+     { start: 1992,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11257 },
+    rel2:
+     { start: 939,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11261 } } ]
+[ { rel:
+     { start: 1997,
+       end: 2003,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11271 },
+    rel2:
+     { start: 2003,
+       end: 1997,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11273 } },
+  { rel:
+     { start: 1997,
+       end: 2004,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11272 },
+    rel2:
+     { start: 2004,
+       end: 1997,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11274 } } ]
+Hashtag for strictly was created
+created for 2:[{"count":2,"name":"strictly","id":2006}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["giveaways"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating view and comment
+creating hashtag for view
+Correlating view and subscribe
+creating hashtag for view
+Correlating view and 520promo
+creating hashtag for view
+Correlating comment and subscribe
+creating hashtag for comment
+Correlating comment and 520promo
+creating hashtag for comment
+Correlating subscribe and 520promo
+creating hashtag for subscribe
+Added hashtags  ["view","comment","subscribe","520promo"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Hashtag for whdarts was created
+created for 2:[{"count":1,"name":"whdarts","id":2007}]
+[ { rel:
+     { start: 1508,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11270 },
+    rel2:
+     { start: 1993,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11277 } },
+  { rel:
+     { start: 1510,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11275 },
+    rel2:
+     { start: 1993,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11278 } },
+  { rel:
+     { start: 1509,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11276 },
+    rel2:
+     { start: 1993,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11279 } } ]
+Hashtag for whdarts was created
+created for 2:[{"count":1,"name":"whdarts","id":2008}]
+[ { rel:
+     { start: 2001,
+       end: 2005,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11280 },
+    rel2:
+     { start: 2005,
+       end: 2001,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11281 } } ]
+[ { rel:
+     { start: 1508,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11282 },
+    rel2:
+     { start: 940,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11290 } },
+  { rel:
+     { start: 1508,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11283 },
+    rel2:
+     { start: 939,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11291 } },
+  { rel:
+     { start: 1510,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11284 },
+    rel2:
+     { start: 940,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11292 } },
+  { rel:
+     { start: 1510,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11285 },
+    rel2:
+     { start: 939,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11293 } },
+  { rel:
+     { start: 1509,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11286 },
+    rel2:
+     { start: 940,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11294 } },
+  { rel:
+     { start: 1509,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11288 },
+    rel2:
+     { start: 939,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11295 } } ]
+Hashtag view was created
+created for 1: [{"count":1,"name":"view","id":2009}]
+creating hashtag for comment
+[ { rel:
+     { start: 1996,
+       end: 2006,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11287 },
+    rel2:
+     { start: 2006,
+       end: 1996,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11289 } } ]
+[ { rel:
+     { start: 1980,
+       end: 1986,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11202 },
+    rel2:
+     { start: 1986,
+       end: 1980,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11203 } } ]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag view was created
+created for 1: [{"count":1,"name":"view","id":2011}]
+creating hashtag for 520promo
+Added hashtags  []
+Correlating benghazi and pjnet
+creating hashtag for benghazi
+Correlating benghazi and ccot
+creating hashtag for benghazi
+Correlating pjnet and ccot
+creating hashtag for pjnet
+Added hashtags  ["benghazi","pjnet","ccot"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating kansasstate and mizzou
+creating hashtag for kansasstate
+Added hashtags  ["kansasstate","mizzou"]
+Added hashtags  []
+Added hashtags  []
+Hashtag view was created
+created for 1: [{"count":1,"name":"view","id":2010}]
+creating hashtag for subscribe
+[ { rel:
+     { start: 1996,
+       end: 2007,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11296 },
+    rel2:
+     { start: 2007,
+       end: 1996,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11298 } },
+  { rel:
+     { start: 1996,
+       end: 2008,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11297 },
+    rel2:
+     { start: 2008,
+       end: 1996,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11299 } } ]
+Hashtag subscribe was created
+created for 1: [{"count":1,"name":"subscribe","id":2014}]
+creating hashtag for 520promo
+Hashtag comment was created
+created for 1: [{"count":1,"name":"comment","id":2013}]
+creating hashtag for 520promo
+Hashtag comment was created
+created for 1: [{"count":1,"name":"comment","id":2012}]
+creating hashtag for subscribe
+Correlating gonavy and beatarmy
+creating hashtag for gonavy
+Added hashtags  ["gonavy","beatarmy"]
+Added hashtags  []
+Correlating icantbreathe and blacklivesmatter
+creating hashtag for icantbreathe
+Correlating icantbreathe and seattle
+creating hashtag for icantbreathe
+Correlating blacklivesmatter and seattle
+creating hashtag for blacklivesmatter
+Added hashtags  ["icantbreathe","blacklivesmatter","seattle"]
+Added hashtags  []
+Added hashtags  ["getwellsoonlouis"]
+Added hashtags  []
+Added hashtags  []
+Hashtag benghazi was created
+created for 1: [{"count":1,"name":"benghazi","id":2017}]
+creating hashtag for pjnet
+Added hashtags  []
+Correlating winterfest2014 and djrara
+creating hashtag for winterfest2014
+Correlating winterfest2014 and djrara504
+creating hashtag for winterfest2014
+Correlating winterfest2014 and nolahottestdj
+creating hashtag for winterfest2014
+Correlating djrara and djrara504
+creating hashtag for djrara
+Correlating djrara and nolahottestdj
+creating hashtag for djrara
+Correlating djrara504 and nolahottestdj
+creating hashtag for djrara504
+Added hashtags  ["winterfest2014","djrara","djrara504","nolahottestdj"]
+Added hashtags  ["uniteblue"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag for 520promo was created
+created for 2:[{"count":1,"name":"520promo","id":2016}]
+Hashtag for comment was created
+created for 2:[{"count":1,"name":"comment","id":2015}]
+[ { rel:
+     { start: 2006,
+       end: 2007,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11300 },
+    rel2:
+     { start: 2007,
+       end: 2006,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11302 } },
+  { rel:
+     { start: 2006,
+       end: 2008,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11301 },
+    rel2:
+     { start: 2008,
+       end: 2006,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11303 } } ]
+Hashtag for subscribe was created
+created for 2:[{"count":2,"name":"subscribe","id":2014}]
+Hashtag kansasstate was created
+created for 1: [{"count":1,"name":"kansasstate","id":2020}]
+creating hashtag for mizzou
+Hashtag pjnet was created
+created for 1: [{"count":1,"name":"pjnet","id":2019}]
+creating hashtag for ccot
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["asktbjzl"]
+Added hashtags  []
+Added hashtags  []
+Correlating ipad and ipadgames
+creating hashtag for ipad
+Correlating ipad and gameinsight
+creating hashtag for ipad
+Correlating ipadgames and gameinsight
+creating hashtag for ipadgames
+Added hashtags  ["ipad","ipadgames","gameinsight"]
+Added hashtags  []
+Correlating thetakeover and eire
+creating hashtag for thetakeover
+Added hashtags  ["thetakeover","eire"]
+Added hashtags  []
+Added hashtags  ["cobertura1dbra"]
+Added hashtags  []
+Added hashtags  []
+Correlating wewormin and pressplay
+creating hashtag for wewormin
+Correlating wewormin and newmusic
+creating hashtag for wewormin
+Correlating pressplay and newmusic
+creating hashtag for pressplay
+Added hashtags  ["wewormin","pressplay","newmusic"]
+Correlating sex and movie
+creating hashtag for sex
+Correlating sex and hot
+creating hashtag for sex
+Correlating sex and iphone
+creating hashtag for sex
+Correlating movie and hot
+creating hashtag for movie
+Correlating movie and iphone
+creating hashtag for movie
+Correlating hot and iphone
+creating hashtag for hot
+Added hashtags  ["sex","movie","hot","iphone"]
+Added hashtags  ["gulf12h"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["awkward"]
+Hashtag benghazi was created
+created for 1: [{"count":1,"name":"benghazi","id":2018}]
+creating hashtag for ccot
+Added hashtags  []
+Hashtag gonavy was created
+created for 1: [{"count":1,"name":"gonavy","id":2021}]
+creating hashtag for beatarmy
+Hashtag for subscribe was created
+created for 2:[{"count":3,"name":"subscribe","id":2014}]
+Hashtag for 520promo was created
+created for 2:[{"count":2,"name":"520promo","id":2016}]
+Hashtag icantbreathe was created
+created for 1: [{"count":1,"name":"icantbreathe","id":2023}]
+creating hashtag for seattle
+Hashtag icantbreathe was created
+created for 1: [{"count":1,"name":"icantbreathe","id":2022}]
+creating hashtag for blacklivesmatter
+Added hashtags  []
+Correlating hunting and ammo
+creating hashtag for hunting
+Correlating hunting and military
+creating hashtag for hunting
+Correlating hunting and 2a
+creating hashtag for hunting
+Correlating hunting and preppertalk
+creating hashtag for hunting
+Correlating ammo and military
+creating hashtag for ammo
+Correlating ammo and 2a
+creating hashtag for ammo
+Correlating ammo and preppertalk
+creating hashtag for ammo
+Correlating military and 2a
+creating hashtag for military
+Correlating military and preppertalk
+creating hashtag for military
+Correlating 2a and preppertalk
+creating hashtag for 2a
+Added hashtags  ["hunting","ammo","military","2a","preppertalk"]
+Added hashtags  []
+Added hashtags  []
+Correlating retweet and tfb_cats
+creating hashtag for retweet
+Correlating retweet and ｆｏｌｌｏｗ
+creating hashtag for retweet
+Correlating tfb_cats and ｆｏｌｌｏｗ
+creating hashtag for tfb_cats
+Added hashtags  ["retweet","tfb_cats","ｆｏｌｌｏｗ"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["twfanmily"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating hockey and skating
+creating hashtag for hockey
+Correlating hockey and lightning
+creating hashtag for hockey
+Correlating hockey and classic
+creating hashtag for hockey
+Correlating skating and lightning
+creating hashtag for skating
+Correlating skating and classic
+creating hashtag for skating
+Correlating lightning and classic
+creating hashtag for lightning
+Added hashtags  ["hockey","skating","lightning","classic"]
+Hashtag winterfest2014 was created
+created for 1: [{"count":1,"name":"winterfest2014","id":2025}]
+creating hashtag for djrara
+Hashtag for 520promo was created
+created for 2:[{"count":2,"name":"520promo","id":2016}]
+Hashtag for pjnet was created
+created for 2:[{"count":2,"name":"pjnet","id":2019}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["jalenmcmillannewtrailer"]
+Added hashtags  ["itjustdontmatch"]
+Hashtag blacklivesmatter was created
+created for 1: [{"count":1,"name":"blacklivesmatter","id":2024}]
+creating hashtag for seattle
+Hashtag djrara was created
+created for 1: [{"count":1,"name":"djrara","id":2028}]
+creating hashtag for nolahottestdj
+Hashtag djrara was created
+created for 1: [{"count":1,"name":"djrara","id":2027}]
+creating hashtag for djrara504
+Hashtag winterfest2014 was created
+created for 1: [{"count":2,"name":"winterfest2014","id":2025}]
+creating hashtag for nolahottestdj
+Hashtag winterfest2014 was created
+created for 1: [{"count":1,"name":"winterfest2014","id":2026}]
+creating hashtag for djrara504
+[ { rel:
+     { start: 2009,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11304 },
+    rel2:
+     { start: 2016,
+       end: 2009,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11307 } },
+  { rel:
+     { start: 2011,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11305 },
+    rel2:
+     { start: 2016,
+       end: 2011,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11308 } },
+  { rel:
+     { start: 2010,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11306 },
+    rel2:
+     { start: 2016,
+       end: 2010,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11309 } } ]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating mountunion and d3fb
+creating hashtag for mountunion
+Correlating mountunion and dynasty
+creating hashtag for mountunion
+Correlating d3fb and dynasty
+creating hashtag for d3fb
+Added hashtags  ["mountunion","d3fb","dynasty"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating mavs and dallas
+creating hashtag for mavs
+Correlating mavs and dalvsgsw
+creating hashtag for mavs
+Correlating dallas and dalvsgsw
+creating hashtag for dallas
+Added hashtags  ["mavs","dallas","dalvsgsw"]
+Correlating team and cometpride
+creating hashtag for team
+Added hashtags  ["team","cometpride"]
+Added hashtags  ["mtvstars"]
+Hashtag djrara504 was created
+created for 1: [{"count":1,"name":"djrara504","id":2029}]
+creating hashtag for nolahottestdj
+[ { rel:
+     { start: 2009,
+       end: 2013,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11310 },
+    rel2:
+     { start: 2013,
+       end: 2009,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11319 } },
+  { rel:
+     { start: 2009,
+       end: 2012,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11311 },
+    rel2:
+     { start: 2012,
+       end: 2009,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11320 } },
+  { rel:
+     { start: 2009,
+       end: 2015,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11312 },
+    rel2:
+     { start: 2015,
+       end: 2009,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11321 } },
+  { rel:
+     { start: 2011,
+       end: 2013,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11313 },
+    rel2:
+     { start: 2013,
+       end: 2011,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11322 } },
+  { rel:
+     { start: 2011,
+       end: 2012,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11314 },
+    rel2:
+     { start: 2012,
+       end: 2011,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11323 } },
+  { rel:
+     { start: 2011,
+       end: 2015,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11315 },
+    rel2:
+     { start: 2015,
+       end: 2011,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11324 } },
+  { rel:
+     { start: 2010,
+       end: 2013,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11316 },
+    rel2:
+     { start: 2013,
+       end: 2010,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11325 } },
+  { rel:
+     { start: 2010,
+       end: 2012,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11317 },
+    rel2:
+     { start: 2012,
+       end: 2010,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11326 } },
+  { rel:
+     { start: 2010,
+       end: 2015,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11318 },
+    rel2:
+     { start: 2015,
+       end: 2010,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11327 } } ]
+Added hashtags  []
+Added hashtags  []
+Hashtag for ccot was created
+created for 2:[{"count":1,"name":"ccot","id":2031}]
+Hashtag for mizzou was created
+created for 2:[{"count":1,"name":"mizzou","id":2030}]
+Hashtag ipadgames was created
+created for 1: [{"count":1,"name":"ipadgames","id":2034}]
+creating hashtag for gameinsight
+[ { rel:
+     { start: 2009,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11328 },
+    rel2:
+     { start: 2014,
+       end: 2009,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11331 } },
+  { rel:
+     { start: 2011,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11329 },
+    rel2:
+     { start: 2014,
+       end: 2011,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11332 } },
+  { rel:
+     { start: 2010,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11330 },
+    rel2:
+     { start: 2014,
+       end: 2010,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11333 } } ]
+Added hashtags  []
+Added hashtags  ["foamed"]
+Added hashtags  []
+Added hashtags  ["wafc"]
+Added hashtags  ["mtvstars"]
+Added hashtags  ["xfactor"]
+Added hashtags  []
+Added hashtags  ["vfl"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["np"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating superprestigio and dtxbarcelona
+creating hashtag for superprestigio
+Added hashtags  ["superprestigio","dtxbarcelona"]
+Correlating wewormin and hoodbillionaire
+creating hashtag for wewormin
+Added hashtags  ["wewormin","hoodbillionaire"]
+Correlating projectforawesome and spnfamily
+creating hashtag for projectforawesome
+Added hashtags  ["projectforawesome","spnfamily"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag ipad was created
+created for 1: [{"count":1,"name":"ipad","id":2033}]
+creating hashtag for gameinsight
+Added hashtags  []
+Added hashtags  []
+Hashtag ipad was created
+created for 1: [{"count":1,"name":"ipad","id":2032}]
+creating hashtag for ipadgames
+Hashtag pressplay was created
+created for 1: [{"count":1,"name":"pressplay","id":2038}]
+creating hashtag for newmusic
+Hashtag wewormin was created
+created for 1: [{"count":1,"name":"wewormin","id":2037}]
+creating hashtag for newmusic
+Hashtag wewormin was created
+created for 1: [{"count":1,"name":"wewormin","id":2036}]
+creating hashtag for pressplay
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating tcot and torturereport
+creating hashtag for tcot
+Added hashtags  ["tcot","torturereport"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating acting and actor
+creating hashtag for acting
+Added hashtags  ["acting","actor"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["newmusic"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag thetakeover was created
+created for 1: [{"count":1,"name":"thetakeover","id":2035}]
+creating hashtag for eire
+Hashtag movie was created
+created for 1: [{"count":4,"name":"movie","id":1508},{"count":5,"name":"movie","id":1510},{"count":5,"name":"movie","id":1509}]
+creating hashtag for hot
+Hashtag sex was created
+created for 1: [{"count":4,"name":"sex","id":1990},{"count":2,"name":"sex","id":1992}]
+creating hashtag for movie
+Hashtag movie was created
+created for 1: [{"count":4,"name":"movie","id":1508},{"count":6,"name":"movie","id":1510},{"count":6,"name":"movie","id":1509}]
+creating hashtag for iphone
+Hashtag for ccot was created
+created for 2:[{"count":2,"name":"ccot","id":2031}]
+Hashtag hot was created
+created for 1: [{"count":3,"name":"hot","id":1993}]
+creating hashtag for iphone
+Added hashtags  []
+Hashtag for beatarmy was created
+created for 2:[{"count":1,"name":"beatarmy","id":2039}]
+Hashtag sex was created
+created for 1: [{"count":4,"name":"sex","id":1990},{"count":3,"name":"sex","id":1992}]
+creating hashtag for hot
+[ { rel:
+     { start: 2014,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11334 },
+    rel2:
+     { start: 2016,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11335 } } ]
+Hashtag for seattle was created
+created for 2:[{"count":1,"name":"seattle","id":2040}]
+[ { rel:
+     { start: 2013,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11336 },
+    rel2:
+     { start: 2014,
+       end: 2013,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11339 } },
+  { rel:
+     { start: 2012,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11337 },
+    rel2:
+     { start: 2014,
+       end: 2012,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11340 } },
+  { rel:
+     { start: 2015,
+       end: 2014,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11338 },
+    rel2:
+     { start: 2014,
+       end: 2015,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11341 } } ]
+Hashtag sex was created
+created for 1: [{"count":4,"name":"sex","id":1990},{"count":4,"name":"sex","id":1992}]
+creating hashtag for iphone
+Hashtag for blacklivesmatter was created
+created for 2:[{"count":2,"name":"blacklivesmatter","id":2024}]
+Hashtag hunting was created
+created for 1: [{"count":1,"name":"hunting","id":2041}]
+creating hashtag for ammo
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag ammo was created
+created for 1: [{"count":1,"name":"ammo","id":2045}]
+creating hashtag for military
+Added hashtags  []
+Hashtag hunting was created
+created for 1: [{"count":1,"name":"hunting","id":2044}]
+creating hashtag for preppertalk
+Hashtag hunting was created
+created for 1: [{"count":1,"name":"hunting","id":2043}]
+creating hashtag for 2a
+Hashtag hunting was created
+created for 1: [{"count":1,"name":"hunting","id":2042}]
+creating hashtag for military
+Added hashtags  []
+Hashtag military was created
+created for 1: [{"count":1,"name":"military","id":2048}]
+creating hashtag for preppertalk
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag military was created
+created for 1: [{"count":1,"name":"military","id":2047}]
+creating hashtag for 2a
+Hashtag ammo was created
+created for 1: [{"count":2,"name":"ammo","id":2045}]
+creating hashtag for preppertalk
+Hashtag ammo was created
+created for 1: [{"count":1,"name":"ammo","id":2046}]
+creating hashtag for 2a
+Hashtag tfb_cats was created
+created for 1: [{"count":1,"name":"tfb_cats","id":2050}]
+creating hashtag for ｆｏｌｌｏｗ
+Hashtag retweet was created
+created for 1: [{"count":3,"name":"retweet","id":1945},{"count":2,"name":"retweet","id":1946}]
+creating hashtag for tfb_cats
+Hashtag 2a was created
+created for 1: [{"count":1,"name":"2a","id":2049}]
+creating hashtag for preppertalk
+Hashtag retweet was created
+created for 1: [{"count":3,"name":"retweet","id":1945},{"count":3,"name":"retweet","id":1946}]
+creating hashtag for ｆｏｌｌｏｗ
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating mgwv and retweet
+creating hashtag for mgwv
+Correlating mgwv and followtrick
+creating hashtag for mgwv
+Correlating mgwv and teamfollowback
+creating hashtag for mgwv
+Correlating mgwv and anotherfollowtrain
+creating hashtag for mgwv
+Correlating mgwv and ｆｏｌｌｏｗ
+creating hashtag for mgwv
+Correlating retweet and followtrick
+creating hashtag for retweet
+Correlating retweet and teamfollowback
+creating hashtag for retweet
+Correlating retweet and anotherfollowtrain
+creating hashtag for retweet
+Correlating retweet and ｆｏｌｌｏｗ
+creating hashtag for retweet
+Correlating followtrick and teamfollowback
+creating hashtag for followtrick
+Correlating followtrick and anotherfollowtrain
+creating hashtag for followtrick
+Correlating followtrick and ｆｏｌｌｏｗ
+creating hashtag for followtrick
+Correlating teamfollowback and anotherfollowtrain
+creating hashtag for teamfollowback
+Correlating teamfollowback and ｆｏｌｌｏｗ
+creating hashtag for teamfollowback
+Correlating anotherfollowtrain and ｆｏｌｌｏｗ
+creating hashtag for anotherfollowtrain
+Added hashtags  ["mgwv","retweet","followtrick","teamfollowback","anotherfollowtrain","ｆｏｌｌｏｗ"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["beatdallas"]
+Added hashtags  ["thegoldenbeaver"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["four"]
+Added hashtags  []
+Added hashtags  ["getwellsoonlouis"]
+Hashtag hockey was created
+created for 1: [{"count":1,"name":"hockey","id":2053}]
+creating hashtag for classic
+Hashtag hockey was created
+created for 1: [{"count":1,"name":"hockey","id":2052}]
+creating hashtag for lightning
+Hashtag hockey was created
+created for 1: [{"count":1,"name":"hockey","id":2051}]
+creating hashtag for skating
+Hashtag for djrara was created
+created for 2:[{"count":2,"name":"djrara","id":2028},{"count":2,"name":"djrara","id":2027}]
+Hashtag lightning was created
+created for 1: [{"count":1,"name":"lightning","id":2056}]
+creating hashtag for classic
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["pics"]
+Added hashtags  ["i594"]
+Hashtag skating was created
+created for 1: [{"count":1,"name":"skating","id":2055}]
+creating hashtag for classic
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating dating and flirting
+creating hashtag for dating
+Correlating dating and sex
+creating hashtag for dating
+Correlating dating and voyeur
+creating hashtag for dating
+Correlating dating and selfie
+creating hashtag for dating
+Correlating flirting and sex
+creating hashtag for flirting
+Correlating flirting and voyeur
+creating hashtag for flirting
+Correlating flirting and selfie
+creating hashtag for flirting
+Correlating sex and voyeur
+creating hashtag for sex
+Correlating sex and selfie
+creating hashtag for sex
+Correlating voyeur and selfie
+creating hashtag for voyeur
+Added hashtags  ["dating","flirting","sex","voyeur","selfie"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating proudcoach and daytonohio
+creating hashtag for proudcoach
+Correlating proudcoach and stiverstigers
+creating hashtag for proudcoach
+Correlating daytonohio and stiverstigers
+creating hashtag for daytonohio
+Added hashtags  ["proudcoach","daytonohio","stiverstigers"]
+Hashtag skating was created
+created for 1: [{"count":1,"name":"skating","id":2054}]
+creating hashtag for lightning
+Hashtag for nolahottestdj was created
+created for 2:[{"count":1,"name":"nolahottestdj","id":2057}]
+Hashtag for seattle was created
+created for 2:[{"count":2,"name":"seattle","id":2040}]
+[ { rel:
+     { start: 2017,
+       end: 2019,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11348 },
+    rel2:
+     { start: 2019,
+       end: 2017,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11350 } },
+  { rel:
+     { start: 2018,
+       end: 2019,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11349 },
+    rel2:
+     { start: 2019,
+       end: 2018,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11351 } } ]
+[ { rel:
+     { start: 2013,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11342 },
+    rel2:
+     { start: 2016,
+       end: 2013,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11345 } },
+  { rel:
+     { start: 2012,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11343 },
+    rel2:
+     { start: 2016,
+       end: 2012,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11346 } },
+  { rel:
+     { start: 2015,
+       end: 2016,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11344 },
+    rel2:
+     { start: 2016,
+       end: 2015,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11347 } } ]
+Hashtag for nolahottestdj was created
+created for 2:[{"count":2,"name":"nolahottestdj","id":2057}]
+Hashtag for djrara504 was created
+created for 2:[{"count":2,"name":"djrara504","id":2029}]
+Hashtag mountunion was created
+created for 1: [{"count":1,"name":"mountunion","id":2059}]
+creating hashtag for dynasty
+Hashtag mountunion was created
+created for 1: [{"count":1,"name":"mountunion","id":2058}]
+creating hashtag for d3fb
+Added hashtags  ["dreambigim5"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating wewormin and pressplay
+creating hashtag for wewormin
+Added hashtags  ["wewormin","pressplay"]
+Added hashtags  []
+Added hashtags  []
+Hashtag mavs was created
+created for 1: [{"count":1,"name":"mavs","id":2062}]
+creating hashtag for dalvsgsw
+Added hashtags  []
+Added hashtags  []
+Hashtag mavs was created
+created for 1: [{"count":1,"name":"mavs","id":2061}]
+creating hashtag for dallas
+Hashtag d3fb was created
+created for 1: [{"count":1,"name":"d3fb","id":2060}]
+creating hashtag for dynasty
+Hashtag for djrara504 was created
+created for 2:[{"count":2,"name":"djrara504","id":2029}]
+Hashtag for nolahottestdj was created
+created for 2:[{"count":3,"name":"nolahottestdj","id":2057}]
+Hashtag team was created
+created for 1: [{"count":1,"name":"team","id":2064}]
+creating hashtag for cometpride
+Added hashtags  ["mtvstars"]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Correlating gossip and perez
+creating hashtag for gossip
+Added hashtags  ["gossip","perez"]
+Hashtag dallas was created
+created for 1: [{"count":1,"name":"dallas","id":2063}]
+creating hashtag for dalvsgsw
+Added hashtags  []
+Added hashtags  []
+Hashtag superprestigio was created
+created for 1: [{"count":1,"name":"superprestigio","id":2066}]
+creating hashtag for dtxbarcelona
+Added hashtags  []
+Hashtag for gameinsight was created
+created for 2:[{"count":1,"name":"gameinsight","id":2065}]
+[ { rel:
+     { start: 2020,
+       end: 2030,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11354 },
+    rel2:
+     { start: 2030,
+       end: 2020,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11355 } } ]
+[ { rel:
+     { start: 2019,
+       end: 2031,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11352 },
+    rel2:
+     { start: 2031,
+       end: 2019,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11353 } } ]
+Hashtag projectforawesome was created
+created for 1: [{"count":1,"name":"projectforawesome","id":2067}]
+creating hashtag for spnfamily
+Hashtag wewormin was created
+created for 1: [{"count":2,"name":"wewormin","id":2037},{"count":2,"name":"wewormin","id":2036}]
+creating hashtag for hoodbillionaire
+Hashtag for newmusic was created
+created for 2:[{"count":1,"name":"newmusic","id":2068}]
+Hashtag for ipadgames was created
+created for 2:[{"count":2,"name":"ipadgames","id":2034}]
+Hashtag for gameinsight was created
+created for 2:[{"count":2,"name":"gameinsight","id":2065}]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Correlating eu and peace
+creating hashtag for eu
+Added hashtags  ["eu","peace"]
+Added hashtags  ["toriesmustgo"]
+Added hashtags  ["movietvtechgeeks"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["calpolyproud"]
+Added hashtags  ["peoplewhomademy2014"]
+Added hashtags  []
+Added hashtags  []
+Correlating safari and osxyosemite
+creating hashtag for safari
+Correlating safari and appleinc
+creating hashtag for safari
+Correlating osxyosemite and appleinc
+creating hashtag for osxyosemite
+Added hashtags  ["safari","osxyosemite","appleinc"]
+Hashtag tcot was created
+created for 1: [{"count":1,"name":"tcot","id":2070}]
+creating hashtag for torturereport
+Hashtag for pressplay was created
+created for 2:[{"count":2,"name":"pressplay","id":2038}]
+Added hashtags  ["happy1stannivwinnertv"]
+Hashtag for newmusic was created
+created for 2:[{"count":1,"name":"newmusic","id":2069}]
+Hashtag for movie was created
+created for 2:[{"count":5,"name":"movie","id":1508},{"count":7,"name":"movie","id":1510},{"count":7,"name":"movie","id":1509}]
+Hashtag for hot was created
+created for 2:[{"count":4,"name":"hot","id":1993}]
+Hashtag for eire was created
+created for 2:[{"count":1,"name":"eire","id":2072}]
+Hashtag acting was created
+created for 1: [{"count":1,"name":"acting","id":2071}]
+creating hashtag for actor
+[ { rel:
+     { start: 2021,
+       end: 2039,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11360 },
+    rel2:
+     { start: 2039,
+       end: 2021,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11361 } } ]
+[ { rel:
+     { start: 2017,
+       end: 2031,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11356 },
+    rel2:
+     { start: 2031,
+       end: 2017,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11358 } },
+  { rel:
+     { start: 2018,
+       end: 2031,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11357 },
+    rel2:
+     { start: 2031,
+       end: 2018,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11359 } } ]
+Hashtag for iphone was created
+created for 2:[{"count":4,"name":"iphone","id":940},{"count":5,"name":"iphone","id":939}]
+Hashtag for hot was created
+created for 2:[{"count":5,"name":"hot","id":1993}]
+[ { rel:
+     { start: 2023,
+       end: 2040,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11362 },
+    rel2:
+     { start: 2040,
+       end: 2023,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11364 } },
+  { rel:
+     { start: 2022,
+       end: 2040,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11363 },
+    rel2:
+     { start: 2040,
+       end: 2022,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11365 } } ]
+Hashtag for ammo was created
+created for 2:[{"count":3,"name":"ammo","id":2045},{"count":2,"name":"ammo","id":2046}]
+Hashtag for military was created
+created for 2:[{"count":2,"name":"military","id":2048},{"count":2,"name":"military","id":2047}]
+[ { rel:
+     { start: 2023,
+       end: 2024,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11366 },
+    rel2:
+     { start: 2024,
+       end: 2023,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11368 } },
+  { rel:
+     { start: 2022,
+       end: 2024,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11367 },
+    rel2:
+     { start: 2024,
+       end: 2022,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11369 } } ]
+Hashtag for preppertalk was created
+created for 2:[{"count":1,"name":"preppertalk","id":2073}]
+Hashtag for iphone was created
+created for 2:[{"count":4,"name":"iphone","id":940},{"count":6,"name":"iphone","id":939}]
+Hashtag for military was created
+created for 2:[{"count":3,"name":"military","id":2048},{"count":3,"name":"military","id":2047}]
+Hashtag for 2a was created
+created for 2:[{"count":2,"name":"2a","id":2049}]
+Hashtag for 2a was created
+created for 2:[{"count":3,"name":"2a","id":2049}]
+Hashtag for preppertalk was created
+created for 2:[{"count":2,"name":"preppertalk","id":2073}]
+Hashtag for 2a was created
+created for 2:[{"count":4,"name":"2a","id":2049}]
+Hashtag for preppertalk was created
+created for 2:[{"count":2,"name":"preppertalk","id":2073}]
+Hashtag for tfb_cats was created
+created for 2:[{"count":2,"name":"tfb_cats","id":2050}]
+Added hashtags  []
+Added hashtags  ["wettendass"]
+Added hashtags  ["lrt"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating handmade and gifts
+creating hashtag for handmade
+Added hashtags  ["handmade","gifts"]
+Added hashtags  ["energymanifesto"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating safari and osxyosemite
+creating hashtag for safari
+Correlating safari and appleinc
+creating hashtag for safari
+Correlating osxyosemite and appleinc
+creating hashtag for osxyosemite
+Added hashtags  ["safari","osxyosemite","appleinc"]
+Added hashtags  []
+Added hashtags  ["rhymesayers"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":1,"name":"ｆｏｌｌｏｗ","id":2074}]
+Hashtag for iphone was created
+created for 2:[{"count":5,"name":"iphone","id":940},{"count":7,"name":"iphone","id":939}]
+Hashtag mgwv was created
+created for 1: [{"count":1,"name":"mgwv","id":2076}]
+creating hashtag for retweet
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":1,"name":"ｆｏｌｌｏｗ","id":2075}]
+Hashtag for preppertalk was created
+created for 2:[{"count":3,"name":"preppertalk","id":2073}]
+Hashtag mgwv was created
+created for 1: [{"count":2,"name":"mgwv","id":2076}]
+creating hashtag for anotherfollowtrain
+Hashtag mgwv was created
+created for 1: [{"count":1,"name":"mgwv","id":2078}]
+creating hashtag for teamfollowback
+Hashtag mgwv was created
+created for 1: [{"count":1,"name":"mgwv","id":2077}]
+creating hashtag for followtrick
+Hashtag retweet was created
+created for 1: [{"count":4,"name":"retweet","id":1945},{"count":4,"name":"retweet","id":1946}]
+creating hashtag for followtrick
+Hashtag mgwv was created
+created for 1: [{"count":2,"name":"mgwv","id":2076}]
+creating hashtag for ｆｏｌｌｏｗ
+Hashtag followtrick was created
+created for 1: [{"count":2,"name":"followtrick","id":1877}]
+creating hashtag for teamfollowback
+Hashtag followtrick was created
+created for 1: [{"count":2,"name":"followtrick","id":1877}]
+creating hashtag for anotherfollowtrain
+Hashtag followtrick was created
+created for 1: [{"count":3,"name":"followtrick","id":1877}]
+creating hashtag for ｆｏｌｌｏｗ
+Hashtag teamfollowback was created
+created for 1: [{"count":3,"name":"teamfollowback","id":1948},{"count":3,"name":"teamfollowback","id":1947}]
+creating hashtag for anotherfollowtrain
+Hashtag teamfollowback was created
+created for 1: [{"count":3,"name":"teamfollowback","id":1948},{"count":4,"name":"teamfollowback","id":1947}]
+creating hashtag for ｆｏｌｌｏｗ
+Correlating millionmarchnyc and blacklivesmatter
+creating hashtag for millionmarchnyc
+Correlating millionmarchnyc and icantbreathe
+creating hashtag for millionmarchnyc
+Correlating blacklivesmatter and icantbreathe
+creating hashtag for blacklivesmatter
+Added hashtags  ["millionmarchnyc","blacklivesmatter","icantbreathe"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating getwellsoonlouis and cnn
+creating hashtag for getwellsoonlouis
+Added hashtags  ["getwellsoonlouis","cnn"]
+Added hashtags  []
+Added hashtags  ["ringoffire"]
+Hashtag anotherfollowtrain was created
+created for 1: [{"count":1,"name":"anotherfollowtrain","id":2079}]
+creating hashtag for ｆｏｌｌｏｗ
+Correlating timcook and financial
+creating hashtag for timcook
+Correlating timcook and appleinc
+creating hashtag for timcook
+Correlating financial and appleinc
+creating hashtag for financial
+Added hashtags  ["timcook","financial","appleinc"]
+Hashtag retweet was created
+created for 1: [{"count":4,"name":"retweet","id":1945},{"count":5,"name":"retweet","id":1946}]
+creating hashtag for teamfollowback
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["welcometweet"]
+Added hashtags  []
+Hashtag for classic was created
+created for 2:[{"count":1,"name":"classic","id":2080}]
+Hashtag retweet was created
+created for 1: [{"count":4,"name":"retweet","id":1945},{"count":6,"name":"retweet","id":1946}]
+creating hashtag for anotherfollowtrain
+Hashtag for skating was created
+created for 2:[{"count":2,"name":"skating","id":2055},{"count":2,"name":"skating","id":2054}]
+[ { rel:
+     { start: 2025,
+       end: 2028,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11370 },
+    rel2:
+     { start: 2028,
+       end: 2025,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11374 } },
+  { rel:
+     { start: 2025,
+       end: 2027,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11371 },
+    rel2:
+     { start: 2027,
+       end: 2025,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11375 } },
+  { rel:
+     { start: 2026,
+       end: 2028,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11372 },
+    rel2:
+     { start: 2028,
+       end: 2026,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11376 } },
+  { rel:
+     { start: 2026,
+       end: 2027,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11373 },
+    rel2:
+     { start: 2027,
+       end: 2026,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11377 } } ]
+Hashtag for classic was created
+created for 2:[{"count":2,"name":"classic","id":2080}]
+Hashtag dating was created
+created for 1: [{"count":1,"name":"dating","id":2081}]
+creating hashtag for flirting
+Hashtag for lightning was created
+created for 2:[{"count":2,"name":"lightning","id":2056}]
+Added hashtags  []
+Hashtag retweet was created
+created for 1: [{"count":4,"name":"retweet","id":1945},{"count":7,"name":"retweet","id":1946}]
+creating hashtag for ｆｏｌｌｏｗ
+Hashtag for classic was created
+created for 2:[{"count":2,"name":"classic","id":2080}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating warriors and mavs
+creating hashtag for warriors
+Correlating warriors and splashbros
+creating hashtag for warriors
+Correlating mavs and splashbros
+creating hashtag for mavs
+Added hashtags  ["warriors","mavs","splashbros"]
+Added hashtags  []
+Added hashtags  ["kathnielliveinbinanlaguna"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Correlating lovethem and iceskating
+creating hashtag for lovethem
+Correlating lovethem and atl
+creating hashtag for lovethem
+Correlating iceskating and atl
+creating hashtag for iceskating
+Added hashtags  ["lovethem","iceskating","atl"]
+Correlating albany and job
+creating hashtag for albany
+Added hashtags  ["albany","job"]
+Added hashtags  []
+Correlating job and milwaukee
+creating hashtag for job
+Added hashtags  ["job","milwaukee"]
+Added hashtags  []
+Added hashtags  []
+Correlating timcook and financial
+creating hashtag for timcook
+Correlating timcook and appleinc
+creating hashtag for timcook
+Correlating financial and appleinc
+creating hashtag for financial
+Added hashtags  ["timcook","financial","appleinc"]
+Added hashtags  []
+Correlating best and independentradio
+creating hashtag for best
+Correlating best and ygk
+creating hashtag for best
+Correlating independentradio and ygk
+creating hashtag for independentradio
+Added hashtags  ["best","independentradio","ygk"]
+Hashtag dating was created
+created for 1: [{"count":1,"name":"dating","id":2082}]
+creating hashtag for sex
+Hashtag flirting was created
+created for 1: [{"count":1,"name":"flirting","id":2084}]
+creating hashtag for voyeur
+Hashtag flirting was created
+created for 1: [{"count":1,"name":"flirting","id":2083}]
+creating hashtag for sex
+Hashtag dating was created
+created for 1: [{"count":2,"name":"dating","id":2081}]
+creating hashtag for voyeur
+Hashtag sex was created
+created for 1: [{"count":5,"name":"sex","id":1990},{"count":5,"name":"sex","id":1992}]
+creating hashtag for voyeur
+Hashtag flirting was created
+created for 1: [{"count":1,"name":"flirting","id":2085}]
+creating hashtag for selfie
+Hashtag dating was created
+created for 1: [{"count":2,"name":"dating","id":2081}]
+creating hashtag for selfie
+Added hashtags  ["mtvstars"]
+Added hashtags  ["mtvstars"]
+Added hashtags  ["mtvstars"]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Correlating strictlycomedancing and strictly
+creating hashtag for strictlycomedancing
+Added hashtags  ["strictlycomedancing","strictly"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["getwellsoonlouis"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["jalenmcmillannewtrailer"]
+Added hashtags  []
+Correlating noflexmas and tocbarxmas
+creating hashtag for noflexmas
+Added hashtags  ["noflexmas","tocbarxmas"]
+Added hashtags  []
+Hashtag voyeur was created
+created for 1: [{"count":1,"name":"voyeur","id":2087}]
+creating hashtag for selfie
+Correlating timcook and financial
+creating hashtag for timcook
+Correlating timcook and appleinc
+creating hashtag for timcook
+Correlating financial and appleinc
+creating hashtag for financial
+Added hashtags  ["timcook","financial","appleinc"]
+Added hashtags  []
+Hashtag proudcoach was created
+created for 1: [{"count":1,"name":"proudcoach","id":2086}]
+creating hashtag for daytonohio
+Hashtag sex was created
+created for 1: [{"count":5,"name":"sex","id":1990},{"count":6,"name":"sex","id":1992}]
+creating hashtag for selfie
+Hashtag for lightning was created
+created for 2:[{"count":3,"name":"lightning","id":2056}]
+Hashtag daytonohio was created
+created for 1: [{"count":1,"name":"daytonohio","id":2089}]
+creating hashtag for stiverstigers
+Hashtag proudcoach was created
+created for 1: [{"count":1,"name":"proudcoach","id":2088}]
+creating hashtag for stiverstigers
+[ { rel:
+     { start: 2024,
+       end: 2040,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11382 },
+    rel2:
+     { start: 2040,
+       end: 2024,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11383 } } ]
+[ { rel:
+     { start: 2028,
+       end: 2057,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11378 },
+    rel2:
+     { start: 2057,
+       end: 2028,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11380 } },
+  { rel:
+     { start: 2027,
+       end: 2057,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11379 },
+    rel2:
+     { start: 2057,
+       end: 2027,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11381 } } ]
+Correlating rrt and respiratory
+creating hashtag for rrt
+Added hashtags  ["rrt","respiratory"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["casual"]
+Added hashtags  []
+Correlating timcook and financial
+creating hashtag for timcook
+Correlating timcook and appleinc
+creating hashtag for timcook
+Correlating financial and appleinc
+creating hashtag for financial
+Added hashtags  ["timcook","financial","appleinc"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag for dynasty was created
+created for 2:[{"count":1,"name":"dynasty","id":2090}]
+[ { rel:
+     { start: 2025,
+       end: 2057,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11384 },
+    rel2:
+     { start: 2057,
+       end: 2025,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11386 } },
+  { rel:
+     { start: 2026,
+       end: 2057,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11385 },
+    rel2:
+     { start: 2057,
+       end: 2026,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11387 } } ]
+Hashtag wewormin was created
+created for 1: [{"count":3,"name":"wewormin","id":2037},{"count":3,"name":"wewormin","id":2036}]
+creating hashtag for pressplay
+Hashtag for d3fb was created
+created for 2:[{"count":2,"name":"d3fb","id":2060}]
+Hashtag for dalvsgsw was created
+created for 2:[{"count":1,"name":"dalvsgsw","id":2091}]
+[ { rel:
+     { start: 2028,
+       end: 2029,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11388 },
+    rel2:
+     { start: 2029,
+       end: 2028,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11390 } },
+  { rel:
+     { start: 2027,
+       end: 2029,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11389 },
+    rel2:
+     { start: 2029,
+       end: 2027,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11391 } } ]
+Hashtag for dynasty was created
+created for 2:[{"count":2,"name":"dynasty","id":2090}]
+Hashtag for dallas was created
+created for 2:[{"count":2,"name":"dallas","id":2063}]
+Hashtag for cometpride was created
+created for 2:[{"count":1,"name":"cometpride","id":2092}]
+[ { rel:
+     { start: 2025,
+       end: 2029,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11392 },
+    rel2:
+     { start: 2029,
+       end: 2025,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11394 } },
+  { rel:
+     { start: 2026,
+       end: 2029,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11393 },
+    rel2:
+     { start: 2029,
+       end: 2026,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11395 } } ]
+Hashtag gossip was created
+created for 1: [{"count":1,"name":"gossip","id":2093}]
+creating hashtag for perez
+Hashtag for dalvsgsw was created
+created for 2:[{"count":2,"name":"dalvsgsw","id":2091}]
+[ { rel:
+     { start: 2029,
+       end: 2057,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11396 },
+    rel2:
+     { start: 2057,
+       end: 2029,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11397 } } ]
+[ { rel:
+     { start: 2034,
+       end: 2065,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11398 },
+    rel2:
+     { start: 2065,
+       end: 2034,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11399 } } ]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  ["imlookingforwardtoitbro"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating mets and metsmonthofgiving
+creating hashtag for mets
+Added hashtags  ["mets","metsmonthofgiving"]
+Added hashtags  []
+Added hashtags  []
+Correlating timcook and financial
+creating hashtag for timcook
+Correlating timcook and appleinc
+creating hashtag for timcook
+Correlating financial and appleinc
+creating hashtag for financial
+Added hashtags  ["timcook","financial","appleinc"]
+Correlating boho and bohemian
+creating hashtag for boho
+Correlating boho and style
+creating hashtag for boho
+Correlating boho and fashion
+creating hashtag for boho
+Correlating bohemian and style
+creating hashtag for bohemian
+Correlating bohemian and fashion
+creating hashtag for bohemian
+Correlating style and fashion
+creating hashtag for style
+Added hashtags  ["boho","bohemian","style","fashion"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating kpop and mica
+creating hashtag for kpop
+Added hashtags  ["kpop","mica"]
+Hashtag for dtxbarcelona was created
+created for 2:[{"count":1,"name":"dtxbarcelona","id":2094}]
+[ { rel:
+     { start: 2033,
+       end: 2034,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11404 },
+    rel2:
+     { start: 2034,
+       end: 2033,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11406 } },
+  { rel:
+     { start: 2032,
+       end: 2034,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11405 },
+    rel2:
+     { start: 2034,
+       end: 2032,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11407 } } ]
+[ { rel:
+     { start: 2038,
+       end: 2068,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11400 },
+    rel2:
+     { start: 2068,
+       end: 2038,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11402 } },
+  { rel:
+     { start: 2038,
+       end: 2069,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11401 },
+    rel2:
+     { start: 2069,
+       end: 2038,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11403 } } ]
+Added hashtags  []
+Hashtag for hoodbillionaire was created
+created for 2:[{"count":1,"name":"hoodbillionaire","id":2096}]
+Hashtag for spnfamily was created
+created for 2:[{"count":1,"name":"spnfamily","id":2095}]
+Hashtag safari was created
+created for 1: [{"count":1,"name":"safari","id":2099}]
+creating hashtag for appleinc
+[ { rel:
+     { start: 2033,
+       end: 2065,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11408 },
+    rel2:
+     { start: 2065,
+       end: 2033,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11410 } },
+  { rel:
+     { start: 2032,
+       end: 2065,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11409 },
+    rel2:
+     { start: 2065,
+       end: 2032,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11411 } } ]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag safari was created
+created for 1: [{"count":1,"name":"safari","id":2098}]
+creating hashtag for osxyosemite
+Added hashtags  ["soundcloud"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["tcot"]
+Correlating jeremylin and nba
+creating hashtag for jeremylin
+Correlating jeremylin and health
+creating hashtag for jeremylin
+Correlating jeremylin and workout
+creating hashtag for jeremylin
+Correlating nba and health
+creating hashtag for nba
+Correlating nba and workout
+creating hashtag for nba
+Correlating health and workout
+creating hashtag for health
+Added hashtags  ["jeremylin","nba","health","workout"]
+Added hashtags  ["four"]
+Hashtag eu was created
+created for 1: [{"count":1,"name":"eu","id":2097}]
+creating hashtag for peace
+[ { rel:
+     { start: 2037,
+       end: 2038,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11412 },
+    rel2:
+     { start: 2038,
+       end: 2037,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11414 } },
+  { rel:
+     { start: 2036,
+       end: 2038,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11413 },
+    rel2:
+     { start: 2038,
+       end: 2036,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11415 } } ]
+Added hashtags  []
+Hashtag for torturereport was created
+created for 2:[{"count":1,"name":"torturereport","id":2101}]
+Hashtag osxyosemite was created
+created for 1: [{"count":1,"name":"osxyosemite","id":2100}]
+creating hashtag for appleinc
+[ { rel:
+     { start: 2035,
+       end: 2072,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11424 },
+    rel2:
+     { start: 2072,
+       end: 2035,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11425 } } ]
+[ { rel:
+     { start: 2037,
+       end: 2068,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11416 },
+    rel2:
+     { start: 2068,
+       end: 2037,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11420 } },
+  { rel:
+     { start: 2037,
+       end: 2069,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11417 },
+    rel2:
+     { start: 2069,
+       end: 2037,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11421 } },
+  { rel:
+     { start: 2036,
+       end: 2068,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11418 },
+    rel2:
+     { start: 2068,
+       end: 2036,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11422 } },
+  { rel:
+     { start: 2036,
+       end: 2069,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11419 },
+    rel2:
+     { start: 2069,
+       end: 2036,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11423 } } ]
+[ { rel:
+     { start: 1990,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11212 },
+    rel2:
+     { start: 1508,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11219 } },
+  { rel:
+     { start: 1990,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11213 },
+    rel2:
+     { start: 1510,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11221 } },
+  { rel:
+     { start: 1990,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11214 },
+    rel2:
+     { start: 1509,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11223 } },
+  { rel:
+     { start: 1992,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11215 },
+    rel2:
+     { start: 1508,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11225 } },
+  { rel:
+     { start: 1992,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11216 },
+    rel2:
+     { start: 1510,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11226 } },
+  { rel:
+     { start: 1992,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11217 },
+    rel2:
+     { start: 1509,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11227 } } ]
+[ { rel:
+     { start: 1508,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11270 },
+    rel2:
+     { start: 1993,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11277 } },
+  { rel:
+     { start: 1510,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11275 },
+    rel2:
+     { start: 1993,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11278 } },
+  { rel:
+     { start: 1509,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11276 },
+    rel2:
+     { start: 1993,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11279 } } ]
+Hashtag for actor was created
+created for 2:[{"count":1,"name":"actor","id":2102}]
+[ { rel:
+     { start: 2041,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11426 },
+    rel2:
+     { start: 2045,
+       end: 2041,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11434 } },
+  { rel:
+     { start: 2041,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11427 },
+    rel2:
+     { start: 2046,
+       end: 2041,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11435 } },
+  { rel:
+     { start: 2044,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11428 },
+    rel2:
+     { start: 2045,
+       end: 2044,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11436 } },
+  { rel:
+     { start: 2044,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11429 },
+    rel2:
+     { start: 2046,
+       end: 2044,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11437 } },
+  { rel:
+     { start: 2043,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11430 },
+    rel2:
+     { start: 2045,
+       end: 2043,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11438 } },
+  { rel:
+     { start: 2043,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11431 },
+    rel2:
+     { start: 2046,
+       end: 2043,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11439 } },
+  { rel:
+     { start: 2042,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11432 },
+    rel2:
+     { start: 2045,
+       end: 2042,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11440 } },
+  { rel:
+     { start: 2042,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11433 },
+    rel2:
+     { start: 2046,
+       end: 2042,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11441 } } ]
+[ { rel:
+     { start: 1508,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11282 },
+    rel2:
+     { start: 940,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11290 } },
+  { rel:
+     { start: 1508,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11283 },
+    rel2:
+     { start: 939,
+       end: 1508,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11291 } },
+  { rel:
+     { start: 1510,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11284 },
+    rel2:
+     { start: 940,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11292 } },
+  { rel:
+     { start: 1510,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11285 },
+    rel2:
+     { start: 939,
+       end: 1510,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11293 } },
+  { rel:
+     { start: 1509,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11286 },
+    rel2:
+     { start: 940,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11294 } },
+  { rel:
+     { start: 1509,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11288 },
+    rel2:
+     { start: 939,
+       end: 1509,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11295 } } ]
+[ { rel:
+     { start: 1990,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11240 },
+    rel2:
+     { start: 1993,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11242 } },
+  { rel:
+     { start: 1992,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11241 },
+    rel2:
+     { start: 1993,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11243 } } ]
+[ { rel:
+     { start: 1993,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11244 },
+    rel2:
+     { start: 940,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11246 } },
+  { rel:
+     { start: 1993,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11245 },
+    rel2:
+     { start: 939,
+       end: 1993,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11247 } } ]
+[ { rel:
+     { start: 2041,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11443 },
+    rel2:
+     { start: 2073,
+       end: 2041,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11448 } },
+  { rel:
+     { start: 2044,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11444 },
+    rel2:
+     { start: 2073,
+       end: 2044,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11449 } },
+  { rel:
+     { start: 2043,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11446 },
+    rel2:
+     { start: 2073,
+       end: 2043,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11450 } },
+  { rel:
+     { start: 2042,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11447 },
+    rel2:
+     { start: 2073,
+       end: 2042,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11451 } } ]
+[Error: Error: LockClient[10390] can't wait on resource RWLock[RELATIONSHIP(11455), hash=28896012] since => LockClient[10390] <-[:HELD_BY]- RWLock[RELATIONSHIP(11457), hash=2086044] <-[:WAITING_FOR]- LockClient[10394] <-[:HELD_BY]- RWLock[RELATIONSHIP(11455), hash=28896012]]
+[ { rel:
+     { start: 2045,
+       end: 2048,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11442 },
+    rel2:
+     { start: 2048,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11454 } },
+  { rel:
+     { start: 2045,
+       end: 2047,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11445 },
+    rel2:
+     { start: 2047,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11455 } },
+  { rel:
+     { start: 2046,
+       end: 2048,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11452 },
+    rel2:
+     { start: 2048,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11456 } },
+  { rel:
+     { start: 2046,
+       end: 2047,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11453 },
+    rel2:
+     { start: 2047,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11457 } } ]
+Added hashtags  ["tsiveyto3milly"]
+[Error: Error: LockClient[10391] can't wait on resource RWLock[RELATIONSHIP(11451), hash=842544] since => LockClient[10391] <-[:HELD_BY]- RWLock[RELATIONSHIP(11470), hash=31905426] <-[:WAITING_FOR]- LockClient[10395] <-[:HELD_BY]- RWLock[RELATIONSHIP(11451), hash=842544]]
+Added hashtags  ["itunes2014"]
+[ { rel:
+     { start: 2045,
+       end: 2049,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11465 },
+    rel2:
+     { start: 2049,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11469 } },
+  { rel:
+     { start: 2046,
+       end: 2049,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11467 },
+    rel2:
+     { start: 2049,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11470 } } ]
+[ { rel:
+     { start: 1945,
+       end: 2050,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11477 },
+    rel2:
+     { start: 2050,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11479 } },
+  { rel:
+     { start: 1946,
+       end: 2050,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11478 },
+    rel2:
+     { start: 2050,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11480 } } ]
+[ { rel:
+     { start: 2045,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11472 },
+    rel2:
+     { start: 2073,
+       end: 2045,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11482 } },
+  { rel:
+     { start: 2046,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11474 },
+    rel2:
+     { start: 2073,
+       end: 2046,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11483 } } ]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["مين_ده"]
+Added hashtags  ["مين_ده"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating kyrgyzstan and silkroadtourism
+creating hashtag for kyrgyzstan
+Added hashtags  ["kyrgyzstan","silkroadtourism"]
+Added hashtags  ["مين_ده"]
+Correlating jessicaalba and show
+creating hashtag for jessicaalba
+Correlating jessicaalba and workout
+creating hashtag for jessicaalba
+Correlating jessicaalba and health
+creating hashtag for jessicaalba
+Correlating show and workout
+creating hashtag for show
+Correlating show and health
+creating hashtag for show
+Correlating workout and health
+creating hashtag for workout
+Added hashtags  ["jessicaalba","show","workout","health"]
+Correlating sanfernando and trinidad
+creating hashtag for sanfernando
+Correlating sanfernando and travel
+creating hashtag for sanfernando
+Correlating sanfernando and traveldestination
+creating hashtag for sanfernando
+Correlating sanfernando and caribbean
+creating hashtag for sanfernando
+Correlating trinidad and travel
+creating hashtag for trinidad
+Correlating trinidad and traveldestination
+creating hashtag for trinidad
+Correlating trinidad and caribbean
+creating hashtag for trinidad
+Correlating travel and traveldestination
+creating hashtag for travel
+Correlating travel and caribbean
+creating hashtag for travel
+Correlating traveldestination and caribbean
+creating hashtag for traveldestination
+Added hashtags  ["sanfernando","trinidad","travel","traveldestination","caribbean"]
+Added hashtags  ["مين_ده"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["rap"]
+Added hashtags  []
+Correlating sanfernando and trinidad
+creating hashtag for sanfernando
+Correlating sanfernando and travel
+creating hashtag for sanfernando
+Correlating sanfernando and traveldestination
+creating hashtag for sanfernando
+Correlating sanfernando and caribbean
+creating hashtag for sanfernando
+Correlating trinidad and travel
+creating hashtag for trinidad
+Correlating trinidad and traveldestination
+creating hashtag for trinidad
+Correlating trinidad and caribbean
+creating hashtag for trinidad
+Correlating travel and traveldestination
+creating hashtag for travel
+Correlating travel and caribbean
+creating hashtag for travel
+Correlating traveldestination and caribbean
+creating hashtag for traveldestination
+Added hashtags  ["sanfernando","trinidad","travel","traveldestination","caribbean"]
+Correlating safari and osxyosemite
+creating hashtag for safari
+Correlating safari and appleinc
+creating hashtag for safari
+Correlating osxyosemite and appleinc
+creating hashtag for osxyosemite
+Added hashtags  ["safari","osxyosemite","appleinc"]
+Hashtag handmade was created
+created for 1: [{"count":1,"name":"handmade","id":2103}]
+creating hashtag for gifts
+[ { rel:
+     { start: 2048,
+       end: 2049,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11481 },
+    rel2:
+     { start: 2049,
+       end: 2048,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11485 } },
+  { rel:
+     { start: 2047,
+       end: 2049,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11484 },
+    rel2:
+     { start: 2049,
+       end: 2047,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11486 } } ]
+Hashtag safari was created
+created for 1: [{"count":2,"name":"safari","id":2099},{"count":2,"name":"safari","id":2098}]
+creating hashtag for osxyosemite
+Hashtag osxyosemite was created
+created for 1: [{"count":2,"name":"osxyosemite","id":2100}]
+creating hashtag for appleinc
+[ { rel:
+     { start: 2048,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11487 },
+    rel2:
+     { start: 2073,
+       end: 2048,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11489 } },
+  { rel:
+     { start: 2047,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11488 },
+    rel2:
+     { start: 2073,
+       end: 2047,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11490 } } ]
+Hashtag for retweet was created
+created for 2:[{"count":5,"name":"retweet","id":1945},{"count":8,"name":"retweet","id":1946}]
+Hashtag safari was created
+created for 1: [{"count":2,"name":"safari","id":2099},{"count":3,"name":"safari","id":2098}]
+creating hashtag for appleinc
+[ { rel:
+     { start: 1990,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11254 },
+    rel2:
+     { start: 940,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11258 } },
+  { rel:
+     { start: 1990,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11255 },
+    rel2:
+     { start: 939,
+       end: 1990,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11259 } },
+  { rel:
+     { start: 1992,
+       end: 940,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11256 },
+    rel2:
+     { start: 940,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11260 } },
+  { rel:
+     { start: 1992,
+       end: 939,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11257 },
+    rel2:
+     { start: 939,
+       end: 1992,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11261 } } ]
+[ { rel:
+     { start: 2050,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11491 },
+    rel2:
+     { start: 2074,
+       end: 2050,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11493 } },
+  { rel:
+     { start: 2050,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11492 },
+    rel2:
+     { start: 2075,
+       end: 2050,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11494 } } ]
+Hashtag for anotherfollowtrain was created
+created for 2:[{"count":2,"name":"anotherfollowtrain","id":2079}]
+Hashtag for teamfollowback was created
+created for 2:[{"count":4,"name":"teamfollowback","id":1948},{"count":5,"name":"teamfollowback","id":1947}]
+[ { rel:
+     { start: 1945,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11497 },
+    rel2:
+     { start: 2074,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11501 } },
+  { rel:
+     { start: 1945,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11498 },
+    rel2:
+     { start: 2075,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11502 } },
+  { rel:
+     { start: 1946,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11499 },
+    rel2:
+     { start: 2074,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11503 } },
+  { rel:
+     { start: 1946,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11500 },
+    rel2:
+     { start: 2075,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11504 } } ]
+[ { rel:
+     { start: 2049,
+       end: 2073,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11495 },
+    rel2:
+     { start: 2073,
+       end: 2049,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11496 } } ]
+Hashtag for followtrick was created
+created for 2:[{"count":4,"name":"followtrick","id":1877}]
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":2,"name":"ｆｏｌｌｏｗ","id":2074},{"count":2,"name":"ｆｏｌｌｏｗ","id":2075}]
+Hashtag for teamfollowback was created
+created for 2:[{"count":5,"name":"teamfollowback","id":1948},{"count":6,"name":"teamfollowback","id":1947}]
+Hashtag for anotherfollowtrain was created
+created for 2:[{"count":3,"name":"anotherfollowtrain","id":2079}]
+Hashtag for followtrick was created
+created for 2:[{"count":4,"name":"followtrick","id":1877}]
+Hashtag for anotherfollowtrain was created
+created for 2:[{"count":3,"name":"anotherfollowtrain","id":2079}]
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":3,"name":"ｆｏｌｌｏｗ","id":2074},{"count":3,"name":"ｆｏｌｌｏｗ","id":2075}]
+Hashtag millionmarchnyc was created
+created for 1: [{"count":1,"name":"millionmarchnyc","id":2105}]
+creating hashtag for blacklivesmatter
+Hashtag millionmarchnyc was created
+created for 1: [{"count":1,"name":"millionmarchnyc","id":2104}]
+creating hashtag for icantbreathe
+Hashtag getwellsoonlouis was created
+created for 1: [{"count":1,"name":"getwellsoonlouis","id":2106}]
+creating hashtag for cnn
+Hashtag blacklivesmatter was created
+created for 1: [{"count":3,"name":"blacklivesmatter","id":2024}]
+creating hashtag for icantbreathe
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":3,"name":"ｆｏｌｌｏｗ","id":2074},{"count":4,"name":"ｆｏｌｌｏｗ","id":2075}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag timcook was created
+created for 1: [{"count":1,"name":"timcook","id":2108}]
+creating hashtag for appleinc
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["uncvsuk"]
+Added hashtags  []
+Added hashtags  []
+Correlating music and crate
+creating hashtag for music
+Added hashtags  ["music","crate"]
+Hashtag timcook was created
+created for 1: [{"count":1,"name":"timcook","id":2107}]
+creating hashtag for financial
+[ { rel:
+     { start: 2053,
+       end: 2080,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11505 },
+    rel2:
+     { start: 2080,
+       end: 2053,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11508 } },
+  { rel:
+     { start: 2052,
+       end: 2080,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11506 },
+    rel2:
+     { start: 2080,
+       end: 2052,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11509 } },
+  { rel:
+     { start: 2051,
+       end: 2080,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11507 },
+    rel2:
+     { start: 2080,
+       end: 2051,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11510 } } ]
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":4,"name":"ｆｏｌｌｏｗ","id":2074},{"count":5,"name":"ｆｏｌｌｏｗ","id":2075}]
+Hashtag for teamfollowback was created
+created for 2:[{"count":6,"name":"teamfollowback","id":1948},{"count":7,"name":"teamfollowback","id":1947}]
+Hashtag financial was created
+created for 1: [{"count":1,"name":"financial","id":2109}]
+creating hashtag for appleinc
+[ { rel:
+     { start: 2053,
+       end: 2055,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11511 },
+    rel2:
+     { start: 2055,
+       end: 2053,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11517 } },
+  { rel:
+     { start: 2053,
+       end: 2054,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11512 },
+    rel2:
+     { start: 2054,
+       end: 2053,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11518 } },
+  { rel:
+     { start: 2052,
+       end: 2055,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11513 },
+    rel2:
+     { start: 2055,
+       end: 2052,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11519 } },
+  { rel:
+     { start: 2052,
+       end: 2054,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11514 },
+    rel2:
+     { start: 2054,
+       end: 2052,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11520 } },
+  { rel:
+     { start: 2051,
+       end: 2055,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11515 },
+    rel2:
+     { start: 2055,
+       end: 2051,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11521 } },
+  { rel:
+     { start: 2051,
+       end: 2054,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11516 },
+    rel2:
+     { start: 2054,
+       end: 2051,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11522 } } ]
+Hashtag for flirting was created
+created for 2:[{"count":2,"name":"flirting","id":2084},{"count":2,"name":"flirting","id":2083},{"count":2,"name":"flirting","id":2085}]
+Hashtag for anotherfollowtrain was created
+created for 2:[{"count":4,"name":"anotherfollowtrain","id":2079}]
+[ { rel:
+     { start: 2053,
+       end: 2056,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11524 },
+    rel2:
+     { start: 2056,
+       end: 2053,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11527 } },
+  { rel:
+     { start: 2052,
+       end: 2056,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11525 },
+    rel2:
+     { start: 2056,
+       end: 2052,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11528 } },
+  { rel:
+     { start: 2051,
+       end: 2056,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11526 },
+    rel2:
+     { start: 2056,
+       end: 2051,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11529 } } ]
+Hashtag for ｆｏｌｌｏｗ was created
+created for 2:[{"count":5,"name":"ｆｏｌｌｏｗ","id":2074},{"count":6,"name":"ｆｏｌｌｏｗ","id":2075}]
+Hashtag warriors was created
+created for 1: [{"count":2,"name":"warriors","id":1866}]
+creating hashtag for mavs
+Hashtag warriors was created
+created for 1: [{"count":3,"name":"warriors","id":1866}]
+creating hashtag for splashbros
+Hashtag lovethem was created
+created for 1: [{"count":1,"name":"lovethem","id":2110}]
+creating hashtag for iceskating
+[ { rel:
+     { start: 2055,
+       end: 2080,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11523 },
+    rel2:
+     { start: 2080,
+       end: 2055,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11531 } },
+  { rel:
+     { start: 2054,
+       end: 2080,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11530 },
+    rel2:
+     { start: 2080,
+       end: 2054,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11532 } } ]
+Hashtag lovethem was created
+created for 1: [{"count":1,"name":"lovethem","id":2111}]
+creating hashtag for atl
+Hashtag mavs was created
+created for 1: [{"count":2,"name":"mavs","id":2062},{"count":2,"name":"mavs","id":2061}]
+creating hashtag for splashbros
+[ { rel:
+     { start: 2056,
+       end: 2080,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11533 },
+    rel2:
+     { start: 2080,
+       end: 2056,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11534 } } ]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  ["lbgtq"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["tbt"]
+Added hashtags  []
+Correlating workout and getfit
+creating hashtag for workout
+Correlating workout and beauty
+creating hashtag for workout
+Correlating getfit and beauty
+creating hashtag for getfit
+Added hashtags  ["workout","getfit","beauty"]
+Correlating mtvstars and globalartisthma
+creating hashtag for mtvstars
+Added hashtags  ["mtvstars","globalartisthma"]
+Added hashtags  ["jesus"]
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Hashtag albany was created
+created for 1: [{"count":1,"name":"albany","id":2113}]
+creating hashtag for job
+Correlating free and kindleunlimited
+creating hashtag for free
+Correlating free and amazoncart
+creating hashtag for free
+Correlating free and iartg
+creating hashtag for free
+Correlating free and rt
+creating hashtag for free
+Correlating free and ya
+creating hashtag for free
+Correlating kindleunlimited and amazoncart
+creating hashtag for kindleunlimited
+Correlating kindleunlimited and iartg
+creating hashtag for kindleunlimited
+Correlating kindleunlimited and rt
+creating hashtag for kindleunlimited
+Correlating kindleunlimited and ya
+creating hashtag for kindleunlimited
+Correlating amazoncart and iartg
+creating hashtag for amazoncart
+Correlating amazoncart and rt
+creating hashtag for amazoncart
+Correlating amazoncart and ya
+creating hashtag for amazoncart
+Correlating iartg and rt
+creating hashtag for iartg
+Correlating iartg and ya
+creating hashtag for iartg
+Correlating rt and ya
+creating hashtag for rt
+Added hashtags  ["free","kindleunlimited","amazoncart","iartg","rt","ya"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag iceskating was created
+created for 1: [{"count":1,"name":"iceskating","id":2112}]
+creating hashtag for atl
+Hashtag financial was created
+created for 1: [{"count":2,"name":"financial","id":2109}]
+creating hashtag for appleinc
+Hashtag timcook was created
+created for 1: [{"count":2,"name":"timcook","id":2108},{"count":2,"name":"timcook","id":2107}]
+creating hashtag for financial
+Hashtag job was created
+created for 1: [{"count":3,"name":"job","id":1825}]
+creating hashtag for milwaukee
+Hashtag best was created
+created for 1: [{"count":2,"name":"best","id":1840},{"count":2,"name":"best","id":1839},{"count":2,"name":"best","id":1838}]
+creating hashtag for independentradio
+Added hashtags  []
+Hashtag independentradio was created
+created for 1: [{"count":1,"name":"independentradio","id":2114}]
+creating hashtag for ygk
+Hashtag timcook was created
+created for 1: [{"count":2,"name":"timcook","id":2108},{"count":3,"name":"timcook","id":2107}]
+creating hashtag for appleinc
+Hashtag for voyeur was created
+created for 2:[{"count":2,"name":"voyeur","id":2087}]
+Hashtag for sex was created
+created for 2:[{"count":6,"name":"sex","id":1990},{"count":7,"name":"sex","id":1992}]
+Hashtag best was created
+created for 1: [{"count":2,"name":"best","id":1840},{"count":3,"name":"best","id":1839},{"count":3,"name":"best","id":1838}]
+creating hashtag for ygk
+Hashtag for sex was created
+created for 2:[{"count":6,"name":"sex","id":1990},{"count":8,"name":"sex","id":1992}]
+Hashtag for voyeur was created
+created for 2:[{"count":3,"name":"voyeur","id":2087}]
+Hashtag for voyeur was created
+created for 2:[{"count":3,"name":"voyeur","id":2087}]
+Hashtag for selfie was created
+created for 2:[{"count":1,"name":"selfie","id":2116}]
+Added hashtags  ["brazilwantsotratourb"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["getwellsoonlouis"]
+Correlating timcook and financial
+creating hashtag for timcook
+Correlating timcook and appleinc
+creating hashtag for timcook
+Correlating financial and appleinc
+creating hashtag for financial
+Added hashtags  ["timcook","financial","appleinc"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag for selfie was created
+created for 2:[{"count":1,"name":"selfie","id":2119}]
+Added hashtags  []
+Added hashtags  []
+Correlating laruesjewelry and kidneywires
+creating hashtag for laruesjewelry
+Added hashtags  ["laruesjewelry","kidneywires"]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating safari and osxyosemite
+creating hashtag for safari
+Correlating safari and appleinc
+creating hashtag for safari
+Correlating osxyosemite and appleinc
+creating hashtag for osxyosemite
+Added hashtags  ["safari","osxyosemite","appleinc"]
+Added hashtags  []
+Added hashtags  []
+Hashtag noflexmas was created
+created for 1: [{"count":1,"name":"noflexmas","id":2118}]
+creating hashtag for tocbarxmas
+Hashtag strictlycomedancing was created
+created for 1: [{"count":1,"name":"strictlycomedancing","id":2117}]
+creating hashtag for strictly
+Hashtag for selfie was created
+created for 2:[{"count":1,"name":"selfie","id":2115}]
+Hashtag for daytonohio was created
+created for 2:[{"count":2,"name":"daytonohio","id":2089}]
+Hashtag for selfie was created
+created for 2:[{"count":2,"name":"selfie","id":2116},{"count":2,"name":"selfie","id":2119},{"count":2,"name":"selfie","id":2115}]
+Hashtag financial was created
+created for 1: [{"count":3,"name":"financial","id":2109}]
+creating hashtag for appleinc
+Hashtag for stiverstigers was created
+created for 2:[{"count":1,"name":"stiverstigers","id":2120}]
+Hashtag timcook was created
+created for 1: [{"count":3,"name":"timcook","id":2108},{"count":4,"name":"timcook","id":2107}]
+creating hashtag for financial
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating austin and surveillance
+creating hashtag for austin
+Correlating austin and police
+creating hashtag for austin
+Correlating austin and shutitdown
+creating hashtag for austin
+Correlating surveillance and police
+creating hashtag for surveillance
+Correlating surveillance and shutitdown
+creating hashtag for surveillance
+Correlating police and shutitdown
+creating hashtag for police
+Added hashtags  ["austin","surveillance","police","shutitdown"]
+Added hashtags  []
+Hashtag for stiverstigers was created
+created for 2:[{"count":1,"name":"stiverstigers","id":2121}]
+[ { rel:
+     { start: 2055,
+       end: 2056,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11535 },
+    rel2:
+     { start: 2056,
+       end: 2055,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11537 } },
+  { rel:
+     { start: 2054,
+       end: 2056,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11536 },
+    rel2:
+     { start: 2056,
+       end: 2054,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11538 } } ]
+Hashtag timcook was created
+created for 1: [{"count":3,"name":"timcook","id":2108},{"count":5,"name":"timcook","id":2107}]
+creating hashtag for appleinc
+Hashtag rrt was created
+created for 1: [{"count":1,"name":"rrt","id":2122}]
+creating hashtag for respiratory
+Hashtag timcook was created
+created for 1: [{"count":4,"name":"timcook","id":2108},{"count":6,"name":"timcook","id":2107}]
+creating hashtag for financial
+[ { rel:
+     { start: 2059,
+       end: 2090,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11539 },
+    rel2:
+     { start: 2090,
+       end: 2059,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11541 } },
+  { rel:
+     { start: 2058,
+       end: 2090,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11540 },
+    rel2:
+     { start: 2090,
+       end: 2058,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11542 } } ]
+Hashtag financial was created
+created for 1: [{"count":4,"name":"financial","id":2109}]
+creating hashtag for appleinc
+Hashtag for pressplay was created
+created for 2:[{"count":3,"name":"pressplay","id":2038}]
+[ { rel:
+     { start: 2059,
+       end: 2060,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11543 },
+    rel2:
+     { start: 2060,
+       end: 2059,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11545 } },
+  { rel:
+     { start: 2058,
+       end: 2060,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11544 },
+    rel2:
+     { start: 2060,
+       end: 2058,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11546 } } ]
+[ { rel:
+     { start: 2060,
+       end: 2090,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11548 },
+    rel2:
+     { start: 2090,
+       end: 2060,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11551 } } ]
+[ { rel:
+     { start: 2062,
+       end: 2091,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11547 },
+    rel2:
+     { start: 2091,
+       end: 2062,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11550 } },
+  { rel:
+     { start: 2061,
+       end: 2091,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11549 },
+    rel2:
+     { start: 2091,
+       end: 2061,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11552 } } ]
+[ { rel:
+     { start: 2064,
+       end: 2092,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11554 },
+    rel2:
+     { start: 2092,
+       end: 2064,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11556 } } ]
+[ { rel:
+     { start: 2062,
+       end: 2063,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11553 },
+    rel2:
+     { start: 2063,
+       end: 2062,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11557 } },
+  { rel:
+     { start: 2061,
+       end: 2063,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11555 },
+    rel2:
+     { start: 2063,
+       end: 2061,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11558 } } ]
+Hashtag for perez was created
+created for 2:[{"count":1,"name":"perez","id":2123}]
+Hashtag timcook was created
+created for 1: [{"count":4,"name":"timcook","id":2108},{"count":7,"name":"timcook","id":2107}]
+creating hashtag for appleinc
+Hashtag mets was created
+created for 1: [{"count":1,"name":"mets","id":2124}]
+creating hashtag for metsmonthofgiving
+[ { rel:
+     { start: 2063,
+       end: 2091,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11559 },
+    rel2:
+     { start: 2091,
+       end: 2063,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11560 } } ]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["teenvotegeri"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating a9 and ios
+creating hashtag for a9
+Correlating a9 and samsung
+creating hashtag for a9
+Correlating ios and samsung
+creating hashtag for ios
+Added hashtags  ["a9","ios","samsung"]
+Correlating kellyclarkson and deal
+creating hashtag for kellyclarkson
+Correlating kellyclarkson and good
+creating hashtag for kellyclarkson
+Correlating kellyclarkson and price
+creating hashtag for kellyclarkson
+Correlating deal and good
+creating hashtag for deal
+Correlating deal and price
+creating hashtag for deal
+Correlating good and price
+creating hashtag for good
+Added hashtags  ["kellyclarkson","deal","good","price"]
+Added hashtags  []
+Added hashtags  []
+Correlating safari and osxyosemite
+creating hashtag for safari
+Correlating safari and appleinc
+creating hashtag for safari
+Correlating osxyosemite and appleinc
+creating hashtag for osxyosemite
+Added hashtags  ["safari","osxyosemite","appleinc"]
+Hashtag boho was created
+created for 1: [{"count":1,"name":"boho","id":2125}]
+creating hashtag for bohemian
+Added hashtags  ["getwellsoonlouis"]
+Hashtag financial was created
+created for 1: [{"count":5,"name":"financial","id":2109}]
+creating hashtag for appleinc
+Hashtag timcook was created
+created for 1: [{"count":5,"name":"timcook","id":2108},{"count":8,"name":"timcook","id":2107}]
+creating hashtag for financial
+Hashtag boho was created
+created for 1: [{"count":2,"name":"boho","id":2125}]
+creating hashtag for fashion
+Hashtag boho was created
+created for 1: [{"count":1,"name":"boho","id":2126}]
+creating hashtag for style
+Hashtag timcook was created
+created for 1: [{"count":5,"name":"timcook","id":2108},{"count":9,"name":"timcook","id":2107}]
+creating hashtag for appleinc
+Hashtag bohemian was created
+created for 1: [{"count":1,"name":"bohemian","id":2128}]
+creating hashtag for fashion
+Hashtag style was created
+created for 1: [{"count":3,"name":"style","id":1924},{"count":2,"name":"style","id":1925}]
+creating hashtag for fashion
+Hashtag bohemian was created
+created for 1: [{"count":1,"name":"bohemian","id":2127}]
+creating hashtag for style
+[ { rel:
+     { start: 2067,
+       end: 2095,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11567 },
+    rel2:
+     { start: 2095,
+       end: 2067,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11568 } } ]
+[ { rel:
+     { start: 2037,
+       end: 2096,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11563 },
+    rel2:
+     { start: 2096,
+       end: 2037,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11565 } },
+  { rel:
+     { start: 2036,
+       end: 2096,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11564 },
+    rel2:
+     { start: 2096,
+       end: 2036,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11566 } } ]
+[ { rel:
+     { start: 2066,
+       end: 2094,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11561 },
+    rel2:
+     { start: 2094,
+       end: 2066,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11562 } } ]
+Added hashtags  []
+Added hashtags  ["strictlycomedancing"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating catchingup and laod
+creating hashtag for catchingup
+Correlating catchingup and pleaseandthanks
+creating hashtag for catchingup
+Correlating catchingup and rt
+creating hashtag for catchingup
+Correlating laod and pleaseandthanks
+creating hashtag for laod
+Correlating laod and rt
+creating hashtag for laod
+Correlating pleaseandthanks and rt
+creating hashtag for pleaseandthanks
+Added hashtags  ["catchingup","laod","pleaseandthanks","rt"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["humour"]
+Added hashtags  []
+Added hashtags  []
+Hashtag kpop was created
+created for 1: [{"count":1,"name":"kpop","id":2129}]
+creating hashtag for mica
+Hashtag jeremylin was created
+created for 1: [{"count":1,"name":"jeremylin","id":2132}]
+creating hashtag for health
+Hashtag jeremylin was created
+created for 1: [{"count":1,"name":"jeremylin","id":2131}]
+creating hashtag for nba
+Hashtag for osxyosemite was created
+created for 2:[{"count":3,"name":"osxyosemite","id":2100}]
+Hashtag for appleinc was created
+created for 2:[{"count":1,"name":"appleinc","id":2130}]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["win"]
+Added hashtags  []
+Hashtag health was created
+created for 1: [{"count":1,"name":"health","id":2136}]
+creating hashtag for workout
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating millionsmarch and blacklivesmatter
+creating hashtag for millionsmarch
+Correlating millionsmarch and ows
+creating hashtag for millionsmarch
+Correlating millionsmarch and oo
+creating hashtag for millionsmarch
+Correlating blacklivesmatter and ows
+creating hashtag for blacklivesmatter
+Correlating blacklivesmatter and oo
+creating hashtag for blacklivesmatter
+Correlating ows and oo
+creating hashtag for ows
+Added hashtags  ["millionsmarch","blacklivesmatter","ows","oo"]
+Added hashtags  ["nfnbox"]
+Added hashtags  []
+Hashtag nba was created
+created for 1: [{"count":1,"name":"nba","id":2135}]
+creating hashtag for workout
+Added hashtags  []
+Hashtag nba was created
+created for 1: [{"count":1,"name":"nba","id":2134}]
+creating hashtag for health
+Hashtag jeremylin was created
+created for 1: [{"count":1,"name":"jeremylin","id":2133}]
+creating hashtag for workout
+[ { rel:
+     { start: 2071,
+       end: 2102,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11571 },
+    rel2:
+     { start: 2102,
+       end: 2071,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11572 } } ]
+Hashtag for appleinc was created
+created for 2:[{"count":2,"name":"appleinc","id":2130}]
+[ { rel:
+     { start: 2070,
+       end: 2101,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11569 },
+    rel2:
+     { start: 2101,
+       end: 2070,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11570 } } ]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Hashtag kyrgyzstan was created
+created for 1: [{"count":1,"name":"kyrgyzstan","id":2138}]
+creating hashtag for silkroadtourism
+Added hashtags  []
+Added hashtags  ["givenchy"]
+Added hashtags  []
+Added hashtags  []
+Hashtag for peace was created
+created for 2:[{"count":1,"name":"peace","id":2137}]
+Hashtag show was created
+created for 1: [{"count":1,"name":"show","id":2142}]
+creating hashtag for workout
+Hashtag jessicaalba was created
+created for 1: [{"count":1,"name":"jessicaalba","id":2140}]
+creating hashtag for workout
+Added hashtags  []
+Hashtag jessicaalba was created
+created for 1: [{"count":1,"name":"jessicaalba","id":2141}]
+creating hashtag for health
+Added hashtags  []
+Correlating homemade and pizza
+creating hashtag for homemade
+Correlating homemade and foodie
+creating hashtag for homemade
+Correlating homemade and foodporn
+creating hashtag for homemade
+Correlating homemade and gettingfat
+creating hashtag for homemade
+Correlating pizza and foodie
+creating hashtag for pizza
+Correlating pizza and foodporn
+creating hashtag for pizza
+Correlating pizza and gettingfat
+creating hashtag for pizza
+Correlating foodie and foodporn
+creating hashtag for foodie
+Correlating foodie and gettingfat
+creating hashtag for foodie
+Correlating foodporn and gettingfat
+creating hashtag for foodporn
+Added hashtags  ["homemade","pizza","foodie","foodporn","gettingfat"]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Correlating hausofse7en and skindiamond
+creating hashtag for hausofse7en
+Correlating hausofse7en and la
+creating hashtag for hausofse7en
+Correlating skindiamond and la
+creating hashtag for skindiamond
+Added hashtags  ["hausofse7en","skindiamond","la"]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating love and lovers
+creating hashtag for love
+Added hashtags  ["love","lovers"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag jessicaalba was created
+created for 1: [{"count":1,"name":"jessicaalba","id":2139}]
+creating hashtag for show
+Hashtag sanfernando was created
+created for 1: [{"count":1,"name":"sanfernando","id":2146}]
+creating hashtag for travel
+Hashtag sanfernando was created
+created for 1: [{"count":1,"name":"sanfernando","id":2145}]
+creating hashtag for trinidad
+Hashtag workout was created
+created for 1: [{"count":1,"name":"workout","id":2144}]
+creating hashtag for health
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating navyfootball and armynavy
+creating hashtag for navyfootball
+Added hashtags  ["navyfootball","armynavy"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["soundcloud"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating johndeere and babyfashion
+creating hashtag for johndeere
+Added hashtags  ["johndeere","babyfashion"]
+Added hashtags  []
+Added hashtags  []
+Hashtag show was created
+created for 1: [{"count":1,"name":"show","id":2143}]
+creating hashtag for health
+Hashtag trinidad was created
+created for 1: [{"count":1,"name":"trinidad","id":2149}]
+creating hashtag for traveldestination
+Hashtag trinidad was created
+created for 1: [{"count":1,"name":"trinidad","id":2148}]
+creating hashtag for travel
+Hashtag sanfernando was created
+created for 1: [{"count":2,"name":"sanfernando","id":2146}]
+creating hashtag for caribbean
+Hashtag sanfernando was created
+created for 1: [{"count":1,"name":"sanfernando","id":2147}]
+creating hashtag for traveldestination
+Added hashtags  []
+Added hashtags  ["dewtour"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["cobertura1dbra"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["mayweather"]
+Added hashtags  ["bd2watchalong"]
+Added hashtags  ["scd"]
+Added hashtags  []
+Added hashtags  ["5yearsofbtr"]
+Added hashtags  []
+Correlating wewormin and pressplay
+creating hashtag for wewormin
+Added hashtags  ["wewormin","pressplay"]
+Added hashtags  []
+Added hashtags  ["respect"]
+Added hashtags  []
+Added hashtags  []
+Hashtag traveldestination was created
+created for 1: [{"count":1,"name":"traveldestination","id":2153}]
+creating hashtag for caribbean
+Hashtag travel was created
+created for 1: [{"count":1,"name":"travel","id":2152}]
+creating hashtag for caribbean
+Hashtag travel was created
+created for 1: [{"count":1,"name":"travel","id":2151}]
+creating hashtag for traveldestination
+Hashtag trinidad was created
+created for 1: [{"count":1,"name":"trinidad","id":2150}]
+creating hashtag for caribbean
+Hashtag sanfernando was created
+created for 1: [{"count":3,"name":"sanfernando","id":2146},{"count":2,"name":"sanfernando","id":2145},{"count":2,"name":"sanfernando","id":2147}]
+creating hashtag for trinidad
+Hashtag trinidad was created
+created for 1: [{"count":2,"name":"trinidad","id":2149},{"count":2,"name":"trinidad","id":2148},{"count":2,"name":"trinidad","id":2150}]
+creating hashtag for travel
+Hashtag trinidad was created
+created for 1: [{"count":3,"name":"trinidad","id":2149},{"count":3,"name":"trinidad","id":2148},{"count":3,"name":"trinidad","id":2150}]
+creating hashtag for traveldestination
+Hashtag trinidad was created
+created for 1: [{"count":3,"name":"trinidad","id":2149},{"count":4,"name":"trinidad","id":2148},{"count":4,"name":"trinidad","id":2150}]
+creating hashtag for caribbean
+Hashtag travel was created
+created for 1: [{"count":2,"name":"travel","id":2152},{"count":2,"name":"travel","id":2151}]
+creating hashtag for traveldestination
+Hashtag travel was created
+created for 1: [{"count":3,"name":"travel","id":2152},{"count":3,"name":"travel","id":2151}]
+creating hashtag for caribbean
+Hashtag traveldestination was created
+created for 1: [{"count":2,"name":"traveldestination","id":2153}]
+creating hashtag for caribbean
+Hashtag safari was created
+created for 1: [{"count":3,"name":"safari","id":2099},{"count":4,"name":"safari","id":2098}]
+creating hashtag for osxyosemite
+Hashtag safari was created
+created for 1: [{"count":4,"name":"safari","id":2099},{"count":5,"name":"safari","id":2098}]
+creating hashtag for appleinc
+Hashtag osxyosemite was created
+created for 1: [{"count":4,"name":"osxyosemite","id":2100}]
+creating hashtag for appleinc
+Hashtag for gifts was created
+created for 2:[{"count":3,"name":"gifts","id":1930},{"count":2,"name":"gifts","id":1931}]
+Hashtag for osxyosemite was created
+created for 2:[{"count":5,"name":"osxyosemite","id":2100}]
+Hashtag for appleinc was created
+created for 2:[{"count":3,"name":"appleinc","id":2130}]
+Hashtag for appleinc was created
+created for 2:[{"count":4,"name":"appleinc","id":2130}]
+[ { rel:
+     { start: 2076,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11573 },
+    rel2:
+     { start: 1945,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11579 } },
+  { rel:
+     { start: 2076,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11574 },
+    rel2:
+     { start: 1946,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11580 } },
+  { rel:
+     { start: 2078,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11575 },
+    rel2:
+     { start: 1945,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11581 } },
+  { rel:
+     { start: 2078,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11576 },
+    rel2:
+     { start: 1946,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11582 } },
+  { rel:
+     { start: 2077,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11577 },
+    rel2:
+     { start: 1945,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11583 } },
+  { rel:
+     { start: 2077,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11578 },
+    rel2:
+     { start: 1946,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11584 } } ]
+[ { rel:
+     { start: 2076,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11585 },
+    rel2:
+     { start: 2079,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11588 } },
+  { rel:
+     { start: 2078,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11586 },
+    rel2:
+     { start: 2079,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11589 } },
+  { rel:
+     { start: 2077,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11587 },
+    rel2:
+     { start: 2079,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11590 } } ]
+[ { rel:
+     { start: 2076,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11591 },
+    rel2:
+     { start: 1948,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11597 } },
+  { rel:
+     { start: 2076,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11592 },
+    rel2:
+     { start: 1947,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11598 } },
+  { rel:
+     { start: 2078,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11593 },
+    rel2:
+     { start: 1948,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11599 } },
+  { rel:
+     { start: 2078,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11594 },
+    rel2:
+     { start: 1947,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11600 } },
+  { rel:
+     { start: 2077,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11595 },
+    rel2:
+     { start: 1948,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11601 } },
+  { rel:
+     { start: 2077,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11596 },
+    rel2:
+     { start: 1947,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11602 } } ]
+[ { rel:
+     { start: 2076,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11603 },
+    rel2:
+     { start: 1877,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11606 } },
+  { rel:
+     { start: 2078,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11604 },
+    rel2:
+     { start: 1877,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11607 } },
+  { rel:
+     { start: 2077,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11605 },
+    rel2:
+     { start: 1877,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11608 } } ]
+[ { rel:
+     { start: 2076,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11609 },
+    rel2:
+     { start: 2074,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11615 } },
+  { rel:
+     { start: 2076,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11610 },
+    rel2:
+     { start: 2075,
+       end: 2076,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11616 } },
+  { rel:
+     { start: 2078,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11611 },
+    rel2:
+     { start: 2074,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11617 } },
+  { rel:
+     { start: 2078,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11612 },
+    rel2:
+     { start: 2075,
+       end: 2078,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11618 } },
+  { rel:
+     { start: 2077,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11613 },
+    rel2:
+     { start: 2074,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11619 } },
+  { rel:
+     { start: 2077,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11614 },
+    rel2:
+     { start: 2075,
+       end: 2077,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11620 } } ]
+[ { rel:
+     { start: 1877,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11621 },
+    rel2:
+     { start: 1948,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11623 } },
+  { rel:
+     { start: 1877,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11622 },
+    rel2:
+     { start: 1947,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11624 } } ]
+[ { rel:
+     { start: 1877,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11625 },
+    rel2:
+     { start: 2079,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11626 } } ]
+[ { rel:
+     { start: 1945,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11627 },
+    rel2:
+     { start: 1877,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11629 } },
+  { rel:
+     { start: 1946,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11628 },
+    rel2:
+     { start: 1877,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11630 } } ]
+[ { rel:
+     { start: 1948,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11631 },
+    rel2:
+     { start: 2079,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11633 } },
+  { rel:
+     { start: 1947,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11632 },
+    rel2:
+     { start: 2079,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11634 } } ]
+[ { rel:
+     { start: 1877,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11635 },
+    rel2:
+     { start: 2074,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11637 } },
+  { rel:
+     { start: 1877,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11636 },
+    rel2:
+     { start: 2075,
+       end: 1877,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11638 } } ]
+Hashtag for blacklivesmatter was created
+created for 2:[{"count":4,"name":"blacklivesmatter","id":2024}]
+Hashtag for icantbreathe was created
+created for 2:[{"count":2,"name":"icantbreathe","id":2023},{"count":2,"name":"icantbreathe","id":2022}]
+Hashtag for cnn was created
+created for 2:[{"count":2,"name":"cnn","id":1957},{"count":2,"name":"cnn","id":1956}]
+Hashtag for icantbreathe was created
+created for 2:[{"count":3,"name":"icantbreathe","id":2023},{"count":3,"name":"icantbreathe","id":2022}]
+Hashtag for appleinc was created
+created for 2:[{"count":5,"name":"appleinc","id":2130}]
+[ { rel:
+     { start: 1948,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11639 },
+    rel2:
+     { start: 2074,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11643 } },
+  { rel:
+     { start: 1948,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11640 },
+    rel2:
+     { start: 2075,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11644 } },
+  { rel:
+     { start: 1947,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11641 },
+    rel2:
+     { start: 2074,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11645 } },
+  { rel:
+     { start: 1947,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11642 },
+    rel2:
+     { start: 2075,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11646 } } ]
+Added hashtags  ["mtvstars"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["cbb"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["smartnews"]
+Added hashtags  []
+Hashtag music was created
+created for 1: [{"count":1,"name":"music","id":2154}]
+creating hashtag for crate
+Hashtag sanfernando was created
+created for 1: [{"count":3,"name":"sanfernando","id":2146},{"count":3,"name":"sanfernando","id":2145},{"count":3,"name":"sanfernando","id":2147}]
+creating hashtag for travel
+Hashtag for financial was created
+created for 2:[{"count":6,"name":"financial","id":2109}]
+[ { rel:
+     { start: 2079,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11647 },
+    rel2:
+     { start: 2074,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11649 } },
+  { rel:
+     { start: 2079,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11648 },
+    rel2:
+     { start: 2075,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11650 } } ]
+Hashtag for appleinc was created
+created for 2:[{"count":6,"name":"appleinc","id":2130}]
+[ { rel:
+     { start: 1945,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11651 },
+    rel2:
+     { start: 1948,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11655 } },
+  { rel:
+     { start: 1945,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11652 },
+    rel2:
+     { start: 1947,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11656 } },
+  { rel:
+     { start: 1946,
+       end: 1948,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11653 },
+    rel2:
+     { start: 1948,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11657 } },
+  { rel:
+     { start: 1946,
+       end: 1947,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11654 },
+    rel2:
+     { start: 1947,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11658 } } ]
+[ { rel:
+     { start: 2081,
+       end: 2084,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11659 },
+    rel2:
+     { start: 2084,
+       end: 2081,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11665 } },
+  { rel:
+     { start: 2081,
+       end: 2083,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11660 },
+    rel2:
+     { start: 2083,
+       end: 2081,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11666 } },
+  { rel:
+     { start: 2081,
+       end: 2085,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11661 },
+    rel2:
+     { start: 2085,
+       end: 2081,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11667 } },
+  { rel:
+     { start: 2082,
+       end: 2084,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11662 },
+    rel2:
+     { start: 2084,
+       end: 2082,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11668 } },
+  { rel:
+     { start: 2082,
+       end: 2083,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11663 },
+    rel2:
+     { start: 2083,
+       end: 2082,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11669 } },
+  { rel:
+     { start: 2082,
+       end: 2085,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11664 },
+    rel2:
+     { start: 2085,
+       end: 2082,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11670 } } ]
+[ { rel:
+     { start: 1945,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11497 },
+    rel2:
+     { start: 2074,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11501 } },
+  { rel:
+     { start: 1945,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11498 },
+    rel2:
+     { start: 2075,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11502 } },
+  { rel:
+     { start: 1946,
+       end: 2074,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11499 },
+    rel2:
+     { start: 2074,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11503 } },
+  { rel:
+     { start: 1946,
+       end: 2075,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11500 },
+    rel2:
+     { start: 2075,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11504 } } ]
+[ { rel:
+     { start: 1945,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11671 },
+    rel2:
+     { start: 2079,
+       end: 1945,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11673 } },
+  { rel:
+     { start: 1946,
+       end: 2079,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11672 },
+    rel2:
+     { start: 2079,
+       end: 1946,
+       type: 'CORRELATED_WITH',
+       properties: [Object],
+       id: 11674 } } ]
+Hashtag for mavs was created
+created for 2:[{"count":3,"name":"mavs","id":2062},{"count":3,"name":"mavs","id":2061}]
+Hashtag for iceskating was created
+created for 2:[{"count":2,"name":"iceskating","id":2112}]
+Added hashtags  []
+Hashtag for splashbros was created
+created for 2:[{"count":1,"name":"splashbros","id":2155}]
+Hashtag sanfernando was created
+created for 1: [{"count":3,"name":"sanfernando","id":2146},{"count":4,"name":"sanfernando","id":2145},{"count":4,"name":"sanfernando","id":2147}]
+creating hashtag for traveldestination
+Hashtag for splashbros was created
+created for 2:[{"count":1,"name":"splashbros","id":2157}]
+Hashtag for atl was created
+created for 2:[{"count":1,"name":"atl","id":2156}]
+Added hashtags  ["blessed"]
+Added hashtags  ["bscbvb"]
+Added hashtags  []
+Correlating sougofollow and hitfollowsteam
+creating hashtag for sougofollow
+Correlating sougofollow and teamfollowback
+creating hashtag for sougofollow
+Correlating sougofollow and tfbjp
+creating hashtag for sougofollow
+Correlating sougofollow and followbackseguro
+creating hashtag for sougofollow
+Correlating hitfollowsteam and teamfollowback
+creating hashtag for hitfollowsteam
+Correlating hitfollowsteam and tfbjp
+creating hashtag for hitfollowsteam
+Correlating hitfollowsteam and followbackseguro
+creating hashtag for hitfollowsteam
+Correlating teamfollowback and tfbjp
+creating hashtag for teamfollowback
+Correlating teamfollowback and followbackseguro
+creating hashtag for teamfollowback
+Correlating tfbjp and followbackseguro
+creating hashtag for tfbjp
+Added hashtags  ["sougofollow","hitfollowsteam","teamfollowback","tfbjp","followbackseguro"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["onedirectionchristmasfavourites"]
+Added hashtags  ["bgc3spain"]
+Correlating cheektocheek and jazz
+creating hashtag for cheektocheek
+Added hashtags  ["cheektocheek","jazz"]
+Hashtag getfit was created
+created for 1: [{"count":1,"name":"getfit","id":2158}]
+creating hashtag for beauty
+Hashtag sanfernando was created
+created for 1: [{"count":3,"name":"sanfernando","id":2146},{"count":5,"name":"sanfernando","id":2145},{"count":5,"name":"sanfernando","id":2147}]
+creating hashtag for caribbean
+Hashtag workout was created
+created for 1: [{"count":2,"name":"workout","id":2144}]
+creating hashtag for getfit
+Hashtag for job was created
+created for 2:[{"count":4,"name":"job","id":1825}]
+Added hashtags  []
+Correlating gallant and goofus
+creating hashtag for gallant
+Correlating gallant and beforeandafter
+creating hashtag for gallant
+Correlating gallant and thisishowiwakeup
+creating hashtag for gallant
+Correlating goofus and beforeandafter
+creating hashtag for goofus
+Correlating goofus and thisishowiwakeup
+creating hashtag for goofus
+Correlating beforeandafter and thisishowiwakeup
+creating hashtag for beforeandafter
+Added hashtags  ["gallant","goofus","beforeandafter","thisishowiwakeup"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Hashtag mtvstars was created
+created for 1: [{"count":1,"name":"mtvstars","id":2159}]
+creating hashtag for globalartisthma
+Hashtag workout was created
+created for 1: [{"count":2,"name":"workout","id":2144}]
+creating hashtag for beauty
+Hashtag free was created
+created for 1: [{"count":2,"name":"free","id":1936},{"count":2,"name":"free","id":1937}]
+creating hashtag for amazoncart
+Hashtag free was created
+created for 1: [{"count":2,"name":"free","id":1936},{"count":3,"name":"free","id":1937}]
+creating hashtag for kindleunlimited
+Hashtag kindleunlimited was created
+created for 1: [{"count":1,"name":"kindleunlimited","id":2160}]
+creating hashtag for amazoncart
+Hashtag free was created
+created for 1: [{"count":2,"name":"free","id":1936},{"count":4,"name":"free","id":1937}]
+creating hashtag for iartg
+Hashtag kindleunlimited was created
+created for 1: [{"count":1,"name":"kindleunlimited","id":2161}]
+creating hashtag for iartg
+Hashtag free was created
+created for 1: [{"count":2,"name":"free","id":1936},{"count":5,"name":"free","id":1937}]
+creating hashtag for rt
+Hashtag amazoncart was created
+created for 1: [{"count":1,"name":"amazoncart","id":2162}]
+creating hashtag for iartg
+Hashtag kindleunlimited was created
+created for 1: [{"count":2,"name":"kindleunlimited","id":2160}]
+creating hashtag for rt
+Hashtag free was created
+created for 1: [{"count":2,"name":"free","id":1936},{"count":6,"name":"free","id":1937}]
+creating hashtag for ya
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Correlating armynavy and gonavybeatarmy
+creating hashtag for armynavy
+Added hashtags  ["armynavy","gonavybeatarmy"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  ["nographics"]
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+Added hashtags  []
+
+Process finished with exit code -1073741510 (0xC000013A: interrupted by Ctrl+C)

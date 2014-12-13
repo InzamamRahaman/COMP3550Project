@@ -30,46 +30,120 @@ models.setUpDB(function() {
     ));
     console.log("set up database, setting up api's");
     app.post('/login', passport.authenticate('local', passport_config));
-    test3(relationships);
-// Code to test creation, deletion, ect...
+    //test3(relationships);
+
+    var API = require("./libs/API").apiManager;
+    var api = new API(app);
+    var http    = require('http').Server(app);
+    var io  = require('socket.io')(http);
+    var Twitter = require('twit');
+    var twitConfig  = config.twitConfig;
+    var twitter = new Twitter(twitConfig);
+    var words={},users={};
+    console.log("Creating twitter stream");
+    var stream = twitter.stream('statuses/sample', {language: 'en'});
+    stream.stop();
+    console.log("Reading stream");
+    read_twitter_stream(stream, relationships);
+    //startStreaming(stream);
+    app.use(express.static(__dirname + '/app'));
+    app.listen(config.port);
+    console.log("Application started at http://127.0.0.1:" + config.port);
+
+
 });
 
-var API = require("./libs/API").apiManager;    
-var api = new API(app);
-var http    = require('http').Server(app);
-var io  = require('socket.io')(http);
-var Twitter = require('twit');
-var twitConfig  = require('./twitConfig.json');
-var twitter = new Twitter(twitConfig);
-var words={},users={};
-var stream = twitter.stream('statuses/sample', {language: 'en'});
-startStreaming(stream);
+function read_twitter_stream(stream, relationships) {
+    stream.on('tweet', function(tweet_received) {
+        var hashtags = get_hashtags(tweet_received);
+        store_hashtags(hashtags, relationships);
+        console.log("Added hashtags  " +  JSON.stringify(hashtags));
+    });
 
-app.use(express.static(__dirname + '/app'));
-app.listen(config.port);
-console.log("Application started at http://127.0.0.1:" + config.port);
+    stream.on("error", function(err) {
+        console.log("Error");
+        console.log(new Error(err));
+    })
+}
+
+function get_hashtags(tweet) {
+    var texts = new buckets.Set();
+    var raw_tags = tweet.entities.hashtags.map(function(h) {
+        return h.text.trim().toLowerCase();
+    });
+    raw_tags.forEach(function(tag) {
+        texts.add(tag);
+    });
+    return texts.toArray();
+}
+
+function store_hashtags(hashtags, relationships) {
+    relationships.correlateHashtagList(hashtags, config.errorify(function(res) {
+        console.log(res);
+    }));
+}
+
+function get_user_identifier(data) {
+    return data.email;
+}
+
+function set_up_user_connection(io, hashtag_subscriptions, users) {
+
+    io.on('connection', function(socket){
+        console.log("user connected");
+        socket.on('register',function(data){
+            var identifier = get_user_identifier(data);
+            users[email]={'identifier' : identifier,'socket':socket};
+            data.tags.forEach(function(tag){
+                var list=words[tag];
+                if(list===null)//if this word has never been added then welp
+                    list=[];
+                list[email]=users[email];// ! change to check then push
+                console.log(list[email]);
+                console.log("registered");
+            });
+        });
+
+
+    });
+
+}
 
 
 
+function push_tweet_to_users(tweet) {
+    var hashtags = get_hashtags(tweet);
+
+}
+
+
+
+
+
+/*
 function startStreaming(stream){
     stream.on('tweet', function(tweet){
         //When Stream is received from twitter
+        console.log("Tweet received: ");
+        console.log(tweet);
         var tweets=tweet.entities.hashtags;
-            if(tweets!=null&&tweets.length!=0){
-                var hashtags=[];
+        console.log(tweets);
+            if(tweets!=null && tweets.length != 0){
+                var hashtags = [];
                 tweets.forEach(function(curr){
                     hashtags.push(curr.text);//array of hashtags for database
                     //for the blink feed
                     for(var subscribers in words[curr.text]){//check the word to see if it had subscribers
                         console.log("subscribers"+subscribers);
-                        if(subscribers===null)
-                            return;
-                        subscribers.forEach(function(usrObj){
-                            if(usrObj.lastTweet!=tweet.id){
-                                usrObj.lastTweet=tweet.id;
-                                usrObj.socket.emit('new tweet',{'text':tweet.text});
-                            }
-                        });
+                        if(subscribers !== null) {
+
+                            subscribers.forEach(function(usrObj){
+                                if(this.hasOwnProperty(userObj) && usrObj.lastTweet!=tweet.id){
+                                    usrObj.lastTweet=tweet.id;
+                                    usrObj.socket.emit('new tweet',{'text':tweet.text});
+                                }
+                            });
+                        }
                     }
                 });
                 var dbObj={"id":tweet.id,"tags":hashtags,"text":tweet.text}
@@ -78,23 +152,9 @@ function startStreaming(stream){
     });
 }
 
-io.on('connection', function(socket){
-    console.log("user connected");
-    socket.on('register',function(data){
-        var email=data.email;
-        users[email]={'email':email,'socket':socket};
-        data.tags.forEach(function(tag){
-            var list=words[tag];
-            if(list===null)//if this word has never been added then welp
-                list=[];
-            list[email]=users[email];// ! change to check then push
-            console.log(list[email]);
-            console.log("registered");
-        });
-    });
 
+*/
 
-});
 
 function test3(relationships) {
 

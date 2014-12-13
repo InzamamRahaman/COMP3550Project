@@ -36,7 +36,7 @@ function Models(db){
     }
 
     this.changeUserPassword = function(username, oldpassword, newpassword, callback) {
-        
+
     }
 
     this.authenticateLocalUser = function(identifier, password, callback) {
@@ -77,6 +77,8 @@ function Models(db){
 
     this.User.on('prepare', prepareUser);
     this.Hashtag.on('prepare', prepareHashtag);
+    //this.User.setUniqueKey("identifier", true);
+    //this.Hashtag.setUniqueKey("name", true);
 
     /*
     this.findUser = q.nbind(that.User.where, that.User);
@@ -92,6 +94,7 @@ function Models(db){
 
     // Set up indexes on the database
     this.setUpDB = function(callback) {
+        /*
         db.index.createIfNone('User', 'identifier', function(err, index) {
             if(err) {
                 console.log("Error in creating index");
@@ -105,6 +108,7 @@ function Models(db){
                         console.log("Index on hashtag created");
                         console.log(index);
                         // Set up constraints to ensure uniqueness
+
                         db.constraints.uniqueness.createIfNone('User', 'identifier', function(err, constraint) {
                             if(err) {
                                 console.log("Error creating constraint on User");
@@ -118,6 +122,12 @@ function Models(db){
                                         console.log("Constraint on Hashtag added");
                                         console.log(constraint);
                                         console.log("Finised set up db indicies and constraints");
+                                        db.constraints.uniqueness.list('User', 'identifier', function(err, cos) {
+                                            console.log("u:" + cos);
+                                            db.constraints.uniqueness.list('Hashtag', 'name', function(err, cs) {
+                                                console.log("h:" + cs);
+                                            });
+                                        });
                                         callback();
                                     }
                                 });
@@ -134,7 +144,8 @@ function Models(db){
 
 
 
-
+    */
+        callback();
     }
 
 }
