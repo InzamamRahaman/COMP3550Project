@@ -118,7 +118,7 @@ models.setUpDB(function() {
     });
 
     app.put('/api/update/user/password', function(req, res) {
-        var identifier = req.session.passport.user.identifier;
+        var identifier = req.user.identifier;
         var newpassword = req.body.password;
         Model.updateUserPassword(identifier, newpassword, function(err, data1) {
             if(err) {
@@ -131,7 +131,7 @@ models.setUpDB(function() {
     });
 
     app.delete('/api/delete/user/subscription/:hashtag', function(req, res) {
-        var identifier = req.session.passport.identifier;
+        var identifier = req.user.identifier;
         var hashtag = req.params.hashtag;
         Model.userUnfollowHashtag(identifier, hashtag, function(err, data1) {
             if(err) {
@@ -144,7 +144,7 @@ models.setUpDB(function() {
     });
 
     app.put('/api/update/user/twittername/:twittername', function(req, res) {
-        var identifier = req.session.passport.user.identifier;
+        var identifier = req.user.identifier;
         var twitter = req.params.twittername;
         Models.setUserTwitterName(identifier, twitter, function(err, data) {
             if(err) {
@@ -152,6 +152,22 @@ models.setUpDB(function() {
                 res.json(failed_op);
             } else {
                 res.json(successful_op);
+            }
+        })
+    });
+
+    app.get('/api/get/user/recommendations/limit/:limit', function(req, res) {
+        var ident = req.user.identifier;
+        var limit = parseInt(req.params.limit);
+        relationships.getRecommendedUsers(ident, limit, function(err, data) {
+            if(err) {
+                console.log(new Error(err));
+                res.json({success: false});
+            } else {
+                res.json({
+                    success: true,
+                    data: data
+                });
             }
         })
     });

@@ -201,6 +201,24 @@ function RelationshipManager(db) {
         }
     }
 
+    this.getRecommendedUsers = function(identifier, num, callback) {
+        var query = [
+            'MATCH (u:User)->[rel1:SUBSCRIBES_TO]->(h:Hashtag)<-[rel2:SUBSCRIBES_TO]-(u1:User)',
+            'WITH u, u1, h, count(h) as shared, (shared/(u.subscriptions + u1.subscriptions - shared)) as sim',
+            'WHERE u.name = {name} AND u1.twitterName is not null',
+            'RETURN {rec_name: u1.name, similarity: sim}',
+            'ORDER BY sim',
+            'LIMIT {limit}'
+        ].join('\n');
+
+        var params = {
+            name: identifier,
+            limit: num
+        }
+
+        db.query(query, params, callback);
+    }
+
 
 
     // For POST wrt a user following a hashtag
