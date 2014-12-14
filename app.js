@@ -124,11 +124,28 @@ models.setUpDB(function() {
     app.delete('/api/delete/user/subscription/:hashtag', function(req, res) {
         var identifier = req.session.passport.identifier;
         var hashtag = req.params.hashtag;
-        Model.userUnfollowHashtag(identifier, hashtag, config.errorify(function(data) {
-            res.json({message: 'Delete successful'});
-        }));
+        Model.userUnfollowHashtag(identifier, hashtag, function(err, data1) {
+            if(err) {
+                console.log(new Error(err));
+                res.json(failed_op);
+            } else {
+                res.json(successful_op);
+            }
+        });
     });
 
+    app.put('/api/update/user/twittername/:twittername', function(req, res) {
+        var identifier = req.session.passport.user.identifier;
+        var twitter = req.params.twittername;
+        Models.setUserTwitterName(identifier, twitter, function(err, data) {
+            if(err) {
+                console.log(new Error(err));
+                res.json(failed_op);
+            } else {
+                res.json(successful_op);
+            }
+        })
+    });
     /*
     io.on('connection', function(socket){
         console.log("user connected");
