@@ -8,6 +8,8 @@ module.exports = function(app, relationships, Model) {
 
     //var config = require("config");
     //var prep_fun = config.create_responder;
+    var successful_op = {success: true};
+    var failed_op = {success: false};
     var buckets = require("./buckets");
     app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
         console.log("Facilitating subgraph extraction");
@@ -40,8 +42,10 @@ module.exports = function(app, relationships, Model) {
                            console.log(new Error(err1));
                        } else {
                            obj_for_user.verticies = data1;
-                           obj_for_user.success = true;
-                           res.json(obj_for_user);
+                           //obj_for_user.success = true;
+                           var obj = {success: true};
+                           obj.data = obj_for_user;
+                           res.json(obj);
                        }
                    });
                }
@@ -125,7 +129,17 @@ module.exports = function(app, relationships, Model) {
     });
 
 
+    app.get('/api/get/user/identifier/unique/:identifier', function(req, res) {
+        var ident = req.params.identifier;
+        var ifInUse = function() {
+            res.json(failed_op);
+        }
 
+        var ifNotInUse = function() {
+            res.json(successful_op);
+        }
+        Model.userIdentifierInUse(ident, ifInUse, ifNotInUse);
+    });
 
 
 }

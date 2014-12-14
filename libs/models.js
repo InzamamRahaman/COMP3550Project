@@ -26,6 +26,17 @@ function Models(db){
         linkedToTwitter: {type: Boolean}
     }
 
+    this.userIdentifierInUse = function(identifier, callbackIfTrue, callbackIfFalse) {
+        this.User.where({identifier: identifier}, function(err, data) {
+            if(err) {
+                console.log(new Error(err));
+                callbackIfTrue();
+            } else {
+                callbackIfFalse();
+            }
+        });
+    }
+
     this.Hashtag = seraph_model(db, config.hashtag_model_name);
     this.Hashtag.schema = {
         name: {type: String, required: true},
