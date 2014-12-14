@@ -2,6 +2,9 @@
  * Created by Inzamam on 11/20/2014.
  */
 var express = require("express");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var session = require("express-session");
 var config = require("./libs/config");
 var app = config.init_server(express());
 var db = require("seraph")(config.db_conn_string);
@@ -28,6 +31,49 @@ models.setUpDB(function() {
     ));
     console.log("set up database, setting up api's");
     app.post('/login', passport.authenticate('local', passport_config));
+
+    var API = require("./libs/API").apiManager;
+    var api = new API(app);
+    var http    = require('http').Server(app);
+    var io  = require('socket.io')(http);
+    var Twitter = require('twit');
+    var twitConfig  = config.twitConfig;
+    var twitter = new Twitter(twitConfig);
+    var routes = require("./libs/routes")(app, relationships, models);
+    var rooms = new buckets.Dictionary();
+    var words = new buckets.Dictionary();
+    var users = new buckets.Dictionary();
+    var stream = twitter.stream('statuses/sample', {language: 'en'});
+    console.log("Reading stream");
+    read_twitter_stream(stream, relationships, words, users, true, true, rooms, io);
+    app.use(express.static(__dirname + '/app'));
+    app.use(cookieParser());
+    app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(bodyParser.json());
+    app.use(session({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: true
+    }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    passport.serializeUser(function(u, done) {
+       done(null, user);
+    });
+    passport.deserializeUser(function(obj, done) {
+        console.log("deserializing " + obj);
+        done(null, obj);
+    });
+    http.listen(config.port, function(){
+        console.log("Listening on http://127.0.0.1:"+config.port);
+    });
+    //IO conn stuff
+    var successful_op = {success: true};
+    var failed_op = {success: false};
+    handle_streaming(io, rooms);
+
+
+    /*
     app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
         console.log("Facilitating subgraph extraction");
         var hashtag = req.params.hashtag;
@@ -61,41 +107,6 @@ models.setUpDB(function() {
             })
         }));
     });
-    var API = require("./libs/API").apiManager;
-    var api = new API(app);
-    var http    = require('http').Server(app);
-    var io  = require('socket.io')(http);
-    var Twitter = require('twit');
-    var twitConfig  = config.twitConfig;
-    var twitter = new Twitter(twitConfig);
-    var words= new buckets.Dictionary();
-    var users = new buckets.Dictionary();
-    var sockets = new buckets.Dictionary();
-    var rooms = new buckets.Dictionary();
-    var stream = twitter.stream('statuses/sample', {language: 'en'});
-    console.log("Reading stream");
-    read_twitter_stream(stream, relationships, words, users, true, true, rooms, io);
-    app.use(express.static(__dirname + '/app'));
-    app.use(express.cookieParser());
-    app.use(express.bodyParser());
-    app.use(express.session({ secret: 'keyboard cat' }));
-    app.use(passport.initialize());
-    app.use(passport.session());
-    passport.serializeUser(function(u, done) {
-       done(null, user);
-    });
-    passport.deserializeUser(function(obj, done) {
-        console.log("deserializing " + obj);
-        done(null, obj);
-    });
-    http.listen(config.port, function(){
-        console.log("Listening on http://127.0.0.1:"+config.port);
-    });
-    //IO conn stuff
-    var successful_op = {success: true};
-    var failed_op = {success: false};
-    handle_streaming(io, rooms);
-    //handle_user_connection(io, users, words, sockets);
 
     app.post('/api/create/user', function(req, res) {
         var identifier = req.body.username;
@@ -193,8 +204,11 @@ models.setUpDB(function() {
         });
     });
     */
-
+    //handle_user_connection(io, users, words, sockets);
     //test3(relationships);
+    //var words= new buckets.Dictionary();
+    //var users = new buckets.Dictionary();
+    //var sockets = new buckets.Dictionary();
 });
 
 function manage_streaming(hashtags, tweet, rooms, io) {

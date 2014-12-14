@@ -70,6 +70,21 @@ module.exports = {
         "consumer_secret"	: "PmsoveMI13G5tTuR960FjKxXL3n89WVS97TzjHqiY7EMxQORMY",
         "access_token" 		: "2429036847-lyVWLTmeHCSlgmpUy4gbAxz1FErb7prwhmEt9yP",
         "access_token_secret": "fpE1XP6SkSFi3g2SKdsEpX44QAeSv4c4BzNMu3vADEEdx"
+    },
+
+    create_responder: function(res, callback) {
+        return function(err, data) {
+
+            if(err) {
+                console.log(new Error(err));
+                res.json({success: false});
+            } else {
+                res.json({
+                    success: true,
+                    data: data
+                });
+            }
+        }
     }
 
 };
