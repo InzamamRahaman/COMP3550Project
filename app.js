@@ -62,10 +62,10 @@ models.setUpDB(function() {
     var words= new buckets.Dictionary();
     var users = new buckets.Dictionary();
     var sockets = new buckets.Dictionary();
-
+    var rooms = new buckets.Dictionary();
     var stream = twitter.stream('statuses/sample', {language: 'en'});
     console.log("Reading stream");
-    read_twitter_stream(stream, relationships, words, users, true, true);
+    read_twitter_stream(stream, relationships, words, users, true, true, rooms, io);
     app.use(express.static(__dirname + '/app'));
     app.use(express.cookieParser());
     app.use(express.bodyParser());
@@ -85,8 +85,8 @@ models.setUpDB(function() {
     //IO conn stuff
     var successful_op = {success: true};
     var failed_op = {success: false};
-
-    handle_user_connection(io, users, words, sockets);
+    handle_streaming(io, rooms);
+    //handle_user_connection(io, users, words, sockets);
 
     app.post('/api/create/user', function(req, res) {
         var identifier = req.body.username;
@@ -172,6 +172,49 @@ models.setUpDB(function() {
     //test3(relationships);
 });
 
+function manage_streaming(hashtags, tweet, rooms, io) {
+    hashtags.forEach(function(hashtag) {
+       if(rooms.containsKey(hashtag)) {
+           io.to(hashtag).emit('new tweet', {
+              text: tweet
+           });
+       }
+    });
+}
+
+function handle_streaming(io, rooms) {
+
+    io.sockets.on('connection', function(socket) {
+
+        // Code for joining in on hashtags
+        socket.on('subscribe', function(data) {
+            var hashtags = data.hashtags.map(standardize_hashtag);
+            hashtags.forEach(function(hashtag) {
+               if(rooms.containsKey(hashtag)) {
+                   rooms.set(hashtag, rooms.get(hashtag) + 1);
+               } else {
+                   rooms.set(hashtag, 1);
+               }
+                socket.join(hashtag);
+            });
+        });
+
+        // Code for leaving hashtags
+        socket.on('unsubscribe', function(data) {
+            var hashtags = data.hashtags.map(standardize_hashtag);
+            hashtags.forEach(function(hashtag) {
+               var count = rooms.get(hashtag);
+                if(count == 1) {
+                    rooms.remove(hashtag);
+                } else {
+                    rooms.set(hashtag, count - 1);
+                }
+                socket.leave(hashtag);
+            });
+        });
+    });
+}
+
 function subscribe_user_to_hashtag(users, tags, identifier,  hashtag) {
     var standard = standardize_hashtag(hashtag);
     users.get(identifier).subscriptions.add(standard);
@@ -230,7 +273,7 @@ function handle_user_connection(io, users, words, sockets) {
 }
 
 
-function read_twitter_stream(stream, relationships, words, users, store, send) {
+function read_twitter_stream(stream, relationships, words, users, store, send, rooms, io) {
     stream.on('tweet', function(tweet_received) {
         var hashtags = get_hashtags(tweet_received);
         if(store) {
@@ -238,7 +281,8 @@ function read_twitter_stream(stream, relationships, words, users, store, send) {
         }
 
         if(send) {
-            push_tweet_to_users(tweet_received, words, users)
+            manage_streaming(hashtags, tweet_received, rooms, io);
+            //push_tweet_to_users(tweet_received, words, users)
         }
         //sendToUsers(hashtags,tweet_received);
         //console.log("Added hashtags  " +  JSON.stringify(hashtags));
