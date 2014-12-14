@@ -28,6 +28,30 @@ models.setUpDB(function() {
     ));
     console.log("set up database, setting up api's");
     app.post('/login', passport.authenticate('local', passport_config));
+    app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
+        console.log("Facilitating subgraph extraction");
+        var hashtag = req.params.hashtag;
+        var limit = req.params.limit;
+        relationships.getImmediateSubgraph(hashtag, limit, config.errorify(function(data) {
+            var set_of_edges = new buckets.Set(function(obj) {
+                return "start:" + obj.start + ", end:" + obj.end + " ,cost:" + obj.cost;
+            });
+            data.forEach(function(edge) {
+                set_of_edges.add(edge);
+            });
+            var edges = set_of_edges.toArray();
+            var obj_for_user = {
+                edges: edges
+            };
+            var verticies = new buckets.Set();
+            edges.forEach(function(edge) {
+                verticies.add(edge.start);
+                verticies.add(edge.end);
+            });
+            obj_for_user.verticies = verticies.toArray();
+            res.json(obj_for_user);
+        }));
+    });
     var API = require("./libs/API").apiManager;
     var api = new API(app);
     var http    = require('http').Server(app);
@@ -39,7 +63,7 @@ models.setUpDB(function() {
 
     var stream = twitter.stream('statuses/sample', {language: 'en'});
     console.log("Reading stream");
-    read_twitter_stream(stream, relationships);
+    read_twitter_stream(stream, relationships, true);
     app.use(express.static(__dirname + '/app'));
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
@@ -74,12 +98,14 @@ models.setUpDB(function() {
 });
 
 
-function read_twitter_stream(stream, relationships) {
+function read_twitter_stream(stream, relationships, store) {
     stream.on('tweet', function(tweet_received) {
         var hashtags = get_hashtags(tweet_received);
-        store_hashtags(hashtags, relationships);
-        sendToUsers(hashtags,tweet_received);
-        console.log("Added hashtags  " +  JSON.stringify(hashtags));
+        if(store) {
+            store_hashtags(hashtags, relationships);
+        }
+        //sendToUsers(hashtags,tweet_received);
+        //console.log("Added hashtags  " +  JSON.stringify(hashtags));
     });
 
     stream.on("error", function(err) {

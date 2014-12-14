@@ -106,7 +106,7 @@ function RelationshipManager(db) {
     this.getImmediateSubgraph = function(hashtag, limit, callback) {
         var query_param = {
             h_name : hashtag,
-            limit: limit,
+            limit: Number(limit),
         };
 
         var query = [
@@ -117,7 +117,7 @@ function RelationshipManager(db) {
             'LIMIT {limit}'
         ].join("\n");
 
-        db.query(query, param, callback);
+        db.query(query, query_param, callback);
     }
 
 
