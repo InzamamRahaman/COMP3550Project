@@ -2,74 +2,28 @@
  * Created by Inzamam on 11/20/2014.
  */
 var express = require("express");
-var bodyParser = require("body-parser");
-var cookieParser = require("cookie-parser");
-var session = require("express-session");
 var config = require("./libs/config");
 var app = config.init_server(express());
 var db = require("seraph")(config.db_conn_string);
 var lodash = require("lodash");
 var buckets = require("./libs/buckets.js");
 var Models = require("./libs/models").Models;
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+var congigureApplication = require("./libs/configure-application");
 console.log(Models);
 var models = new Models(db); // Use this to manipulate models
 var RelationshipManager = require("./libs/relationships").RelationshipManager;
 var relationships = new RelationshipManager(db);
 models.setUpDB(function() {
-    // Set up passport here
-    var passport_config = {
-        successRedirect: '/',
-        failureRedirect: '/login',
-        failureFlash: true
-    };
-    passport.use(new LocalStrategy(
-        function (username, password, done) {
-            Models.authenticateLocalUser(username, password, done);
-        }
-    ));
     console.log("set up database, setting up api's");
-    app.post('/login', passport.authenticate('local', passport_config));
-
-
+    congigureApplication.configureApplication(app, express, models);
     var http    = require('http').Server(app);
-    var io  = require('socket.io')(http);
-    var Twitter = require('twit');
-    var twitConfig  = config.twitConfig;
-    var twitter = new Twitter(twitConfig);
+    var twitter = require("./libs/twitter-setup");
+    twitter.setUpTwitter(http, relationships, true, true);
     var routes = require("./libs/routes")(app, relationships, models);
-    var rooms = new buckets.Dictionary();
-    var words = new buckets.Dictionary();
-    var users = new buckets.Dictionary();
-    var stream = twitter.stream('statuses/sample', {language: 'en'});
-    var streamManager = require("./libs/stream-manager").createStreamManager(io, relationships, stream);
-    streamManager.handle_streaming();
-    streamManager.read_twitter_stream(true, true);
-    app.use(express.static(__dirname + '/app'));
-    app.use(cookieParser());
-    app.use(bodyParser.urlencoded({ extended: false }))
-    app.use(bodyParser.json());
-    app.use(session({
-        secret: 'keyboard cat',
-        resave: false,
-        saveUninitialized: true
-    }));
-    app.use(passport.initialize());
-    app.use(passport.session());
-    passport.serializeUser(function(u, done) {
-       done(null, user);
-    });
-    passport.deserializeUser(function(obj, done) {
-        console.log("deserializing " + obj);
-        done(null, obj);
-    });
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
     });
-    //IO conn stuff
-    var successful_op = {success: true};
-    var failed_op = {success: false};
+
     //handle_streaming(io, rooms);
     //console.log("Reading stream");
     //read_twitter_stream(stream, relationships, words, users, true, true, rooms, io);
@@ -213,6 +167,10 @@ models.setUpDB(function() {
     //var sockets = new buckets.Dictionary();
     //var API = require("./libs/API").apiManager;
     //var api = new API(app);
+
+    //var rooms = new buckets.Dictionary();
+    //var words = new buckets.Dictionary();
+    //var users = new buckets.Dictionary();
 });
 
 //function manage_streaming(hashtags, tweet, rooms, io) {
