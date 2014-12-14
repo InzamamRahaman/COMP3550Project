@@ -48,8 +48,17 @@ models.setUpDB(function() {
                 verticies.add(edge.start);
                 verticies.add(edge.end);
             });
-            obj_for_user.verticies = verticies.toArray();
-            res.json(obj_for_user);
+            //obj_for_user.verticies = verticies.toArray();
+            //res.json(obj_for_user);
+            Models.getHashtagCounts(verticies.toArray(), function(err1, data1) {
+                if(err1) {
+                    console.log(new Error(err1));
+                } else {
+                    obj_for_user.verticies = data1;
+                    obj_for_user.success = true;
+                    res.json(obj_for_user);
+                }
+            })
         }));
     });
     var API = require("./libs/API").apiManager;
@@ -96,7 +105,7 @@ models.setUpDB(function() {
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
-                Model.addUser(identifier, password, function(err, data2) {
+                Model.addUser(identifier, password, "", false, function(err, data2) {
                    if(err) {
                        console.log(new Error(err));
                        res.json(failed_op);

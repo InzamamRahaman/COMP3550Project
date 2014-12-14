@@ -22,7 +22,8 @@ function Models(db){
         salt: {type: String},
         follows: {type: Number},
         subscriptions: {type : Number},
-        twitterName: {type : String}
+        twitterName: {type : String},
+        linkedToTwitter: {type: Boolean}
     }
 
     this.Hashtag = seraph_model(db, config.hashtag_model_name);
@@ -31,8 +32,14 @@ function Models(db){
         count: {type: Number, required: false}
     }
 
-    this.addUser = function(username, password, callback) {
-        this.User.save({identifier: username, password: password}, callback);
+    this.addUser = function(username, password, twitterName, linkedToTwitter, callback) {
+        var obj = {
+            identifier: username,
+            password: password,
+            twitterName: twitterName,
+            linkedToTwitter: linkedToTwitter
+        };
+        this.User.save(obj, callback);
     }
 
     this.setUserTwitterName = function(identifier, twitterName, callback) {

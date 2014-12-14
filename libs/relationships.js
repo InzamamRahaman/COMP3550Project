@@ -103,6 +103,21 @@ function RelationshipManager(db) {
         //promisifiedQuery(query, {}).then(callback).fail(config.error_print("Error creating or updating tag")).done();
     }
 
+
+    this.getHashtagCounts = function(hashtags, callback) {
+        var query = [
+            'MATCH (h:Hashtag)',
+            'WHERE h.name IN {names}',
+            'RETURN {name: h.name, size: h.count};'
+        ].join('\n');
+
+        var param = {
+            names: hashtags
+        };
+
+        db.query(query, param, callback);
+    }
+
     this.getImmediateSubgraph = function(hashtag, limit, callback) {
         var query_param = {
             h_name : hashtag,
@@ -111,7 +126,7 @@ function RelationshipManager(db) {
 
         var query = [
             'MATCH (h1:Hashtag {name : {h_name}})-[rel:CORRELATED_WITH]->(h2:Hashtag)',
-            'WITH h1, rel, h2, (100 - (100 * rel.times)/(h1.count + h2.count)) AS distance',
+            'WITH h1, rel, h2, (100 - (100 * rel.times)/(h1.count + h2.count - rel.times)) AS distance',
             'RETURN {start: {h_name}, end: h2.name, cost: distance}',
             'ORDER BY distance',
             'LIMIT {limit}'
