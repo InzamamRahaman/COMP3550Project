@@ -75,25 +75,58 @@ models.setUpDB(function() {
     passport.serializeUser(function(u, done) {
        done(null, user);
     });
+    passport.deserializeUser(function(obj, done) {
+        console.log("deserializing " + obj);
+        done(null, obj);
+    });
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
     });
     //IO conn stuff
+    var successful_op = {success: true};
+    var failed_op = {success: false};
 
     handle_user_connection(io, users, words, sockets);
 
-    api.get('/api/get/hashtag/current', function(req, res) {
-        var identifier = req.session.passport.user.identifier;
-        var subscriptions = users.get(identifier).subscriptions;
-        res.json({'subscriptions' : subscriptions});
+    app.post('/api/create/user', function(req, res) {
+        var identifier = req.body.username;
+        var password = req.body.password;
+        Model.User.where({identifier: identifier}, function(err, data1) {
+            if(err){
+                console.log(new Error(err));
+                res.json(failed_op);
+            } else {
+                Model.addUser(identifier, password, function(err, data2) {
+                   if(err) {
+                       console.log(new Error(err));
+                       res.json(failed_op);
+                   } else {
+                       res.json(successful_op);
+                   }
+                });
+            }
+        })
     });
 
-    api.put('/api/put/hashtag/:hashtag', function(req, res) {
-
+    app.put('/api/update/user/password', function(req, res) {
         var identifier = req.session.passport.user.identifier;
+        var newpassword = req.body.password;
+        Model.updateUserPassword(identifier, newpassword, function(err, data1) {
+            if(err) {
+                console.log(new Error(err));
+                res.json(failed_op);
+            } else {
+                res.json(successful_op);
+            }
+        });
+    });
+
+    app.delete('/api/delete/user/subscription/:hashtag', function(req, res) {
+        var identifier = req.session.passport.identifier;
         var hashtag = req.params.hashtag;
-
-
+        Model.userUnfollowHashtag(identifier, hashtag, config.errorify(function(data) {
+            res.json({message: 'Delete successful'});
+        }));
     });
 
     /*

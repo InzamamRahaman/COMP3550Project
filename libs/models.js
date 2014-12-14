@@ -66,9 +66,7 @@ function Models(db){
         db.query(query, param, callback);
     }
 
-    this.changeUserPassword = function(username, oldpassword, newpassword, callback) {
 
-    }
 
     this.authenticateLocalUser = function(identifier, password, callback) {
         this.User.where({identifier: identifier}, {}, function(err, user) {
