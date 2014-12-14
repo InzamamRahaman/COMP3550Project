@@ -67,12 +67,34 @@ models.setUpDB(function() {
     console.log("Reading stream");
     read_twitter_stream(stream, relationships, words, users, true, true);
     app.use(express.static(__dirname + '/app'));
+    app.use(express.cookieParser());
+    app.use(express.bodyParser());
+    app.use(express.session({ secret: 'keyboard cat' }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    passport.serializeUser(function(u, done) {
+       done(null, user);
+    });
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
     });
     //IO conn stuff
 
     handle_user_connection(io, users, words, sockets);
+
+    api.get('/api/get/hashtag/current', function(req, res) {
+        var identifier = req.session.passport.user.identifier;
+        var subscriptions = users.get(identifier).subscriptions;
+        res.json({'subscriptions' : subscriptions});
+    });
+
+    api.put('/api/put/hashtag/:hashtag', function(req, res) {
+
+        var identifier = req.session.passport.user.identifier;
+        var hashtag = req.params.hashtag;
+
+
+    });
 
     /*
     io.on('connection', function(socket){
