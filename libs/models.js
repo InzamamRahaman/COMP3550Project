@@ -35,6 +35,37 @@ function Models(db){
         this.User.save({identifier: username, password: password}, callback);
     }
 
+    this.setUserTwitterName = function(identifier, twitterName, callback) {
+        var query = [
+            'MATCH (u:User {identifier: {ident}})',
+            'SET u.twitterName = {twitter}',
+            'RETURN u'
+        ].join("\n");
+
+        var param = {
+            ident: identifier,
+            twitter: twitterName
+        }
+
+        db.query(query, param, callback);
+    }
+
+    this.updateUserPassword = function(identifier, password, callback) {
+        var newsalt = bcrytp.getSaltSynch(10);
+        var newhash = bcrytp.saltSynch(password, newsalt)
+        var query = [
+            'MATCH (u:User {identifier: {ident}})',
+            'SET u.salt = {salt}, u.password = {hash}',
+            'RETURN u'
+        ].join("\n");
+        var param = {
+            ident: identifier,
+            salt: newsalt,
+            hash: newhash
+        };
+        db.query(query, param, callback);
+    }
+
     this.changeUserPassword = function(username, oldpassword, newpassword, callback) {
 
     }
