@@ -64,7 +64,7 @@ models.setUpDB(function() {
 
     var stream = twitter.stream('statuses/sample', {language: 'en'});
     console.log("Reading stream");
-    read_twitter_stream(stream, relationships, words, users, true, false);
+    read_twitter_stream(stream, relationships, words, users, false, false);
     app.use(express.static(__dirname + '/app'));
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
@@ -184,14 +184,15 @@ function sendToUsers(tags,tweet){
     });
 }
 
-function standardize_hashtag(hastag) {
+function standardize_hashtag(hashtag) {
     return hashtag.trim().toLowerCase();
 }
 
 function get_hashtags(tweet) {
     var texts = new buckets.Set();
     var raw_tags = tweet.entities.hashtags.map(function(h) {
-        return standardize_hashtag(h);
+        console.log(h);
+        return standardize_hashtag(h.text);
     });
     raw_tags.forEach(function(tag) {
         texts.add(tag);
