@@ -61,17 +61,18 @@ models.setUpDB(function() {
     var twitter = new Twitter(twitConfig);
     var words= new buckets.Dictionary();
     var users = new buckets.Dictionary();
+    var sockets = new buckets.Dictionary();
 
     var stream = twitter.stream('statuses/sample', {language: 'en'});
     console.log("Reading stream");
-    read_twitter_stream(stream, relationships, words, users, false, false);
+    read_twitter_stream(stream, relationships, words, users, true, true);
     app.use(express.static(__dirname + '/app'));
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
     });
     //IO conn stuff
 
-    handle_user_connection(io, users, words);
+    handle_user_connection(io, users, words, sockets);
 
     /*
     io.on('connection', function(socket){
@@ -113,7 +114,7 @@ function extract_socket_identifier(data) {
     return data.email;
 }
 
-function register_user(data, users) {
+function register_user(data, users, socket, sockets) {
     var identifier = extract_socket_identifier(data);
     var user_obj =  {
         'identifier': identifier,
@@ -121,29 +122,37 @@ function register_user(data, users) {
         'subscriptions' : new buckets.Set()
     };
     users.set(identifier, user_obj);
+    sockets.set(socket, identifier);
 }
 
-function disconnect_user(users, words, identifier) {
+function disconnect_user(users, words, sockets, socket) {
+    var identifier = sockets.get(socket);
+    console.log("Disconnecting " + identifier);
     var subscriptions = users.get(identifier).subscriptions.forEach(function(tag) {
-        words.get(standardize_hashtag(tag)). // Gte the set of subscribers
-            remove(identifier); // remove this user
+        var subscribers = words.get(standardize_hashtag(tag));
+         console.log(subscribers);// Gte the set of subscribers
+        if(subscribers !== undefined) {
+            subscribers.remove(identifier);
+        }
     });
+    sockets.remove(socket);
     users.remove(identifier); // delete from temporary store
 }
 
-function handle_user_connection(io, users, words) {
+function handle_user_connection(io, users, words, sockets) {
     io.on('connection', function(socket){
         console.log("user connected");
         socket.on('register',function(data){
-            register_user(data, users);
+            register_user(data, users, socket, sockets);
             data.tags.forEach(function(tag){
-                subscribe_user_to_hashtag(users, words, identifier, tag);
+                subscribe_user_to_hashtag(users, words, extract_socket_identifier(data), tag);
             });
             console.log("registered");
         });
 
-        socket.on('disconnect',function(data){
-            disconnect_user(users, words, extract_socket_identifier(data));
+
+        socket.on('disconnect',function(){
+            disconnect_user(users, words,sockets, this);
         });
     });
 }
@@ -226,7 +235,7 @@ function push_tweet_to_users(tweet, words, users) {
                 var tweet_obj = {
                     text: tweet.txt
                 }
-                user_obj.socket.emi("new tweet", tweet_obj);
+                user_obj.socket.emit("new tweet", tweet_obj);
             });
         }
     });
