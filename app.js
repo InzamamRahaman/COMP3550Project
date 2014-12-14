@@ -44,8 +44,9 @@ models.setUpDB(function() {
     var words = new buckets.Dictionary();
     var users = new buckets.Dictionary();
     var stream = twitter.stream('statuses/sample', {language: 'en'});
-    console.log("Reading stream");
-    read_twitter_stream(stream, relationships, words, users, true, true, rooms, io);
+    var streamManager = require("./libs/stream-manager").createStreamManager(io, relationships, stream);
+    streamManager.handle_streaming();
+    streamManager.read_twitter_stream(true, true);
     app.use(express.static(__dirname + '/app'));
     app.use(cookieParser());
     app.use(bodyParser.urlencoded({ extended: false }))
@@ -70,7 +71,9 @@ models.setUpDB(function() {
     //IO conn stuff
     var successful_op = {success: true};
     var failed_op = {success: false};
-    handle_streaming(io, rooms);
+    //handle_streaming(io, rooms);
+    //console.log("Reading stream");
+    //read_twitter_stream(stream, relationships, words, users, true, true, rooms, io);
 
 
     /*
