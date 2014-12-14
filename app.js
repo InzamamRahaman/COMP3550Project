@@ -59,19 +59,21 @@ models.setUpDB(function() {
     var Twitter = require('twit');
     var twitConfig  = config.twitConfig;
     var twitter = new Twitter(twitConfig);
-    var words={},users={};
+    var words= new buckets.Dictionary();
+    var users = new buckets.Dictionary();
 
     var stream = twitter.stream('statuses/sample', {language: 'en'});
     console.log("Reading stream");
-    read_twitter_stream(stream, relationships, true);
+    read_twitter_stream(stream, relationships, words, users, true, false);
     app.use(express.static(__dirname + '/app'));
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
     });
-
-
     //IO conn stuff
 
+    handle_user_connection(io, users, words);
+
+    /*
     io.on('connection', function(socket){
         console.log("user connected");
         socket.on('register',function(data){
@@ -92,17 +94,70 @@ models.setUpDB(function() {
 
         });
     });
-
+    */
 
     //test3(relationships);
 });
 
+function subscribe_user_to_hashtag(users, tags, identifier,  hashtag) {
+    var standard = standardize_hashtag(hashtag);
+    users.get(identifier).subscriptions.add(standard);
+    var subscribers_to_hashtag = tags.get(standard);
+    if(subscribers_to_hashtag === undefined) {
+        tags.set(hashtag, new buckets.Set());
+    }
+    tags.get(hashtag).add(identifier);
+}
 
-function read_twitter_stream(stream, relationships, store) {
+function extract_socket_identifier(data) {
+    return data.email;
+}
+
+function register_user(data, users) {
+    var identifier = extract_socket_identifier(data);
+    var user_obj =  {
+        'identifier': identifier,
+        'socket': socket,
+        'subscriptions' : new buckets.Set()
+    };
+    users.set(identifier, user_obj);
+}
+
+function disconnect_user(users, words, identifier) {
+    var subscriptions = users.get(identifier).subscriptions.forEach(function(tag) {
+        words.get(standardize_hashtag(tag)). // Gte the set of subscribers
+            remove(identifier); // remove this user
+    });
+    users.remove(identifier); // delete from temporary store
+}
+
+function handle_user_connection(io, users, words) {
+    io.on('connection', function(socket){
+        console.log("user connected");
+        socket.on('register',function(data){
+            register_user(data, users);
+            data.tags.forEach(function(tag){
+                subscribe_user_to_hashtag(users, words, identifier, tag);
+            });
+            console.log("registered");
+        });
+
+        socket.on('disconnect',function(data){
+            disconnect_user(users, words, extract_socket_identifier(data));
+        });
+    });
+}
+
+
+function read_twitter_stream(stream, relationships, words, users, store, send) {
     stream.on('tweet', function(tweet_received) {
         var hashtags = get_hashtags(tweet_received);
         if(store) {
             store_hashtags(hashtags, relationships);
+        }
+
+        if(send) {
+            push_tweet_to_users(tweet_received, words, users)
         }
         //sendToUsers(hashtags,tweet_received);
         //console.log("Added hashtags  " +  JSON.stringify(hashtags));
@@ -128,10 +183,15 @@ function sendToUsers(tags,tweet){
         }
     });
 }
+
+function standardize_hashtag(hastag) {
+    return hashtag.trim().toLowerCase();
+}
+
 function get_hashtags(tweet) {
     var texts = new buckets.Set();
     var raw_tags = tweet.entities.hashtags.map(function(h) {
-        return h.text.trim().toLowerCase();
+        return standardize_hashtag(h);
     });
     raw_tags.forEach(function(tag) {
         texts.add(tag);
@@ -154,9 +214,21 @@ function get_user_identifier(data) {
 
 
 
-function push_tweet_to_users(tweet) {
+function push_tweet_to_users(tweet, words, users) {
     var hashtags = get_hashtags(tweet);
-
+    hashtags.forEach(function(hashtag) {
+        var standard = standardize_hashtag(hashtag);
+        if(words.containsKey(standard)) {
+            var subscribers = words.get(standard);
+            subscribers.forEach(function(subscriber) {
+                var user_obj = users.get(subscriber);
+                var tweet_obj = {
+                    text: tweet.txt
+                }
+                user_obj.socket.emi("new tweet", tweet_obj);
+            });
+        }
+    });
 }
 
 
