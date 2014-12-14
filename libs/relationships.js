@@ -80,20 +80,44 @@ function RelationshipManager(db) {
 
 
 
-    var createOrUpdateHashtag = function (hashtag, callback) {
+    var createOrUpdateHashtag = function (hashtag, callback, initial_count) {
         console.log("creating hashtag for " + hashtag);
         var query = [
             //'MERGE (h:Hashtag {name: "' + hashtag + '"})',
             "MERGE (h:Hashtag {name : {hashtag_name}})",
-            'ON CREATE SET h.count = 1.0',
+            'ON CREATE SET h.count = {initial}',
             'ON MATCH SET h.count = h.count + 1.0',
             'RETURN h'
         ].join('\n');
+        var init = null;
+        if(initial_count) {
+            init = initial_count
+        } else {
+            init = 1.0;
+        }
         var param = {
-            hashtag_name: hashtag
+            hashtag_name: hashtag,
+            initial: init
         }
         db.query(query, param, callback);
         //promisifiedQuery(query, {}).then(callback).fail(config.error_print("Error creating or updating tag")).done();
+    }
+
+    this.getImmediateSubgraph = function(hashtag, limit, callback) {
+        var query_param = {
+            h_name : hashtag,
+            limit: limit,
+        };
+
+        var query = [
+            'MATCH (h1:Hashtag {name : {h_name}})-[rel:CORRELATED_WITH]->(h2:Hashtag)',
+            'WITH h1, rel, h2, (100 - (100 * rel.times)/(h1.count + h2.count)) AS distance',
+            'RETURN {start: {h_name}, end: h2.name, cost: distance}',
+            'ORDER BY distance',
+            'LIMIT {limit}'
+        ].join("\n");
+
+        db.query(query, param, callback);
     }
 
 
@@ -124,7 +148,8 @@ function RelationshipManager(db) {
                             'MATCH (h1:Hashtag), (h2:Hashtag)',
                             'WHERE h1.name = {h1} AND h2.name = {h2}',
                             'CREATE UNIQUE (h1)-[rel:CORRELATED_WITH]->(h2)',
-                            'SET rel.times = coalesce(rel.times, 0) + 1'
+                            'SET rel.times = coalesce(rel.times, 0) + 1',
+                            'RETURN rel'
                         ].join("\n");
 
                         var query = [
@@ -166,44 +191,28 @@ function RelationshipManager(db) {
     // For POST wrt a user following a hashtag
     this.userFollowHashtag = function(user_identifier, hashtag_name, callback) {
 
-        var query1 = [
-            'MERGE (h:Hashtag {name: {h_i}})',
-            'ON CREATE SET h.count=0',
-            'ON MATCH SET h.count= h.count + 1',
-            'RETURN h'
-        ].join('\n');
+        var follow_hashtag = function() {
+            var query2 = [
+                'MATCH (u:User), (h:Hashtag)',
+                'WHERE u.identifier = {u_i} AND h.name = {h_i}',
+                'SET u.subscriptions=u.subscriptions + 1',
+                'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
+                'RETURNS follows'
+            ].join('\n');
 
-        var query2 = [
-            'MATCH (u:User), (h:Hashtag)',
-            'WHERE u.identifier = {u_i} AND h.name = {h_i}',
-            'SET u.subscriptions=u.subscriptions + 1',
-            'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
-            'RETURNS follows'
-        ].join('\n');
-
-        var param = {
-            u_i: user_identifier,
-            h_i: hashtag_name
-        };
-        var fn = config.id;
-        if(callback) {
-            console.log("using supplied callback");
-            fn = callback;
+            var param = {
+                u_i: user_identifier,
+                h_i: hashtag_name
+            };
+            var fn = config.id;
+            if(callback) {
+                console.log("using supplied callback");
+                fn = callback;
+            }
+            db.query(query2, param, callback);
         }
 
-        db.query(query1,param, function(err, res) {
-            if (err) {
-                console.log("ERROR IN MERGING HASHTAG FOR FOLLOWS RELATIONSHIP:");
-                console.log(new Error(err));
-            } else {
-                db.query(query2, param, fn);
-                /*
-                promisifiedQuery(query2, param).then(fn).fail(function(err) {
-                    console.log("ERROR IN CREATING SUBSCRIPTION RELATIONSHIP");
-                    console.log(new Error(err));
-                }).done(); */
-            }
-        });
+        createOrUpdateHashtag(hashtag_name, config.errorify(follow_hashtag), 0);
     }
 
 
