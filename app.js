@@ -20,6 +20,12 @@ models.setUpDB(function() {
     var twitter = require("./libs/twitter-setup");
     twitter.setUpTwitter(http, relationships, true, true);
     var routes = require("./libs/routes")(app, relationships, models);
+    //var http = require("http");
+    ///var server = http.createSe
+    var path = require("path");
+    var path_to_static_files = path.join(__dirname, 'app');
+    console.log("Directory " + path_to_static_files);
+    app.use(express.static(path_to_static_files));
     http.listen(config.port, function(){
         console.log("Listening on http://127.0.0.1:"+config.port);
     });

@@ -13,8 +13,6 @@ module.exports = {
         var session = require("express-session");
         var passportSetup = require("./passport-setup");
 
-
-        app.use(express.static(__dirname + '/app'));
         app.use(cookieParser());
         app.use(bodyParser.urlencoded({ extended: false }))
         app.use(bodyParser.json());
