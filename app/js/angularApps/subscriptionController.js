@@ -16,7 +16,15 @@
         console.log('subscriptions controll');
 
         $scope.hashtags = [];
-        $scope.newestSubscription = ""
+        $scope.newestSubscription = "";
+
+        hashtagfetch.register_observer(function(data) {
+            $scope.hashtags = data.data;
+            console.log("Hashtags: ");
+            console.log($scope.hashtags);
+        });
+
+        hashtagfetch.fetchHashtags();
 
         $scope.subscribe = function() {
             if($scope.newestSubscription.length > 0) {
@@ -28,11 +36,7 @@
             hashtagfetch.delete_hashtag_subscroption(hashtag);
         }
 
-        hashtagfetch.register_observer(function(data) {
-            $scope.hashtags = data;
-            console.log("Hashtags: ");
-            console.log($scope.hashtags);
-        });
+
 
 
     }
