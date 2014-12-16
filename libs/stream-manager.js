@@ -83,7 +83,7 @@ function StreamManager(io, relationships, stream) {
     function get_hashtags(tweet) {
         var texts = new buckets.Set();
         var raw_tags = tweet.entities.hashtags.map(function (h) {
-            console.log(h);
+            //console.log(h);
             return standardize_hashtag(h.text);
         });
         raw_tags.forEach(function (tag) {

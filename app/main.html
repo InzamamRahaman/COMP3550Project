@@ -77,7 +77,7 @@
 
 
     <div id="RegistrationModal" class="reveal-modal" data-reveal>
-        <form data-abide>
+        <form method="post" action="/api/create/user" data-abide id="registrationForm">
             <div class="input-wrapper">
                 <label>
                     Email
@@ -103,14 +103,13 @@
                 <small class="error">The two passwords must be equal</small>
             </div>
 
-            <input type="submit" value="Register" data-reveal-id="ServerResponse"
-                   class="button expand">
+            <button type="submit" class="button expand">Register</button>
         </form>
         <a class="close-reveal-modal">&#215;</a>
     </div>
 
     <div id="ServerResponse" class="reveal-modal" data-reveal>
-        <p id="ServerResponseMessage">Registration was unsuccessful :(</p>
+        <p id="ServerResponseMessage">Registration complete</p>
         <a class="close-reveal-modal">&#215;</a>
     </div>
 </body>

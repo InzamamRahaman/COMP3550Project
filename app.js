@@ -18,7 +18,7 @@ models.setUpDB(function() {
     congigureApplication.configureApplication(app, express, models);
     var http    = require('http').Server(app);
     var twitter = require("./libs/twitter-setup");
-    twitter.setUpTwitter(http, relationships, true, true);
+    twitter.setUpTwitter(http, relationships, false, false);
     var routes = require("./libs/routes")(app, relationships, models);
     //var http = require("http");
     ///var server = http.createSe

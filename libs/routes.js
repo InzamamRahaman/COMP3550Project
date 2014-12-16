@@ -54,8 +54,11 @@ module.exports = function(app, relationships, Model) {
     });
 
     app.post('/api/create/user', function(req, res) {
+        //console.log("Adding new user to database");
         var identifier = req.body.username;
         var password = req.body.password;
+        console.log(req.body);
+        //throw "something";
         Model.User.where({identifier: identifier}, function(err, data1) {
             if(err){
                 console.log(new Error(err));

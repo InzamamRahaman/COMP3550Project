@@ -9,7 +9,7 @@
                         var non_alpha_numeric = /\W/;
                         var text = el.value;
                         var len = text.length;
-                        if(len > 20) {
+                        if(len > 6) {
                             return true;
                         } else {
                             return (len > 10 && number.test(text) && non_alpha_numeric.test(text));
@@ -19,8 +19,15 @@
             }
         });
         console.log("Foundation set-up and ready :)");
-
-        // Place stuff related to form validation
+        $('#registrationForm').on('valid.fndtn.abide', function() {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            var data = {
+                username: username,
+                password: password
+            };
+            console.log(data);
+        });
 
     });
 
