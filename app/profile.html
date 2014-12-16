@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>tweet graph</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.abide.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
+    <script src="js/foundation/foundation.magellan.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/foundation/foundation.alert.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/main-page.css">
+</head>
+<body>
+
+<!-- Navigation begins here -->
+    <nav class="top-bar" data-topbar role="navigation">
+    <div>
+        <div>
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#" title="Parrot" class="logo">Tweet Graph</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon">
+                    <a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li class="active"><a href="#">Profile</a></li>
+                    <li class="divider" ></li>
+                    <li><a href="#">Graph</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">About Us</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</nav>
+<!-- Navigation ends here -->
+
+    <section role="main" id="main-content" class="scroll-container">
+
+        <div class="row">
+
+
+            <div class="small- 12 medium-6 large-6 columns">
+
+                <form data-abide="ajax" id="profileForm">
+
+                    <fieldset>
+
+                        <legend>
+                            User Profile
+                        </legend>
+
+                        <div class="form-control">
+                            <label>
+                                New Password
+                                <input type="password" id="password" name="password">
+                            </label>
+                        </div>
+
+                        <div class="form-control">
+                            <label>
+                                Retype New Password
+                                <input type="password" id="retypepassword"
+                                       name="retypepassword" data-equalto="password">
+                            </label>
+                            <small class="error">The password did not match</small>
+                        </div>
+
+                        <div class="form-control">
+                            <label>
+                                Twitter Handle
+                                <input type="text" id="twitterHandle" name="password">
+                            </label>
+                        </div>
+
+                        <button class="button expand" type="submit">
+                            Update Profile
+                        </button>
+
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+
+            <div class="small-12, medium-6 large-6 columns">
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <script src="js/jqueryUtils.js"></script>
+    <script src="js/profile-page.js"></script>
+</body>
+</html>

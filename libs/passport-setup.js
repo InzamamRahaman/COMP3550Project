@@ -13,7 +13,7 @@ module.exports = {
         var flash = require("connect-flash");
 
         var passport_config = {
-            successRedirect: '/',
+            successRedirect: '/profile',
             failureRedirect: '/landing',
             failureFlash: true
         };
@@ -30,10 +30,11 @@ module.exports = {
 
 
         passport.serializeUser(function(user, done) {
+            //console.log(user);
             done(null, user);
         });
         passport.deserializeUser(function(obj, done) {
-            console.log("deserializing " + obj);
+            //console.log("deserializing " + obj);
             done(null, obj);
         });
 

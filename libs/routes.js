@@ -12,14 +12,32 @@ module.exports = function(app, relationships, Model) {
     var failed_op = {success: false};
     var buckets = require("./buckets");
 
+    function checkAuth(req, res, next) {
+        var user = req.user;
+        if(!user) {
+            res.status(401).send("You need to be logged in before using this page");
+        } else {
+            next();
+        }
+    }
+
     app.get('/landing', function(req, res) {
         var user = req.user;
         if(user === {} || user === undefined || user === null) {
             res.redirect("main.html");
         } else {
-            res.json("user logged in");
+            res.redirect("/profile");
         }
 
+    });
+
+    app.get('/profile', function(req, res) {
+       var user = req.user;
+        if(user) {
+            res.redirect("profile.html");
+        } else {
+            res.status(401).send("You need to be logged in to view this page");
+        }
     });
 
     app.get('/logout', function(req, res) {
@@ -30,9 +48,12 @@ module.exports = function(app, relationships, Model) {
     app.get("/", function(req, res) {
         var user = req.user;
         if(user === undefined) {
-            res.json("Not logged in");
+            //res.json("Not logged in");
+            res.redirect("/landing");
         } else {
-            res.json("Logged in");
+            res.redirect("/profile");
+            //
+            // res.json("Logged in");
         }
     });
 
@@ -98,7 +119,7 @@ module.exports = function(app, relationships, Model) {
                             console.log(new Error(err));
                             res.status(500).send("Enable to create acccount")
                         } else {
-                            res.redirect("main.html");
+                            res.redirect("/landing");
                         }
                     });
                 }
