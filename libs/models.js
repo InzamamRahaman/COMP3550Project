@@ -43,6 +43,10 @@ function Models(db){
         count: {type: Number, required: false}
     }
 
+    this.getUserInfo = function(identifier, callback) {
+        this.User.where({identifier: identifier}, callback);
+    }
+
     this.addUser = function(username, password, twitterName, linkedToTwitter, callback) {
         var obj = {
             identifier: username,

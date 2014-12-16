@@ -9,6 +9,16 @@
         // Handle profile form submission here
         $(document).foundation();
         console.log("Foundation ready :)");
+
+        // Grab user's twitter name and load in into webpage
+        var twitterNameGetApi = "/api/get/user/twitter";
+        $.get(twitterNameGetApi, function(data)  {
+           console.log(data);
+            var twitt = data.data.twitterName;
+            $('#twitterHandle').val(twitt);
+        });
+
+
         $('#profileForm').on('valid.fndtn.abide', function() {
            console.log("Ready to submit form!");
 

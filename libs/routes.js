@@ -21,6 +21,23 @@ module.exports = function(app, relationships, Model) {
         }
     }
 
+    function compose_objects(obj1, obj2) {
+        var result = {};
+        for(var prop in obj1) {
+            if(obj1.hasOwnProperty(prop)) {
+                result[prop] = obj1[prop];
+            }
+        }
+
+        for(var prop1 in obj2) {
+            if(obj2.hasOwnProperty(prop)) {
+                result[prop] = obj2[prop];
+            }
+        }
+
+        return result;
+    }
+
     app.get('/landing', function(req, res) {
         var user = req.user;
         if(user === {} || user === undefined || user === null) {
@@ -42,6 +59,7 @@ module.exports = function(app, relationships, Model) {
 
     app.get('/logout', function(req, res) {
         delete req.user;
+        console.log("Log out user");
         res.redirect('/landing');
     });
 
@@ -55,6 +73,24 @@ module.exports = function(app, relationships, Model) {
             //
             // res.json("Logged in");
         }
+    });
+
+    app.get("/api/get/user/twitter", checkAuth, function(req, res) {
+
+        var user = req.user;
+        var identifier = user.identifier;
+        Model.getUserInfo(identifier, function(err, result) {
+            if(err) {
+                console.log(new Error(err));
+                res.json(failed_op);
+            } else {
+                var u = result[0];
+                var name = u.twitterName;
+                var obj = {success: true, data: {twitterName: name}};
+                res.json(obj);
+            }
+        })
+
     });
 
     app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
@@ -156,7 +192,7 @@ module.exports = function(app, relationships, Model) {
     app.put('/api/update/user/twittername/:twittername', function(req, res) {
         var identifier = req.user.identifier;
         var twitter = req.params.twittername;
-        Models.setUserTwitterName(identifier, twitter, function(err, data) {
+        Model.setUserTwitterName(identifier, twitter, function(err, data) {
             if(err) {
                 console.log(new Error(err));
                 res.json(failed_op);
