@@ -190,6 +190,21 @@ module.exports = function(app, relationships, Model) {
         });
     });
 
+    app.get('/api/get/user/subscriptions', function(req, res) {
+
+        var user = req.user;
+        var identifier = user.identifier;
+        relationships.getFollowedHashtags(identifier, function(err, data) {
+            if(err) {
+                res.json(failed_op);
+            } else {
+                var obj = {success: true};
+                obj.data = data;
+                res.json(obj);
+            }
+        })
+    });
+
     app.put('/api/update/user/subscription/:hashtag', function(req, res) {
 
         var user = req.user;

@@ -18,7 +18,7 @@
         var that = this;
 
         this.fetchHashtags = function() {
-            var url = "";
+            var url = "/api/get/user/subscriptions";
             $http.get(url).success(function(data) {
                 console.log("Received " + data);
                 hashtags = data;

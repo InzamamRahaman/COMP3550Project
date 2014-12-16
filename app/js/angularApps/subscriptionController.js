@@ -30,6 +30,8 @@
 
         hashtagfetch.register_observer(function(data) {
             $scope.hashtags = data;
+            console.log("Hashtags: ");
+            console.log($scope.hashtags);
         });
 
 
