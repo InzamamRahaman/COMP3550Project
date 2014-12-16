@@ -64,14 +64,18 @@ module.exports = function(app, relationships, Model) {
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
-                Model.addUser(identifier, password, "", false, function(err, data2) {
-                    if(err) {
-                        console.log(new Error(err));
-                        res.json(failed_op);
-                    } else {
-                        res.json(successful_op);
-                    }
-                });
+                if(data1.length > 0) {
+                    res.json("Email address already in use");
+                } else {
+                    Model.addUser(identifier, password, "", false, function(err, data2) {
+                        if(err) {
+                            console.log(new Error(err));
+                            res.json(failed_op);
+                        } else {
+                            res.json(successful_op);
+                        }
+                    });
+                }
             }
         })
     });
