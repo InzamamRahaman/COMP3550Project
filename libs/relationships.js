@@ -230,7 +230,7 @@ function RelationshipManager(db) {
                 'WHERE u.identifier = {u_i} AND h.name = {h_i}',
                 'SET u.subscriptions=u.subscriptions + 1',
                 'CREATE UNIQUE (u)-[follows:SUBSCRIBES_TO]->(h)',
-                'RETURNS follows'
+                'RETURN follows'
             ].join('\n');
 
             var param = {

@@ -3,7 +3,7 @@
  */
 (function() {
 
-    angular.module("app").controller("subscriptionController");
+    angular.module("app").controller("subscriptionController", subscriptionController);
 
     // Inject dependencies
 
@@ -13,6 +13,7 @@
     function subscriptionController($scope, hashtagfetch) {
 
         var that = this;
+        console.log('subscriptions controll');
 
         $scope.hashtags = [];
         $scope.newestSubscription = ""
@@ -33,5 +34,6 @@
 
 
     }
+
 
 })();
