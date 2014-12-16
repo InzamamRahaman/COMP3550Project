@@ -13,7 +13,7 @@ module.exports = function(app, relationships, Model) {
     var buckets = require("./buckets");
     app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
         console.log("Facilitating subgraph extraction");
-        var hashtag = req.params.hashtag;
+        var hashtag = req.params.hashtag.trim().toLowerCase();
         var limit = req.params.limit;
         relationships.getImmediateSubgraph(hashtag, limit, function(err1, data) {
                if(err1) {
