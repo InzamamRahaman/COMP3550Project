@@ -28,6 +28,9 @@
 
         this.delete_hashtag_subscroption = function(hashtag) {
             var url = "/api/delete/user/subscription/" + hashtag;
+            $http.delete(url).success(function(data) {
+               console.log("On delete " + data);
+            });
             that.fetchHashtags();
         };
 
@@ -47,6 +50,7 @@
 
         function notify_observers()  {
             observers.forEach(function(callback) {
+                console.log(JSON.stringify(hashtags));
                 callback(hashtags);
             });
         }

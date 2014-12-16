@@ -180,7 +180,7 @@ module.exports = function(app, relationships, Model) {
     app.delete('/api/delete/user/subscription/:hashtag', function(req, res) {
         var identifier = req.user.identifier;
         var hashtag = req.params.hashtag;
-        Model.userUnfollowHashtag(identifier, hashtag, function(err, data1) {
+        relationships.userUnfollowHashtag(identifier, hashtag, function(err, data1) {
             if(err) {
                 console.log(new Error(err));
                 res.json(failed_op);

@@ -29,11 +29,13 @@
         $scope.subscribe = function() {
             if($scope.newestSubscription.length > 0) {
                 hashtagfetch.subscribe_to_hashtag($scope.newestSubscription);
+                $scope.newestSubscription = "";
             }
         }
 
         $scope.unsubscribe_hashtag = function(hashtag) {
-            hashtagfetch.delete_hashtag_subscroption(hashtag);
+            console.log('Unsubscribing hashtag ' + hashtag.name);
+            hashtagfetch.delete_hashtag_subscroption(hashtag.name);
         }
 
 
