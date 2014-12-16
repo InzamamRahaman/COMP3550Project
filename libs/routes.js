@@ -190,6 +190,21 @@ module.exports = function(app, relationships, Model) {
         });
     });
 
+    app.put('/api/update/user/subscription/:hashtag', function(req, res) {
+
+        var user = req.user;
+        var identifier = user.identifier;
+        var hashtag = req.params.hashtag;
+        relationships.userFollowHashtag(identifier, hashtag, function(err, data) {
+            if(err) {
+                console.log(new Error(err));
+                res.json(failed_op);
+            } else {
+                res.json(successful_op);
+            }
+        });
+    });
+
     app.put('/api/update/user/twittername/:twittername', function(req, res) {
         var identifier = req.user.identifier;
         var twitter = req.params.twittername;
