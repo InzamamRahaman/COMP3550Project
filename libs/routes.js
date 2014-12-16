@@ -23,8 +23,12 @@ module.exports = function(app, relationships, Model) {
     });
 
     app.get("/", function(req, res) {
-        console.log(req.user);
-       res.json("Logged in");
+        var user = req.user;
+        if(user === undefined) {
+            res.json("Not logged in");
+        } else {
+            res.json("Logged in");
+        }
     });
 
     app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
