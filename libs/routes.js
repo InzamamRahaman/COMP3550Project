@@ -22,6 +22,11 @@ module.exports = function(app, relationships, Model) {
 
     });
 
+    app.get('/logout', function(req, res) {
+        delete req.user;
+        res.redirect('/landing');
+    });
+
     app.get("/", function(req, res) {
         var user = req.user;
         if(user === undefined) {
@@ -77,22 +82,23 @@ module.exports = function(app, relationships, Model) {
         //console.log("Adding new user to database");
         var identifier = req.body.username;
         var password = req.body.password;
-        console.log(req.body);
+        //console.log(req.body);
         //throw "something";
         Model.User.where({identifier: identifier}, function(err, data1) {
             if(err){
                 console.log(new Error(err));
-                res.json(failed_op);
+                res.status(500).send("Enable to create acccount")
+                //res.json(failed_op);
             } else {
                 if(data1.length > 0) {
-                    res.json("Email address already in use");
+                    res.status(500).send("Email address already in use for an account")
                 } else {
                     Model.addUser(identifier, password, "", false, function(err, data2) {
                         if(err) {
                             console.log(new Error(err));
-                            res.json(failed_op);
+                            res.status(500).send("Enable to create acccount")
                         } else {
-                            res.json(successful_op);
+                            res.redirect("main.html");
                         }
                     });
                 }
