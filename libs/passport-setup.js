@@ -10,13 +10,15 @@ module.exports = {
 
         var passport = require("passport");
         var LocalStrategy = require("passport-local").Strategy;
+        var flash = require("connect-flash");
 
         var passport_config = {
             successRedirect: '/',
-            failureRedirect: '/login',
+            failureRedirect: '/landing',
             failureFlash: true
         };
 
+        app.use(flash());
         app.use(passport.initialize());
         app.use(passport.session());
 
@@ -27,7 +29,7 @@ module.exports = {
         ));
 
 
-        passport.serializeUser(function(u, done) {
+        passport.serializeUser(function(user, done) {
             done(null, user);
         });
         passport.deserializeUser(function(obj, done) {

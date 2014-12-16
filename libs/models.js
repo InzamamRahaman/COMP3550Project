@@ -91,7 +91,7 @@ function Models(db){
             if(err) {
                 console.log(new Error(err));
                 callback(null, false, {message: "Database error! Contact webmaster"});
-            } else if (u.length > 0){
+            } else if (user.length > 0){
                 var u = user[0];
                 var hash_to_check = bcrytp.hashSync(password, u.salt);
                 if (hash_to_check !== u.password) {

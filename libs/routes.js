@@ -11,6 +11,22 @@ module.exports = function(app, relationships, Model) {
     var successful_op = {success: true};
     var failed_op = {success: false};
     var buckets = require("./buckets");
+
+    app.get('/landing', function(req, res) {
+        var user = req.user;
+        if(user === {} || user === undefined || user === null) {
+            res.redirect("main.html");
+        } else {
+            res.json("user logged in");
+        }
+
+    });
+
+    app.get("/", function(req, res) {
+        console.log(req.user);
+       res.json("Logged in");
+    });
+
     app.get('/api/get/hashtag/subgraph/:hashtag/limit/:limit', function(req, res) {
         console.log("Facilitating subgraph extraction");
         var hashtag = req.params.hashtag.trim().toLowerCase();

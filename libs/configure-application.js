@@ -21,7 +21,7 @@ module.exports = {
             resave: false,
             saveUninitialized: true
         }));
-
+        //app.engine('html', require('ejs').renderFile);
         passportSetup.setUpPassport(app, Models);
 
     }
