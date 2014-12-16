@@ -28,6 +28,8 @@
     "q": "^1.1.1",
     "seraph": "^0.9.12",
     "seraph-model": "^0.6.18",
-    "socket.io": "^1.2.0"
+    "socket.io": "^1.2.0",
+    "connect-flash": "^0.1.1",
+    "twit":"^1.1.14"
   }
 }
