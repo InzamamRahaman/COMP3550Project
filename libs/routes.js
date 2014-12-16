@@ -58,7 +58,8 @@ module.exports = function(app, relationships, Model) {
     });
 
     app.get('/logout', function(req, res) {
-        delete req.user;
+        //delete req.user;
+        req.logout();
         console.log("Log out user");
         res.redirect('/landing');
     });
