@@ -174,10 +174,12 @@ function StreamManager(io, relationships, stream) {
             //console.log("From stream:");
             //console.log(tweet_received);
             if (store === true) {
+                //console.log("storing relationships");
                 store_hashtags(hashtags, relationships);
             }
 
             if (send === true) {
+                //console.log("streaming to clients");
                 manage_streaming(hashtags, tweet_received);
                 //push_tweet_to_users(tweet_received, words, users)
             }

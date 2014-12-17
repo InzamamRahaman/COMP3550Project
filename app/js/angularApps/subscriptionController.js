@@ -35,7 +35,7 @@
 
         $scope.unsubscribe_hashtag = function(hashtag) {
             console.log('Unsubscribing hashtag ' + hashtag.name);
-            hashtagfetch.delete_hashtag_subscroption(hashtag.name);
+            hashtagfetch.delete_hashtag_subscription(hashtag.name);
         }
 
 

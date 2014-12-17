@@ -82,6 +82,7 @@ module.exports = function(app, relationships, Model, stream) {
         var identifier = user.identifier;
         Model.getUserInfo(identifier, function(err, result) {
             if(err) {
+                console.log("Error getting twitter name");
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
@@ -100,6 +101,7 @@ module.exports = function(app, relationships, Model, stream) {
         var limit = req.params.limit;
         relationships.getImmediateSubgraph(hashtag, limit, function(err1, data) {
                if(err1) {
+                   console.log("Error getting subgraph");
                    console.log(new Error(err));
                    res.json({success: false});
                } else {
@@ -120,9 +122,10 @@ module.exports = function(app, relationships, Model, stream) {
                    });
                    //obj_for_user.verticies = verticies.toArray();
                    //res.json(obj_for_user);
-                   relationships.getHashtagCounts(verticies.toArray(), function(err1, data1) {
-                       if(err1) {
-                           console.log(new Error(err1));
+                   relationships.getHashtagCounts(verticies.toArray(), function(err2, data1) {
+                       if(err2) {
+                           console.log("Error getting subgraph counts");
+                           console.log(new Error(err2));
                        } else {
                            obj_for_user.verticies = data1;
                            //obj_for_user.success = true;
@@ -144,6 +147,7 @@ module.exports = function(app, relationships, Model, stream) {
         //throw "something";
         Model.User.where({identifier: identifier}, function(err, data1) {
             if(err){
+                console.log("Error creating account stage 1");
                 console.log(new Error(err));
                 res.status(500).send("Enable to create acccount")
                 //res.json(failed_op);
@@ -151,9 +155,10 @@ module.exports = function(app, relationships, Model, stream) {
                 if(data1.length > 0) {
                     res.status(500).send("Email address already in use for an account")
                 } else {
-                    Model.addUser(identifier, password, "", false, function(err, data2) {
-                        if(err) {
-                            console.log(new Error(err));
+                    Model.addUser(identifier, password, "", false, function(err1, data2) {
+                        if(err1) {
+                            console.log("Error creating account stage 2");
+                            console.log(new Error(err1));
                             res.status(500).send("Enable to create acccount")
                         } else {
                             res.redirect("/landing");
@@ -169,6 +174,7 @@ module.exports = function(app, relationships, Model, stream) {
         var newpassword = req.body.password;
         Model.updateUserPassword(identifier, newpassword, function(err, data1) {
             if(err) {
+                console.log("Error updating user password");
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
@@ -182,6 +188,7 @@ module.exports = function(app, relationships, Model, stream) {
         var hashtag = req.params.hashtag;
         relationships.userUnfollowHashtag(identifier, hashtag, function(err, data1) {
             if(err) {
+                console.log("Error deleting user hashtag subscription");
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
@@ -196,6 +203,8 @@ module.exports = function(app, relationships, Model, stream) {
         var identifier = user.identifier;
         relationships.getFollowedHashtags(identifier, function(err, data) {
             if(err) {
+                console.log("Error getting subscriptions");
+                console.log(new Error(err));
                 res.json(failed_op);
             } else {
                 var obj = {success: true};
@@ -212,6 +221,7 @@ module.exports = function(app, relationships, Model, stream) {
         var hashtag = req.params.hashtag;
         relationships.userFollowHashtag(identifier, hashtag, function(err, data) {
             if(err) {
+                console.log("Error updating subscription on hashtag");
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
@@ -228,6 +238,7 @@ module.exports = function(app, relationships, Model, stream) {
         var twitter = req.params.twittername;
         Model.setUserTwitterName(identifier, twitter, function(err, data) {
             if(err) {
+                console.log("Error updating twitter name");
                 console.log(new Error(err));
                 res.json(failed_op);
             } else {
@@ -241,6 +252,7 @@ module.exports = function(app, relationships, Model, stream) {
         var limit = parseInt(req.params.limit);
         relationships.getRecommendedUsers(ident, limit, function(err, data) {
             if(err) {
+                console.log("Error getting reccomendations");
                 console.log(new Error(err));
                 res.json({success: false});
             } else {

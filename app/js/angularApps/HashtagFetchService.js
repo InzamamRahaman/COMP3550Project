@@ -26,8 +26,9 @@
             });
         };
 
-        this.delete_hashtag_subscroption = function(hashtag) {
+        this.delete_hashtag_subscription = function(hashtag) {
             var url = "/api/delete/user/subscription/" + hashtag;
+            console.log("Hashtag fetch deleting");
             $http.delete(url).success(function(data) {
                console.log("On delete " + data);
             });
