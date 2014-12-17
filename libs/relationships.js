@@ -62,7 +62,7 @@ function RelationshipManager(db) {
     // For DELETE wrt a user following a hashtag
     this.userUnfollowHashtag = function (user_identifier, hashtag_name, callback) {
         var query = [
-            'MATCH (u:User)-[follows:SUBSCRIBES_TO]-(h:Hashtag)',
+            'MATCH (u:User)-[follows:SUBSCRIBES_TO]->(h:Hashtag)',
             'WHERE u.identifier = {user_i} AND h.name = {hashtag_i}',
             'DELETE follows'
         ].join("\n")
@@ -132,7 +132,17 @@ function RelationshipManager(db) {
             'LIMIT {limit}'
         ].join("\n");
 
-        db.query(query, query_param, callback);
+        var query2 = [
+            'Match (h1:Hashtag {name: {h_name}})',
+            'With h1 as node1',
+            'Match (node1)-[rel:CORRELATED_WITH]->(h2:Hashtag)',
+            'With node1, rel, h2, (100 - (100 * rel.times)/(node1.count + h2.count - rel.times)) AS distance',
+            'RETURN {start: {h_name}, end: h2.name, cost: distance}',
+            'ORDER BY distance',
+            'LIMIT {limit}'
+        ].join('\n');
+
+        db.query(query2, query_param, callback);
     }
 
 
@@ -166,6 +176,18 @@ function RelationshipManager(db) {
                             'SET rel.times = coalesce(rel.times, 0) + 1',
                             'RETURN rel'
                         ].join("\n");
+
+                        var query3 = [
+                            'Match (h1:Hashtag {name: {h1_i}})',
+                            'With h1 as n1',
+                            'Match (h2: Hashtag {name: {h2_i}})',
+                            'With h2 as n2',
+                            'Create unique (n1)-[rel:CORRELATED_WITH]->(h2)',
+                            'Set rel.times = coalesce(rel.times, 0) + 1',
+                            'Create unique (n2)<-[rel1:CORRELATED_WITH]-(n1)',
+                            'Set rel1.times = coalesce(rel1.times, 0) + 1',
+                            'Return rel, rel1'
+                        ].join('\n');
 
                         var query = [
                             'MATCH (h1:Hashtag), (h2:Hashtag)',
