@@ -5,7 +5,7 @@
 
 module.exports = {
 
-    setUpTwitter: function(http, relationships, store, stream_to_users) {
+    setUpTwitter: function(app, http, relationships, models, store, stream_to_users) {
 
         var config = require("./config");
         var io  = require('socket.io')(http);
@@ -17,6 +17,7 @@ module.exports = {
         var streamManager = require("./stream-manager").createStreamManager(io, relationships, stream);
         streamManager.handle_streaming();
         streamManager.read_twitter_stream(store, stream_to_users);
+        var routes = require("./routes")(app, relationships, models, streamManager);
 
     }
 

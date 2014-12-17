@@ -4,7 +4,7 @@
 
 
 // Sets up the api for the application
-module.exports = function(app, relationships, Model) {
+module.exports = function(app, relationships, Model, stream) {
 
     //var config = require("config");
     //var prep_fun = config.create_responder;
@@ -216,6 +216,9 @@ module.exports = function(app, relationships, Model) {
                 res.json(failed_op);
             } else {
                 res.json(successful_op);
+                stream.get_concomittant_hashtags(hashtag, 20, function(data) {
+
+                });
             }
         });
     });

@@ -11,6 +11,7 @@ function StreamManager(io, relationships, stream) {
     var twitter = new Twit(config.twitConfig);
     var xregexp = require("xregexp").XRegExp;
     var lodash = require("lodash");
+
     //console.log(twitter);
 
 
@@ -76,7 +77,7 @@ function StreamManager(io, relationships, stream) {
         });
     }
 
-    this.get_concomittant_hashtags('haskell', 100, function(data) {
+    this.get_concomittant_hashtags('ocaml', 100, function(data) {
         console.log(data);
     });
     // Functions that handle the streaming and user connections
