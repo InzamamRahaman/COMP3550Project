@@ -58,9 +58,27 @@ function StreamManager(io, relationships, stream) {
     //    console.log(hashtags);
     //});
 
+    this.search_for_tweets_with_hashtag = function(hashtag, num, callback) {
+        var query = '#' + hashtag;
+        twitter.get('search/tweets', {q: query, count: num}, function(err, data, resp) {
+           if(err) {
+               console.log(new Error(err));
+           } else {
+               var statuses = data.statuses;
+               callback(statuses);
+           }
+        });
+    }
+
     this.get_concomittant_hashtags = function(hashtag, num, callback) {
         var query_hashtag = '#' + hashtag;
         twitter.get("search/tweets" ,{q: query_hashtag, count: num},function(err, data, resp) {
+            //console.log("Raw from search");
+            //console.log(data);
+            //console.log("From search");
+            //console.log(data.statuses[0]);
+            //console.log("User:");
+            //console.log(JSON.stringify(data.statuses[0].user));
             var texts = extract_text_from_status(data);
             var hashtags = texts.map(function(text) {
                 return get_all_matches(text);
@@ -77,9 +95,39 @@ function StreamManager(io, relationships, stream) {
         });
     }
 
-    this.get_concomittant_hashtags('ocaml', 100, function(data) {
-        console.log(data);
-    });
+    function standardize_tweets_for_transmission(tweet, fromStream) {
+
+        var user = null;
+        var username = null;
+        var text = null;
+        var userPictureLink = null;
+        if(fromStream) {
+            text = tweet.text;
+            user = tweet.user;
+            username = user.screen_name;
+            userPictureLink = user.profile_image_url;
+        } else { // the tweet was obtained from the search API
+            // Assumes that this is a single status
+            text = tweet.text;
+            user = tweet.user;
+            username = user.screen_name;
+            userPictureLink = user.profile_image_url;
+        }
+
+        return {
+            text: text,
+            user_obj: user,
+            username: username,
+            picture: picture
+        };
+
+
+    }
+
+    //this.get_concomittant_hashtags('ocaml', 1, function(data) {
+    //    //console.log("From search:");
+    //    //console.log(data);
+    //});
     // Functions that handle the streaming and user connections
     this.handle_streaming = function () {
 
@@ -95,6 +143,11 @@ function StreamManager(io, relationships, stream) {
                         rooms.set(hashtag, 1);
                     }
                     socket.join(hashtag);
+                    this.search_for_tweets_with_hashtag(hashtag, 5, function(tweets) {
+                       tweets.forEach(function(tweet) {
+                           io.to(hashtag).emit('new tweet', standardize_tweets_for_transmission(tweet));
+                       });
+                    });
                 });
             });
 
@@ -109,6 +162,7 @@ function StreamManager(io, relationships, stream) {
                         rooms.set(hashtag, count - 1);
                     }
                     socket.leave(hashtag);
+
                 });
             });
         });
@@ -117,6 +171,8 @@ function StreamManager(io, relationships, stream) {
     this.read_twitter_stream = function (store, send) {
         stream.on('tweet', function (tweet_received) {
             var hashtags = get_hashtags(tweet_received);
+            //console.log("From stream:");
+            //console.log(tweet_received);
             if (store === true) {
                 store_hashtags(hashtags, relationships);
             }
@@ -144,9 +200,7 @@ function StreamManager(io, relationships, stream) {
     function manage_streaming(hashtags, tweet) {
         hashtags.forEach(function (hashtag) {
             if (rooms.containsKey(hashtag)) {
-                io.to(hashtag).emit('new tweet', {
-                    text: tweet
-                });
+                io.to(hashtag).emit('new tweet', standardize_tweets_for_transmission(tweet, true));
             }
         });
     }
@@ -166,7 +220,7 @@ function StreamManager(io, relationships, stream) {
 
     function store_hashtags(hashtags, relationships) {
         relationships.correlateHashtagList(hashtags, config.errorify(function (res) {
-            console.log(res);
+            //console.log(res);
         }));
     }
 

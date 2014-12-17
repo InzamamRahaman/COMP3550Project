@@ -52,7 +52,7 @@ function RelationshipManager(db) {
         }
         var fn = config.id;
         if (callback !== undefined) {
-            console.log("using defined fun");
+            //console.log("using defined fun");
             fn = callback;
         }
         db.query(query, params, fn);
@@ -81,7 +81,7 @@ function RelationshipManager(db) {
 
 
     var createOrUpdateHashtag = function (hashtag, callback, initial_count) {
-        console.log("creating hashtag for " + hashtag);
+        //console.log("creating hashtag for " + hashtag);
         var query = [
             //'MERGE (h:Hashtag {name: "' + hashtag + '"})',
             "MERGE (h:Hashtag {name : {hashtag_name}})",
@@ -137,20 +137,20 @@ function RelationshipManager(db) {
 
 
     this.addToCorrelationBetweenHashtags = function (hashtag1, hashtag2, callback) {
-        console.log("Correlating " + hashtag1 + " and " + hashtag2);
+        //console.log("Correlating " + hashtag1 + " and " + hashtag2);
         createOrUpdateHashtag(hashtag1, function (err, data) {
             if (err) {
                 console.log("Hashtag " + hashtag1 + " was not created");
                 console.log(new Error(err));
             } else {
-                console.log("Hashtag " + hashtag1 + " was created");
-                console.log("created for 1: " + JSON.stringify(data));
+                //console.log("Hashtag " + hashtag1 + " was created");
+                //console.log("created for 1: " + JSON.stringify(data));
                 createOrUpdateHashtag(hashtag2, function (err1, data1) {
                     if (err1) {
                         console.log(new Error(err1));
                     } else {
-                        console.log("Hashtag for " + hashtag2 + " was created");
-                        console.log("created for 2:" + JSON.stringify(data1));
+                        //console.log("Hashtag for " + hashtag2 + " was created");
+                        //console.log("created for 2:" + JSON.stringify(data1));
                         var param = {
                             h1_i : hashtag1,
                             h2_i: hashtag2
@@ -239,7 +239,7 @@ function RelationshipManager(db) {
             };
             var fn = config.id;
             if(callback) {
-                console.log("using supplied callback");
+                //console.log("using supplied callback");
                 fn = callback;
             }
             db.query(query2, param, callback);
