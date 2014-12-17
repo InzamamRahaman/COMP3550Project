@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>tweet graph</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.abide.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
+    <script src="js/foundation/foundation.magellan.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/foundation/foundation.alert.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/main-page.css">
+</head>
+<body ng-app="app">
+
+<!-- Navigation begins here -->
+<nav class="top-bar" data-topbar role="navigation">
+    <div>
+        <div>
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#" title="Parrot" class="logo">Tweet Graph</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon">
+                    <a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li class="active"><a href="#">Profile</a></li>
+                    <li class="divider" ></li>
+                    <li><a href="#">Graph</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">About Us</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</nav>
+<!-- Navigation ends here -->
+
+<section role="main" id="main-content" class="scroll-container">
+
+    <div class="row">
+
+
+        <div class="small- 12 medium-6 large-6 columns">
+
+            <form data-abide="ajax" id="profileForm">
+
+                <fieldset>
+
+                    <legend>
+                        User Profile
+                    </legend>
+
+                    <div class="form-control">
+                        <label>
+                            New Password
+                            <input type="password" id="password" name="password">
+                        </label>
+                    </div>
+
+                    <div class="form-control">
+                        <label>
+                            Retype New Password
+                            <input type="password" id="retypepassword"
+                                   name="retypepassword" data-equalto="password">
+                        </label>
+                        <small class="error">The password did not match</small>
+                    </div>
+
+                    <div class="form-control">
+                        <label>
+                            Twitter Handle
+                            <input type="text" id="twitterHandle" name="password">
+                        </label>
+                    </div>
+
+                    <button class="button expand" type="submit">
+                        Update Profile
+                    </button>
+
+
+                </fieldset>
+
+            </form>
+
+        </div>
+
+        <div class="small-12, medium-6 large-6 columns" ng-controller="subscriptionController">
+
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    Subscribe to Hashtag
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-8 medium-8 large-8 columns">
+                    <label>
+                        <input type="text" id="hashtag" name="hashtag" ng-model="newestSubscription">
+                    </label>
+                </div>
+                <div class="small-4 medium-4 large-4 columns">
+                    <button class="button round tiny" id="addHashtag" ng-click="subscribe()">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <div class="row" ng-repeat="hashtag in hashtags">
+                        <div class="small-7 medium-7 large-7 columns">
+                            {{hashtag.name}}
+                        </div>
+                        <div class="small-5 medium-5 large-5 columns">
+                            <button class="button info"
+                                    ng-click="unsubscribe_hashtag(hashtag)">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<script src="js/jqueryUtils.js"></script>
+<script src="js/profile-page.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="js/angularApps/angularApp.js"></script>
+<script src="js/angularApps/HashtagFetchService.js"></script>
+<script src="js/angularApps/subscriptionController.js"></script>
+</body>
+</html>

@@ -226,7 +226,7 @@ module.exports = function(app, relationships, Model, stream) {
                 res.json(failed_op);
             } else {
                 res.json(successful_op);
-                stream.get_concomittant_hashtags(hashtag, 20, function(data) {
+                stream.get_concomittant_hashtags(hashtag, 10, function(data) {
 
                 });
             }
