@@ -12,7 +12,7 @@ module.exports = {
         var Twitter = require('twit');
         var twitConfig  = config.twitConfig;
         var twitter = new Twitter(twitConfig);
-
+        //console.log(twitter);
         var stream = twitter.stream('statuses/sample', {language: 'en'});
         var streamManager = require("./stream-manager").createStreamManager(io, relationships, stream);
         streamManager.handle_streaming();
