@@ -18,6 +18,8 @@
         $scope.hashtags = [];
         $scope.newestSubscription = "";
 
+
+
         hashtagfetch.register_observer(function(data) {
             $scope.hashtags = data.data;
             console.log("Hashtags: ");

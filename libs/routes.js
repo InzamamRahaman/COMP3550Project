@@ -57,6 +57,10 @@ module.exports = function(app, relationships, Model, stream) {
         }
     });
 
+    app.get('/view', checkAuth, function(req, res) {
+        res.redirect("viewboard.html");
+    });
+
     app.get('/logout', function(req, res) {
         //delete req.user;
         req.logout();

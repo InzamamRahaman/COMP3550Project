@@ -31,9 +31,9 @@
             </ul>
             <section class="top-bar-section">
                 <ul class="right">
-                    <li class="active"><a href="#">Profile</a></li>
+                    <li><a href="/profile">Profile</a></li>
                     <li class="divider" ></li>
-                    <li><a href="#">Graph</a></li>
+                    <li class="active"><a href="#">Graph</a></li>
                     <li class="divider"></li>
                     <li><a href="#">About Us</a></li>
                     <li class="divider"></li>
@@ -49,16 +49,19 @@
 
 <section role="main" id="main-content" class="scroll-container">
 
+
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+            <a href="#" class="button expand" data-reveal-id="hashtagModal">
+                Show Hashtags
+            </a>
+        </div>
+    </div>
+
     <div class="row">
 
 
-        <div class="small- 12 medium-6 large-6 columns">
-
-            <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
-
-                </div>
-            </div>
+        <div class="small-12 medium-6 large-6 columns">
 
             <div class="row">
                 <div class="small-12 medium-12 large-12 columns">
@@ -70,7 +73,7 @@
 
         </div>
 
-        <div class="small-12, medium-6 large-6 columns" ng-controller="tweetController">
+        <div class="small-12, medium-6 large-6 columns">
 
             <div id="tweetPane">
                 <ul class="">
@@ -95,13 +98,30 @@
     </div>
 
 </section>
+
+
+
+    <!-- Put modal to select hashtags here  -->
+    <div id="hashtagModal" class="reveal-modal" data-reveal ng-controller="hashtagButtonController">
+        <ul class="button-group" ng-repeat="group in groups">
+            <li ng-repeat="hashtag in group">
+                <button class="button" id="{{hashtag.id}}"
+                        ng-class="get_class(hashtag)"
+                        ng-click="handle_click(hashtag)">
+                    {{hashtag.name}}
+                </button>
+            </li>
+        </ul>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+<script src="js/lodash.js"></script>
 <script src="js/jqueryUtils.js"></script>
 <script src="js/profile-page.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 <script src="js/angularApps/angularApp.js"></script>
 <script src="js/angularApps/HashtagFetchService.js"></script>
-<script src="js/angularApps/tweetManagerService.js"></script>
-<script src="js/angularApps/tweetController.js"></script>
+<script src="js/angularApps/hashtagButtonController.js"></script>
 </body>
 </html>
