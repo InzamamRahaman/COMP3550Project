@@ -139,24 +139,26 @@ function StreamManager(io, relationships, stream) {
             socket.on('subscribe', function (data) {
                 console.log("Subscribing for " + JSON.stringify(data));
                 var tags = data.hashtags[0];
-                var hashtags = tags.map(standardize_hashtag);
-                hashtags.forEach(function (hashtag) {
-                    if (rooms.containsKey(hashtag)) {
-                        rooms.set(hashtag, rooms.get(hashtag) + 1);
-                    } else {
-                        rooms.set(hashtag, 1);
-                    }
-                    socket.join(hashtag);
-                    console.log("Searching for " + hashtag);
-                    that.search_for_tweets_with_hashtag(hashtag, 5, function(tweets) {
-                        //console.log(tweets);
-                       tweets.forEach(function(tweet) {
-                           var standard = standardize_tweets_for_transmission(tweet);
-                           console.log(standard);
-                           io.to(hashtag).emit('new tweet', standard );
-                       });
+                if(data.hashtags !== undefined && tags !== undefined && tags.length > 0) {
+                    var hashtags = tags.map(standardize_hashtag);
+                    hashtags.forEach(function (hashtag) {
+                        if (rooms.containsKey(hashtag)) {
+                            rooms.set(hashtag, rooms.get(hashtag) + 1);
+                        } else {
+                            rooms.set(hashtag, 1);
+                        }
+                        socket.join(hashtag);
+                        console.log("Searching for " + hashtag);
+                        that.search_for_tweets_with_hashtag(hashtag, 5, function(tweets) {
+                            //console.log(tweets);
+                            tweets.forEach(function(tweet) {
+                                var standard = standardize_tweets_for_transmission(tweet);
+                                console.log(standard);
+                                io.to(hashtag).emit('new tweet', standard );
+                            });
+                        });
                     });
-                });
+                }
             });
 
             // Code for leaving hashtags
@@ -164,17 +166,19 @@ function StreamManager(io, relationships, stream) {
                 console.log("Unsubscribing for " + data);
 
                 var tags = data.hashtags[0];
-                var hashtags = tags.map(standardize_hashtag);
-                hashtags.forEach(function (hashtag) {
-                    var count = rooms.get(hashtag);
-                    if (count == 1) {
-                        rooms.remove(hashtag);
-                    } else {
-                        rooms.set(hashtag, count - 1);
-                    }
-                    socket.leave(hashtag);
+                if(data.hashtags !== undefined && tags !== undefined && tags.length > 0) {
+                    var hashtags = tags.map(standardize_hashtag);
+                    hashtags.forEach(function (hashtag) {
+                        var count = rooms.get(hashtag);
+                        if (count == 1) {
+                            rooms.remove(hashtag);
+                        } else {
+                            rooms.set(hashtag, count - 1);
+                        }
+                        socket.leave(hashtag);
 
-                });
+                    });
+                }
             });
         });
     }

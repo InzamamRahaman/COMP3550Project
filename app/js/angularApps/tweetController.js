@@ -12,9 +12,9 @@
 
 
         $scope.tweets = [
-            {username:'John',
-                text: 'hhsidhsid'
-            }
+            //{username:'John',
+            //    text: 'hhsidhsid'
+            //}
         ];
 
         subgraphService.register_observer(function(data) {
