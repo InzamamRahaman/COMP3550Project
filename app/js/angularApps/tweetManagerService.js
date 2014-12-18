@@ -13,7 +13,17 @@
 
         var current_hashtag = "";
 
+        var current_graph = {};
+
         var observers = [];
+
+
+        this.grab_subgraph = function(hashtag, callback) {
+            var url = '/api/get/hashtag/subgraph/'+ hashtag + '/limit/10';
+            $http.get(url).success(function(data) {
+                callback(data);
+            });
+        }
 
         this.register_as_subscriber = function(current) {
             that.current_hashtag = current;
