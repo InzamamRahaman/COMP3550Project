@@ -132,6 +132,7 @@ module.exports = function(app, relationships, Model, stream) {
                            console.log(new Error(err2));
                        } else {
                            obj_for_user.verticies = data1;
+                           obj_for_user.center = hashtag;
                            //obj_for_user.success = true;
                            var obj = {success: true};
                            obj.data = obj_for_user;
