@@ -1,0 +1,17 @@
+#ticker li {
+    color: #4E4E4E;
+    background: none repeat scroll 0% 0% #F2F2F2;
+    overflow: hidden;
+    height: 80px;
+    padding: 10px;
+    line-height: 30px;
+    list-style: outside none none;
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 1px dotted #2C8162;
+}
+
+.reveal .fa {
+    font-family: 'FontAwesome';
+    font-style: normal;
+}

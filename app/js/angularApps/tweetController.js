@@ -5,15 +5,17 @@
 
     angular.module("app").controller('tweetController', tweetController);
 
-    tweetController.$inject = ['$scope','hashtagfetch', 'tweetmanagerservice'];
+    tweetController.$inject = ['$scope','hashtagfetch'];
 
-    function tweetController($scope, hashtagfetch, tweetmanagerservice) {
+    function tweetController($scope, hashtagfetch) {
 
-        $scope.tweets = [];
+        $scope.tweets = [
+            {username:'John',
+                text: 'hhsidhsid'
+            }
+        ];
 
-        tweetmanagerservice.register_observer(function(data) {
-           $scope.tweets = data;
-        });
+
 
 
     }
