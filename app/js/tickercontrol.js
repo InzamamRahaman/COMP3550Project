@@ -6,8 +6,8 @@
     $(document).ready(function() {
         console.log('set up ticker');
         $('#ticker').newsTicker({
-            row_height: 80,
-            max_rows: 3,
+            row_height: 100,
+            max_rows: 5,
             duration: 4000,
             prevButton: $('#ticker-prev'),
             nextButton: $('#ticker-next')

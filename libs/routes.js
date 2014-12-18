@@ -202,7 +202,7 @@ module.exports = function(app, relationships, Model, stream) {
         });
     });
 
-    app.get('/api/get/user/subscriptions', function(req, res) {
+    app.get('/api/get/user/subscriptions', checkAuth, function(req, res) {
 
         var user = req.user;
         var identifier = user.identifier;

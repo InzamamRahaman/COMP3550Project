@@ -118,12 +118,14 @@ function StreamManager(io, relationships, stream) {
             text: text,
             user_obj: user,
             username: username,
-            picture: picture
+            picture: userPictureLink
         };
 
 
     }
 
+
+    var that = this;
     //this.get_concomittant_hashtags('ocaml', 1, function(data) {
     //    //console.log("From search:");
     //    //console.log(data);
@@ -135,7 +137,9 @@ function StreamManager(io, relationships, stream) {
 
             // Code for joining in on hashtags
             socket.on('subscribe', function (data) {
-                var hashtags = data.hashtags.map(standardize_hashtag);
+                console.log("Subscribing for " + JSON.stringify(data));
+                var tags = data.hashtags[0];
+                var hashtags = tags.map(standardize_hashtag);
                 hashtags.forEach(function (hashtag) {
                     if (rooms.containsKey(hashtag)) {
                         rooms.set(hashtag, rooms.get(hashtag) + 1);
@@ -143,9 +147,13 @@ function StreamManager(io, relationships, stream) {
                         rooms.set(hashtag, 1);
                     }
                     socket.join(hashtag);
-                    this.search_for_tweets_with_hashtag(hashtag, 5, function(tweets) {
+                    console.log("Searching for " + hashtag);
+                    that.search_for_tweets_with_hashtag(hashtag, 5, function(tweets) {
+                        //console.log(tweets);
                        tweets.forEach(function(tweet) {
-                           io.to(hashtag).emit('new tweet', standardize_tweets_for_transmission(tweet));
+                           var standard = standardize_tweets_for_transmission(tweet);
+                           console.log(standard);
+                           io.to(hashtag).emit('new tweet', standard );
                        });
                     });
                 });
@@ -153,7 +161,10 @@ function StreamManager(io, relationships, stream) {
 
             // Code for leaving hashtags
             socket.on('unsubscribe', function (data) {
-                var hashtags = data.hashtags.map(standardize_hashtag);
+                console.log("Unsubscribing for " + data);
+
+                var tags = data.hashtags[0];
+                var hashtags = tags.map(standardize_hashtag);
                 hashtags.forEach(function (hashtag) {
                     var count = rooms.get(hashtag);
                     if (count == 1) {

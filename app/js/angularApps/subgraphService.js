@@ -34,11 +34,16 @@
         }
 
         this.register_observer = function(obs) {
+
+            console.log('obsercer registered');
+            console.log(obs);
             observers.push(obs);
         }
 
         this.notify_observer = function() {
             observers.forEach(function(observer) {
+
+                console.log('notifying ');
                observer(collections);
             });
         }
@@ -51,6 +56,7 @@
                     collections[hashtag]['graph'] = graph;
                     collections[hashtag]['in_use'] = true;
                     collections[hashtag]['cached'] = true;
+                    that.notify_observer();
                 });
             } else {
                 var use = collections[hashtag]['in_use'];
@@ -59,9 +65,10 @@
                 } else {
                     collections[hashtag]['in_use'] = true;
                 }
+                that.notify_observer();
             }
             console.log(collections);
-            that.notify_observer();
+
         };
 
     }
