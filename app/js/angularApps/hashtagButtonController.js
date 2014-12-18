@@ -5,14 +5,15 @@
 
     angular.module('app').controller('hashtagButtonController', hashtagButtonController);
 
-    hashtagButtonController.$inject = ['$scope', 'hashtagfetch'];
+    hashtagButtonController.$inject = ['$scope', 'hashtagfetch', 'subgraphService'];
 
-    function hashtagButtonController($scope, hashtagfetch) {
+    function hashtagButtonController($scope, hashtagfetch, subgraphService) {
 
         var that = this;
 
         $scope.hashtags = [];
         $scope.groups = [];
+        subgraphService.register_connection();
         hashtagfetch.register_observer(function(data){
             $scope.hashtags = data;
             split_hashtags_into_groups(data);
@@ -27,6 +28,7 @@
             } else {
                 hashtag.clss = "";
             }
+            subgraphService.get_subgraph(hashtag.name);
         }
 
         $scope.get_class = function(hashtag) {
