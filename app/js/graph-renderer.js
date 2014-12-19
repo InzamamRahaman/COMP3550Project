@@ -247,7 +247,8 @@
             nodeArray[nodeCount++] = sys.addNode(alphaNode, {
                 'color': 'red',
                 'shape': 'dot',
-                'label': alphaNode 'mass': 2.5
+                'label': alphaNode,
+                'mass': 2.5
             })
             nodes.forEach(function(el) {
                 nodeArray[nodeCount++] = sys.addNode(el.end, {
@@ -263,15 +264,6 @@
                 })
             }
         })
-        for (var i = 0; i <= edgeCount; i++) {
-            sys.addEdge(alphaNode, nodeArray[i], {
-                length: edgeArray[i]
-            })
-
-            sys.addEdge(alphaNode, nodeArray[i], {
-                length: 20
-            })
-        }
     })
 
 })(this.jQuery)
