@@ -234,10 +234,10 @@
             }) // use center-gravity to make the graph settle nicely (ymmv)
         sys.renderer = Renderer("#viewport") // our newly created renderer will have its .init() method called shortly by sys...
 
-        var hashtagSubgraphGetApi = "/api/get/hashtag/subgraph/moms/limit/25"
+        var hashtagSubgraphGetApi = "/api/get/hashtag/subgraph/haskell/limit/5"
         var nodeArray = []
         var edgeArray = []
-        var alphaNode = "moms"
+        var alphaNode = "haskell"
 
         $.get(hashtagSubgraphGetApi, function(obj) {
             var nodeCount = 0
@@ -247,7 +247,7 @@
             nodeArray[nodeCount++] = sys.addNode(alphaNode, {
                 'color': 'red',
                 'shape': 'dot',
-                'label': alphaNode,
+                //'label': alphaNode,
                 'mass': 2.5
             })
             nodes.forEach(function(el) {

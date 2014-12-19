@@ -5,9 +5,9 @@
 
     angular.module('app').controller('subgraphController', subgraphController);
 
-    subgraphController.$inject = ['$scope', 'subgraphService', 'socketService'];
+    subgraphController.$inject = ['$scope', 'subgraphService', 'socketService', 'aborService'];
 
-    function subgraphController($scope, subgraphService, socketService) {
+    function subgraphController($scope, subgraphService, socketService, aborService) {
 
         $scope.data = null;
         $scope.node_mappings = {};
@@ -31,7 +31,7 @@
         }
 
         $scope.plot_graph = function() {
-            clear_canvas('graph_pane');
+            //clear_canvas('graph_pane');
             console.log("Data to plot");
             console.log($scope.data);
             console.log('Plotting graph');
@@ -42,8 +42,13 @@
             var usable_data = _.map(graphs, 'data');
             console.log("Plotting graph for");
             console.log(usable_data);
-            var nodes = get_nodes(usable_data);
-            var edges = get_edges(usable_data);
+            var nodes = _.flatten(_.map(usable_data, get_nodes));//get_nodes(usable_data);
+            var edges = _.flatten(_.map(usable_data, get_edges));
+            console.log('Requesting for');
+            console.log(nodes);
+            console.log('edge ');
+            console.log(edges);
+            aborService.plot(nodes, edges);
 
         }
 
@@ -56,20 +61,35 @@
 
         function get_nodes(data) {
             var verticies = data.verticies;
+            console.log("vertsd  ");
+            console.log(verticies);
             var colour = get_random_color();
             return _.map(verticies, function(vertex) {
-               return {
-                   name : name,
-                   data : {
-                       color: colour,
-                       mass: vertex.count
-                   }
-               };
+                console.log(vertex);
+                var m = vertex['size']
+                var obj = {
+                    'name' : vertex.name,
+                    'data' : {
+                        'color': colour
+                    }
+                };
+                obj['data']['mass'] = m;
+                console.log(obj);
+               return obj;
             });
         }
 
         function get_edges(data) {
-            var edges = data.edge;
+            var edges = data.edges;
+            console.log('edges');
+            console.log(edges);
+            return _.map(edges, function(edge) {
+                return {
+                    'start': edge.start,
+                    'end': edge.end,
+                    'length': edge.cost
+                }
+            });
         }
 
     }
