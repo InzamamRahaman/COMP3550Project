@@ -14,7 +14,7 @@ Requirements
 ============
 NodeJS - http://nodejs.org/
 
-NMP - Usually installed with NodeJS but can be confirmed with sudo npm install npm -g on Debian machines or running npm -version from command prompt on Windows
+NPM - Usually installed with NodeJS but can be confirmed with `npm -v` on Debian machines or running `npm version` from command prompt on Windows
 
 Neo4j - http://neo4j.com/
 
