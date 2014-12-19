@@ -70,7 +70,7 @@ At the back-end, node modules were used extensively, with each module only deali
 At the front-end, modularity was enforced using angular controllers and angular services in accord with the MVVM architecture. Angular services were made responsible for all DOM manipulations and ajax requests and were utilized by angular controllers that equested services from the angular services and/or  registered themselves as observers to the services, thereby enabling the controllers to remain specific to certain concerns while allowing the manipulation at regions not under the auspices of a controller indirectly. Moreover, modularity was enforced with the non-angular code as well, as specific javascript code (wrapped in self-executed functions) and css code were relegated to specific files
 These characteristics were explified by ~/app/js/angularApps and ~/app/js and ~/app/css
 
-CS Topic - Information
+CS Topic - Information Overload
 ======================
 
 Information overload refers to the phenomenon that users are inudated with so much information that they are bewildered and find themselves unable to extract meaningful insight from data.
