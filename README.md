@@ -73,4 +73,11 @@ These characteristics were explified by ~/app/js/angularApps and ~/app/js and ~/
 CS Topic - Information
 ======================
 
+Information overload refers to the phenomenon that users are inudated with so much information that they are bewildered and find themselves unable to extract meaningful insight from data.
+
+The naive solution to the problem of Information overload is to restrict the data being streamed to users based on their stated preferences. However, with this naive solution emerges a problem - users may be prevented from viewing data that they might be interested in since they may not be directly within the scope of their preferences. Consequently, it would be useful to derive some method and/or metric to determine what information a user might be interested in given the information they are aware they are interested in. This is the slant of our solution.
+
+Twitter is a prime example of a source of information overload. Tweets in twitter may be classified according to the hashtags assigned to them by the denizens of the twitterverse. In our solution, we leveraged a graph model, represented and stored in the graph database neo4j, to connect hashtags with one another. The database was populated using the tweets received from the twitter streaming API, from where hashtags were extracted and correlated using a variant of the Jaccard Index based on hashtags' concomitancy with one another. 
+
+Our users then subscribe to hashtags and can then view an extracted subgraph and the tweets associated with the hashtags in the subgraph, facilitating the delivery of tweets according to hashtags that they are interested in and tweets related to those hashtags, thereby easing the problem of information overload
 
