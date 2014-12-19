@@ -11,6 +11,9 @@
     <script src="js/foundation/foundation.magellan.js"></script>
     <script src="js/foundation/foundation.reveal.js"></script>
     <script src="js/foundation/foundation.alert.js"></script>
+    <script src="js/arbor/arbor.js"></script>
+    <script src="js/arbor/arbor-graphics.js"></script>
+    <script src="js/arbor/arbor-tween.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <script src="js/vendor/modernizr.js"></script>
     <link rel="stylesheet" href="css/main-page.css">
@@ -51,105 +54,16 @@
 
 <section role="main" id="main-content" class="scroll-container">
 
-
-    <div class="row">
-        <div class="small-12 medium-12 large-12 columns">
-            <a href="#" class="button expand" data-reveal-id="hashtagModal">
-                Select Hashtags
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
+<canvas id="viewport" width="800" height="600"></canvas>
 
 
-        <div class="small-12 medium-6 large-6 columns">
-
-            <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
-                    <div id="graphBoard" ng-controller="subgraphController">
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="small-12, medium-6 large-6 columns">
-
-            <div id="tweetPane" ng-controller="tweetController">
-                <div class="row">
-                    <div class="small-5 medium-5 large-5 columns">
-
-                    </div>
-
-                    <div class="small-2 medium-2 large-2 columns">
-                        <i id="ticker-prev" class="fa fa-arrow-circle-up fa-3x"></i>
-                    </div>
-
-                    <div class="small-5 medium-5 large-5 columns">
-
-                    </div>
-
-                </div>
-
-
-                <ul class="newsticker" id="ticker">
-                    <li ng-repeat="tweet in tweets">
-                        <div class="row">
-                            <div class="small-12 medium-12 large-12 columns">
-                                {{tweet.username}}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="small-12 medium-12 large-12 columns">
-                                {{tweet.text}}
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="row">
-                    <div class="small-5 medium-5 large-5 columns">
-
-                    </div>
-
-                    <div class="small-2 medium-2 large-2 columns">
-                        <i id="ticker-next" class="fa fa-arrow-circle-down fa-3x"></i>
-                    </div>
-
-                    <div class="small-5 medium-5 large-5 columns">
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
-
+    
 </section>
 
 
-
-    <!-- Put modal to select hashtags here  -->
-    <div id="hashtagModal" class="reveal-modal" data-reveal ng-controller="hashtagButtonController">
-        <ul class="button-group" ng-repeat="group in groups">
-            <li ng-repeat="hashtag in group">
-                <button class="button" id="{{hashtag.id}}"
-                        ng-class="get_class(hashtag)"
-                        ng-click="handle_click(hashtag)">
-                    {{hashtag.name}}
-                </button>
-            </li>
-        </ul>
-        <a class="close-reveal-modal">&#215;</a>
-    </div>
-
 <script src="js/lodash.js"></script>
 <script src="js/jqueryUtils.js"></script>
-<script src="js/profile-page.js"></script>
+<script src="js/graph-renderer.js"></script>
 <script src="js/socket.io.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
