@@ -21,9 +21,9 @@
         }
 
         function prepare_sys() {
-            sys = arbor.ParticleSystem(600, 600, 0.9) // create the system with sensible repulsion/stiffness/friction
+            sys = arbor.ParticleSystem(1000, 400, 1); // create the system with sensible repulsion/stiffness/friction
             sys.parameters({
-                gravity: false
+                gravity: true
             }) // use center-gravity to make the graph settle nicely (ymmv)
             sys.renderer = Renderer("#graph_pane");
             //return sys;
@@ -59,8 +59,9 @@
                 redraw: function() {
                     if (!particleSystem) return
 
-                    gfx.clear() // convenience ƒ: clears the whole canvas rect
-
+                    //gfx.clear() // convenience ƒ: clears the whole canvas rect
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.beginPath();
                     // draw the nodes & save their bounds for edge drawing
                     var nodeBoxes = {}
                     particleSystem.eachNode(function(node, pt) {
@@ -209,7 +210,7 @@
                     // start listening
                     $(canvas).mousedown(handler.clicked);
 
-                },
+                }
 
             }
             // helpers for figuring out where to draw arrows (thanks springy.js)

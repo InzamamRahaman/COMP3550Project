@@ -29,8 +29,11 @@
                 redraw: function() {
                     if (!particleSystem) return
 
-                    gfx.clear() // convenience ƒ: clears the whole canvas rect
-
+                    //gfx.clear() // convenience ƒ: clears the whole canvas rect
+                    //ctx.fillStyle = "white"
+                    //ctx.fillRect(0,0, canvas.width, canvas.height);
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.beginPath();
                     // draw the nodes & save their bounds for edge drawing
                     var nodeBoxes = {}
                     particleSystem.eachNode(function(node, pt) {
