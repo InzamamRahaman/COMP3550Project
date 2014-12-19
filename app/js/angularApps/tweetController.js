@@ -5,9 +5,9 @@
 
     angular.module("app").controller('tweetController', tweetController);
 
-    tweetController.$inject = ['$scope','hashtagfetch', 'subgraphService'];
+    tweetController.$inject = ['$scope','hashtagfetch', 'subgraphService', 'socketService'];
 
-    function tweetController($scope, hashtagfetch, subgraphService) {
+    function tweetController($scope, hashtagfetch, subgraphService, socketService) {
 
 
 
@@ -16,6 +16,15 @@
             //    text: 'hhsidhsid'
             //}
         ];
+
+        socketService.register_observer(function(data) {
+
+            console.log("Received");
+            console.log(data);
+            //$scope.tweets.push(data);
+            $scope.tweets = data;
+            $scope.$digest();
+        });
 
         subgraphService.register_observer(function(data) {
 
@@ -100,20 +109,22 @@
         var socket = io.connect();
 
         function join_rooms(hashtags) {
-            console.log('Joining ' + hashtags);
-            socket.emit('subscribe', {hashtags: hashtags});
+            socketService.join_rooms(hashtags);
+            //console.log('Joining ' + hashtags);
+            //socket.emit('subscribe', {hashtags: hashtags});
         }
 
         function leave_rooms(hashtags) {
-            console.log('Leaving ' + hashtags);
-            socket.emit('unsubscribe', {hashtags: hashtags});
+            socketService.leave_rooms(hashtags);
+            //console.log('Leaving ' + hashtags);
+            //socket.emit('unsubscribe', {hashtags: hashtags});
         }
 
-        socket.on('new tweet', function(data) {
-            console.log(data);
-           $scope.tweets.push(data);
-            $scope.$digest();
-        });
+        //socket.on('new tweet', function(data) {
+        //    console.log(data);
+        //   $scope.tweets.push(data);
+        //    $scope.$digest();
+        //});
 
 
 
