@@ -138,7 +138,7 @@ function StreamManager(io, relationships, stream) {
             // Code for joining in on hashtags
             socket.on('subscribe', function (data) {
                 console.log("Subscribing for " + JSON.stringify(data));
-                var tags = data.hashtags[0];
+                var tags = data.hashtags
                 if(data.hashtags !== undefined && tags !== undefined && tags.length > 0) {
                     var hashtags = tags.map(standardize_hashtag);
                     hashtags.forEach(function (hashtag) {
@@ -165,7 +165,7 @@ function StreamManager(io, relationships, stream) {
             socket.on('unsubscribe', function (data) {
                 console.log("Unsubscribing for " + data);
 
-                var tags = data.hashtags[0];
+                var tags = data.hashtags
                 if(data.hashtags !== undefined && tags !== undefined && tags.length > 0) {
                     var hashtags = tags.map(standardize_hashtag);
                     hashtags.forEach(function (hashtag) {

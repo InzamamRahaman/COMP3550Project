@@ -20,6 +20,7 @@
 
         $scope.plot_graph = function() {
             console.log('Plotting graph');
+
         }
 
     }

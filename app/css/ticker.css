@@ -2,11 +2,11 @@
     color: #4E4E4E;
     background: none repeat scroll 0% 0% #F2F2F2;
     overflow: hidden;
-    height: 80px;
+    height: 100px;
     padding: 10px;
-    line-height: 30px;
+    line-height: 20px;
     list-style: outside none none;
-    font-size: 24px;
+    font-size: 12px;
     text-align: left;
     border-bottom: 1px dotted #2C8162;
 }

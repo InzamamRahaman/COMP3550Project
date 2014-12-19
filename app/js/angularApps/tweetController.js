@@ -66,7 +66,9 @@
             //    return d.data.in_use === true && d.data.cached === true;
             //});
             console.log('Setting up to enter ' + toEnter);
-            join_rooms(_.map(toEnter, extract_hashtags));
+            var all_entry_hashtags = _.map(toEnter, extract_hashtags);
+            join_rooms(_.flatten(all_entry_hashtags));
+            //join_rooms(_.map(toEnter, extract_hashtags));
 
             // Leaving rooms
 
@@ -74,7 +76,8 @@
             //    return d.data.in_use === false && d.data.cached === true;
             //});
             console.log('Setting up to leave ' + toLeave);
-            leave_rooms(_.map(toLeave, extract_hashtags));
+            var all_leave_hashtags = _.map(toLeave, extract_hashtags);
+            leave_rooms(_.flatten(all_leave_hashtags));
 
         });
 
