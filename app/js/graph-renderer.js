@@ -1,9 +1,3 @@
-//
-//  main.js
-//
-//  A project template for using arbor.js
-//
-
 (function($) {
 
     var Renderer = function(canvas) {
@@ -244,50 +238,40 @@
         var nodeArray = []
         var edgeArray = []
         var alphaNode = "moms"
-        var nodeCount = 0
-        var edgeCount = 0
+
         $.get(hashtagSubgraphGetApi, function(obj) {
+            var nodeCount = 0
+            var edgeCount = 1
             var nodes = obj.data.edges
             console.log(nodes)
-            nodes.forEach(function(el) {
-                nodeArray[nodeCount] = sys.addNode(el.end, {'color':'blue','shape':'dot','label':el.end})
-                edgeArray[edgeCount] = el.cost
+            nodeArray[nodeCount++] = sys.addNode(alphaNode, {
+                'color': 'red',
+                'shape': 'dot',
+                'label': alphaNode 'mass': 2.5
             })
+            nodes.forEach(function(el) {
+                nodeArray[nodeCount++] = sys.addNode(el.end, {
+                    'color': 'blue',
+                    'shape': 'dot',
+                    'label': el.end
+                })
+                edgeArray[edgeCount++] = el.cost
+            })
+            for (var i = 1; i < edgeCount; i++) {
+                sys.addEdge(alphaNode, nodeArray[i], {
+                    length: edgeArray[i]
+                })
+            }
         })
+        for (var i = 0; i <= edgeCount; i++) {
+            sys.addEdge(alphaNode, nodeArray[i], {
+                length: edgeArray[i]
+            })
 
-        for(var i = 0; i <= edgeCount; i++) {
-<<<<<<< HEAD
-          sys.addEdge(alphaNode, nodeArray[i], {length: edgeArray[i]})
-=======
-          sys.addEdge(alphaNode, nodeArray[i], {length: 20})
->>>>>>> 16b9cbe9ee431dee7c456ef39d82f5c10cd1196b
+            sys.addEdge(alphaNode, nodeArray[i], {
+                length: 20
+            })
         }
-
-        // // add some nodes to the graph and watch it go...
-        // sys.addEdge('a', 'b')
-        // sys.addEdge('a', 'c')
-        // sys.addEdge('a', 'd')
-        // sys.addEdge('a', 'e')
-        // sys.addNode('f', {
-        //     alone: true,
-        //     mass: .25
-        // })
-
-        // or, equivalently:
-        //
-        // sys.graft({
-        //   nodes:{
-        //     f:{alone:true, mass:.25}
-        //   }, 
-        //   edges:{
-        //     a:{ b:{},
-        //         c:{},
-        //         d:{},
-        //         e:{}
-        //     }
-        //   }
-        // })
-
     })
 
 })(this.jQuery)
