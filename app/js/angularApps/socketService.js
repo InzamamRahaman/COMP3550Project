@@ -23,7 +23,8 @@
             });
         }
 
-        var socket = io.connect();
+        var socket = io('http://localhost:3000/');
+        //var socket = io.connect();
 
 
         this.join_rooms = function(hashtags) {
