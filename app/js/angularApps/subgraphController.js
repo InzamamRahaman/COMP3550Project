@@ -53,10 +53,16 @@
         }
 
         function get_random_color() {
-            function c() {
-                return Math.floor(Math.random()*256).toString(16)
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
             }
-            return "#"+c()+c()+c();
+            return color;
+            //function c() {
+            //    return Math.floor(Math.random()*256).toString(16)
+            //}
+            //return "#"+c()+c()+c();
         }
 
         function get_nodes(data) {

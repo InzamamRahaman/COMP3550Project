@@ -272,7 +272,10 @@
             nodes.forEach(function(node) {
                 console.log("Adding node");
                 console.log(node);
-               sys.addNode(node.name, {'color': node.data.colour, 'mass': node['data']['mass'],
+                console.log('With colour');
+                var c = node['data']['color'];
+                console.log(c);
+               sys.addNode(node.name, {'color': c, 'mass': node['data']['mass'],
                    'shape' : 'dot', 'label': node.name});
             });
         }
