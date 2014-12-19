@@ -32,20 +32,35 @@ Start the Neo4j instance and go the address it points to, run the following quer
 
 For some reason, the uniqueness constraint in neo4j is being fragile. As such, we need to manually run the query to enforce uniquenss of hastags:
 
-CREATE CONSTRAINT ON (hashtag:Hashtag) ASSERT hashtag.name IS UNIQUE
+`CREATE CONSTRAINT ON (hashtag:Hashtag) ASSERT hashtag.name IS UNIQUE`
 
-CREATE CONSTRAINT ON (user:User) ASSERT user.identifier IS UNIQUE
+`CREATE CONSTRAINT ON (user:User) ASSERT user.identifier IS UNIQUE`
 
 The above will also automatically create an index to improve query performance
 
-In the root folder open app.js and in the function call twitter.setUpTwitter(.....) set the first boolean to true
+For dev purposes- in the root folder open app.js and in the function call twitter.setUpTwitter(.....) set the first boolean to false to stop the database from populating
 
-From command line, run node app.js. This will populate the database with the hashtags and build the correlations. Let it run for a few minutes
+From command line, run `node app.js` This will populate the database with the hashtags and build the correlations. Let it run for a few minutes
 
 Confirm the number of successful relationships by going to the neo4j dashboard and running the following cypher query
 
-Match (h:Hashtag) with count(h) as c_h return c_h
+`Match (h:Hashtag) with count(h) as c_h return c_h`
 
-This shows us the number of hashtags currently in the graph database
+While the neo4j instance is running, from root folder, run `node app.js`
+
+Nagivate to localhost:3000
+
+Usage
+==================
+
+The first step would be to register with an email address and login
+
+In the subscribe filed, enter hashtags that you want to see correlations on
+
+In the nav bar, hit graph. Select the desired tag
+
+
+
+
 
 
