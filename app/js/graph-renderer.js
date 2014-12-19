@@ -256,7 +256,11 @@
         })
 
         for(var i = 0; i <= edgeCount; i++) {
+<<<<<<< HEAD
           sys.addEdge(alphaNode, nodeArray[i], {length: edgeArray[i]})
+=======
+          sys.addEdge(alphaNode, nodeArray[i], {length: 20})
+>>>>>>> 16b9cbe9ee431dee7c456ef39d82f5c10cd1196b
         }
 
         // // add some nodes to the graph and watch it go...

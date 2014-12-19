@@ -42,7 +42,8 @@
             var usable_data = _.map(graphs, 'data');
             console.log("Plotting graph for");
             console.log(usable_data);
-
+            var nodes = get_nodes(usable_data);
+            var edges = get_edges(usable_data);
 
         }
 
@@ -68,7 +69,7 @@
         }
 
         function get_edges(data) {
-
+            var edges = data.edge;
         }
 
     }
